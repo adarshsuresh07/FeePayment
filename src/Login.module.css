@@ -1,0 +1,135 @@
+.imagecss{
+  margin-left:50px;
+  margin-top: 5px;
+  display: inline-block;
+  position: absolute;
+}
+.formstudent, .formadmin
+{
+ display:block;
+ position: absolute;
+ /*  margin-top: 100px;*/
+ right:0;
+  margin-right: 70px;
+ width:300px;
+}
+.formstudent input, .formadmin input{
+  width: 200px;
+  height: 30px;
+  font-size: 16px;
+  margin: 10px;
+  outline: 0;
+  border-width: 0 0 2px;
+}
+.formadmin input:focus {
+  border-color: blue;
+}
+.formstudent input:focus {
+  border-color: #64099c;
+}
+.formadmin span{
+  color: blue;
+}
+.formstudent span{
+  color: #64099c;
+}
+
+.login{
+  display:inline-block;
+  margin-top:150px;
+}
+.invalid{
+    color: red;
+     font-style: italic;
+     font-size: 12px;
+    }
+.flex-container > div {
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.flex-container {
+  display: flex;
+    justify-content:right;
+  align-items: right;
+}
+
+    .row{
+      width: 100%;
+    }
+
+
+.goodtogo{
+  text-align: center;
+  border: 2px;
+}
+
+.topRight{
+  float: right;
+  margin: 20px 20px 0 auto;
+}
+.button2 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: black; 
+  border: 2px solid black;
+}
+
+.button2:hover {
+  background-color: black;
+  color: white;
+}
+.button3 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #64099c;
+  margin-top: 20px;
+}
+
+.button3:hover {
+  background-color: #64099c;
+  color: white;
+}
+.button4 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: black; 
+  border: 2px solid blue;
+   margin-top: 20px;
+}
+
+.button4:hover {
+  background-color: blue;
+  color: white;
+}
+
+
+fieldset{
+ border: 2px solid;
+}
+
+   form{
+      text-align: center;
+   }
+
+a:hover{
+text-decoration: none;}
+a:visited{
+color: none;}
+
+th, td {
+  padding-left: 30px;
+  text-align: left;
+}
+
+span{ 
+  text-align: center;
+}
+.but{
+height:30px;
+width:80px;
+border: none;
+background-color: #010d0c;
+}
