@@ -38,6 +38,96 @@
   display:inline-block;
   margin-top:150px;
 }
+.dashboard{
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+}
+.dashboardimg{
+width:100vw;
+top:0;
+}
+.dashboardimg img{
+width:35vw;
+left:0;
+
+}
+.details{
+  background-color: #600080;
+  color: white;
+  border: 2px solid #64099c;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+  margin-left:100px;
+  padding: 30px;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+.details span{
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+.admindetails{
+  background-color: blue;
+  color: white;
+  border: 2px solid blue;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+  position:fixed;
+  padding: 30px;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+.confirm{
+ border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+  margin:7vw;
+  padding-top: 20px;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+.confirm span{
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+.finedetails{
+  color: red;
+  margin-right: 10px;
+}
+.adminfunc{
+  margin-left: 150px;
+}
+.adminfunc input{
+  width: 200px;
+  height: 30px;
+  font-size: 16px;
+  margin: 10px;
+  outline: 0;
+  border-width: 0 0 2px;
+}
+.adminfunc input:focus {
+  border-color: blue;
+}
+.adminfunc select{
+  border: 2px solid blue;
+  color: blue;
+  background-color: white;
+  margin-left: 10px;
+}
+.adminfunc select :hover{
+  background-color: blue;
+  color: white;
+}
+.adminfunc img{
+  height:30px;
+  width:30px;
+  margin-left: 5px;
+  margin-right: 20px;
+}
 .invalid{
     color: red;
      font-style: italic;
@@ -67,7 +157,19 @@
 
 .topRight{
   float: right;
-  margin: 20px 20px 0 auto;
+  margin:0 20px 0 auto;
+}
+.button1 {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #600080; 
+  color: white; 
+  border: 2px solid white;
+}
+
+.button1:hover {
+  background-color: white;
+  color: #600080;
 }
 .button2 {
   padding: 12px 24px;
@@ -104,7 +206,34 @@
   background-color: blue;
   color: white;
 }
+.button5 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: #00b300; 
+  border: 2px solid #00b300;
+   margin-top: 20px;
+}
 
+.button5:hover {
+  background-color: #00b300;
+  color: white;
+}
+.button6 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: #ff3300; 
+  border: 2px solid #ff3300;
+   margin-top: 20px;
+    margin-left: 20px;
+}
+
+.button6:hover {
+  background-color: #ff3300;
+  color: white;
+}
+.dashboard hr {
+  border-top: 1px solid #64099c;
+}
 
 fieldset{
  border: 2px solid;
