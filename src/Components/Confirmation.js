@@ -1,7 +1,12 @@
 import React from 'react';
 import Style from './Login.module.css';
-class Studenthome extends React.Component {
-render(){
+import { isLogins } from '../utils';
+const Confirm = (props) => {
+
+     const cancel = () => {
+      isLogins()?  
+      props.history.push('/Studenthome'): props.history.push('/');
+    }
  return (
   <div className={Style.confirm}>
     <h3> 170668 Adarsh S S5 Computer Science & Engineering</h3>
@@ -16,12 +21,11 @@ render(){
     <span>Total Amount: Rs 1740</span>
     <div>
     <button className={Style.button5} type="Submit"> Confirm </button>
-    <button className={Style.button6} type="Submit"> Cancel </button>
+    <button className={Style.button6} type="Submit" onClick={() => cancel()}> Cancel </button>
     </div>
 </div>
 
   );
 }
-}
 
-export default Studenthome;
+export default Confirm;

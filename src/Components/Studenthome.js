@@ -1,13 +1,24 @@
 import React from 'react';
+import { logouts, isLogins } from '../utils';
+import { Link } from 'react-router-dom';
 import Style from './Login.module.css';
-class Adminhome extends React.Component {
-render(){
+const Studenthome = (props) => {
+
+
+    const handleLogout = () => {
+        logouts();
+      props.history.push('/');
+    }
+     const pay = () => {
+      props.history.push('/Confirmation');
+    }
+
  return (
   <div>
   <div className={Style.dashboardimg}>
   <img src={require("./cet.png")}/>
   <div className={Style.topRight}>
-  <button className={Style.button3} type="Submit"> Logout </button>
+  <button className={Style.button3} onClick={() => handleLogout()}> Logout </button>
   </div>
   <hr/>
   </div>
@@ -26,13 +37,13 @@ render(){
     <span className={Style.finedetails} title="Base fine:Rs.10 It will be double after next two days and so on">?</span>
     <span>Fine imposed: No</span>
     </div>
-    <button className={Style.button1} type="Submit"> Pay </button>
+    <button className={Style.button1} type="Submit" onClick={() => pay()}> Pay </button>
   </div>
   </div>
 </div>
 
   );
-}
-}
 
-export default Adminhome;
+};
+
+export default Studenthome;

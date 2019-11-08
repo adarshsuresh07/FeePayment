@@ -1,13 +1,19 @@
 import React from 'react';
+import { logouta} from '../utils';
 import Style from './Login.module.css';
-class Adminhome extends React.Component {
-render(){
+const Adminhome = (props) => {
+
+
+    const handleLogout = () => {
+        logouta();
+        props.history.push('/');
+    }
  return (
   <div>
   <div className={Style.dashboardimg}>
   <img src={require("./cet.png")}/>
   <div className={Style.topRight}>
-  <button className={Style.button4} type="Submit"> Logout </button>
+  <button className={Style.button4} onClick={() => handleLogout()}> Logout </button>
   </div>
    <hr/>
   </div> 
@@ -41,7 +47,6 @@ render(){
 </div>
 
   );
-}
 }
 
 export default Adminhome;
