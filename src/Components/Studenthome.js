@@ -2,23 +2,26 @@ import React from 'react';
 import { logouts, isLogins } from '../utils';
 import { Link } from 'react-router-dom';
 import Style from './Login.module.css';
-const Studenthome = (props) => {
+class Studenthome extends React.Component  {
+  constructor(props){
+    super(props);
+  }
 
 
-    const handleLogout = () => {
+    handleLogout(){
         logouts();
-      props.history.push('/');
+      //this.props.history.push('/');
     }
-     const pay = () => {
-      props.history.push('/Confirmation');
+     pay(){
+      //this.props.history.push('/Confirmation');
     }
-
+render(){
  return (
   <div>
   <div className={Style.dashboardimg}>
   <img src={require("./cet.png")}/>
   <div className={Style.topRight}>
-  <button className={Style.button3} onClick={() => handleLogout()}> Logout </button>
+  <button className={Style.button3} onClick={this.handleLogout()}> Logout </button>
   </div>
   <hr/>
   </div>
@@ -37,13 +40,12 @@ const Studenthome = (props) => {
     <span className={Style.finedetails} title="Base fine:Rs.10 It will be double after next two days and so on">?</span>
     <span>Fine imposed: No</span>
     </div>
-    <button className={Style.button1} type="Submit" onClick={() => pay()}> Pay </button>
+    <button className={Style.button1} type="Submit" onClick={this.pay()}> Pay </button>
   </div>
   </div>
 </div>
 
   );
-
-};
-
+ }
+}
 export default Studenthome;
