@@ -1,12 +1,16 @@
 import React from 'react';
 import Style from './Login.module.css';
 import { isLogins } from '../utils';
-const Confirm = (props) => {
-
-     const cancel = () => {
+class Confirm extends React.Component {
+  constructor(props){
+    super(props);
+    this.cancel = this.cancel.bind(this);
+  }
+      cancel(){
       isLogins()?  
-      props.history.push('/Studenthome'): props.history.push('/');
+      this.props.history.push('/Studenthome'): this.props.history.push('/');
     }
+    render(){
  return (
   <div className={Style.confirm}>
     <h3> 170668 Adarsh S S5 Computer Science & Engineering</h3>
@@ -21,11 +25,11 @@ const Confirm = (props) => {
     <span>Total Amount: Rs 1740</span>
     <div>
     <button className={Style.button5} type="Submit"> Confirm </button>
-    <button className={Style.button6} type="Submit" onClick={() => cancel()}> Cancel </button>
+    <button className={Style.button6} type="Submit" onClick={this.cancel}> Cancel </button>
     </div>
 </div>
 
-  );
+  );}
 }
 
 export default Confirm;

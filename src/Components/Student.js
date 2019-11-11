@@ -5,6 +5,8 @@ import { logins, logouta } from '../utils';
 class Student extends React.Component  {
   constructor(props){
     super(props);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   
   handleLogin(){
@@ -20,7 +22,7 @@ class Student extends React.Component  {
       <div>
       <div className={Style.topRight}>
       Are you an Administrator?   
-      <button className={Style.button2} onClick={this.handleClick()}>Login</button>
+      <button className={Style.button2} onClick={this.handleClick}>Login</button>
       </div>
         <div className={Style.login}>
         <div className={Style.imagecssstudent}>
@@ -31,7 +33,7 @@ class Student extends React.Component  {
         <span>Student</span><br/><br/>
         <input type="text" name="uname" placeholder="UserName" />
         <input type="password" name="password" placeholder="Password" />
-        <button type="submit" className={Style.button3} onClick={this.handleLogin()}>Login</button>
+        <button type="submit" className={Style.button3} onClick={this.handleLogin}>Login</button>
         </div>
         </div>
       </div>

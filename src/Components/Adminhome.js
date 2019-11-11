@@ -4,12 +4,13 @@ import Style from './Login.module.css';
 class Adminhome extends React.Component  {
   constructor(props){
     super(props);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
 
     handleLogout(){
         logouta();
-        //props.history.push('/');
+        this.props.history.push('/');
     }
     render(){
  return (
@@ -17,7 +18,7 @@ class Adminhome extends React.Component  {
   <div className={Style.dashboardimg}>
   <img src={require("./cet.png")}/>
   <div className={Style.topRight}>
-  <button className={Style.button4} onClick={this.handleLogout()}> Logout </button>
+  <button className={Style.button4} onClick={this.handleLogout}> Logout </button>
   </div>
    <hr/>
   </div> 

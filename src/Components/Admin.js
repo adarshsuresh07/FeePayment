@@ -4,6 +4,8 @@ import Style from './Login.module.css';
 class Admin extends React.Component  {
     constructor(props){
       super(props);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     }
   
     handleLogin = () => {
@@ -19,7 +21,7 @@ render(){
       <div>
       <div className={Style.topRight}>
       Are you a Student?   
-      <button className={Style.button2} onClick={this.handleClick()}>Login</button>
+      <button className={Style.button2} onClick={this.handleClick}>Login</button>
       </div>
       <div className={Style.login}>
       <div className={Style.imagecssadmin}>
@@ -30,7 +32,7 @@ render(){
       <span>Admin</span><br/><br/>
       <input type="text" name="uname" placeholder="UserName" />
       <input type="password" name="password" placeholder="Password" />
-      <button type="submit" className={Style.button4} onClick={this.handleLogin()}>Login</button>
+      <button type="submit" className={Style.button4} onClick={this.handleLogin}>Login</button>
       </div>
       </div>
       </div>

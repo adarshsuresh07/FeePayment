@@ -5,15 +5,15 @@ import Style from './Login.module.css';
 class Studenthome extends React.Component  {
   constructor(props){
     super(props);
+    this.handleLogout = this.handleLogout.bind(this);
+    this.pay = this.pay.bind(this);
   }
-
-
     handleLogout(){
         logouts();
-      //this.props.history.push('/');
+      this.props.history.push('/');
     }
      pay(){
-      //this.props.history.push('/Confirmation');
+      this.props.history.push('/Confirmation');
     }
 render(){
  return (
@@ -21,7 +21,7 @@ render(){
   <div className={Style.dashboardimg}>
   <img src={require("./cet.png")}/>
   <div className={Style.topRight}>
-  <button className={Style.button3} onClick={this.handleLogout()}> Logout </button>
+  <button className={Style.button3} onClick={this.handleLogout}> Logout </button>
   </div>
   <hr/>
   </div>
@@ -40,7 +40,7 @@ render(){
     <span className={Style.finedetails} title="Base fine:Rs.10 It will be double after next two days and so on">?</span>
     <span>Fine imposed: No</span>
     </div>
-    <button className={Style.button1} type="Submit" onClick={this.pay()}> Pay </button>
+    <button className={Style.button1} type="Submit" onClick={this.pay}> Pay </button>
   </div>
   </div>
 </div>
