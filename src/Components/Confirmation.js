@@ -1,10 +1,45 @@
 import React from 'react';
 import Style from './Login.module.css';
-import { isLogins } from '../utils';
+import { isLogins, getTokens } from '../utils';
+import Axios from 'axios';
+
 class Confirm extends React.Component {
   constructor(props){
     super(props);
     this.cancel = this.cancel.bind(this);
+    this.state = {
+      admno: '',
+      name: '',
+      sem: '',
+      dept: '',
+      scholname: '',
+      deadline: '',
+      fine: '',
+      fee: '',
+      totalFee: '',
+      dayslate: ''
+    };
+  }
+  componentWillMount = () => {
+    let config = {
+      headers: {
+        Authorization: 'bearer '+getTokens()
+      }
+    };
+    Axios.get('http://localhost:3001/dashboard/confirmation',config)
+    .then((res) => {
+      this.setState({
+        admno: res.data.admno,
+        name: res.data.name,
+        sem: res.data.sem,
+        dept: res.data.dept,
+        scholname: res.data.scholname,
+        deadline: res.data.deadline,
+        fee: res.data.fee,
+        fine: res.data.fine,
+        totalFee: res.data.totalfee
+      });
+    });
   }
       cancel(){
       isLogins()?  
@@ -13,16 +48,16 @@ class Confirm extends React.Component {
     render(){
  return (
   <div className={Style.confirm}>
-    <h3> 170668 Adarsh S S5 Computer Science & Engineering</h3>
-    <span>Scholarship Details: E-grantz</span>
-    <span>Fee Deadline: 29/08/2019</span>
-    <span>Fee: Rs 1700</span><br/>
+    <h3> {this.state.admno} {this.state.name} {this.state.sem} {this.state.dept}</h3>
+    <span>Scholarship Details: {this.state.scholname}</span>
+    <span>Fee Deadline: {this.state.deadline}</span>
+    <span>Fee: Rs {this.state.fee}</span><br/>
     <div>
     <br/>
-    <span>Fine imposed: Rs 40</span>
+    <span>Fine: Rs {this.state.fine}</span>
     <span className={Style.finedetails} title="Fine for last 7 days">?</span>
     </div>
-    <span>Total Amount: Rs 1740</span>
+    <span>Total Amount: Rs {this.state.totalFee}</span>
     <div>
     <button className={Style.button5} type="Submit"> Confirm </button>
     <button className={Style.button6} type="Submit" onClick={this.cancel}> Cancel </button>
