@@ -1,17 +1,36 @@
 import React from 'react';
-import { logouta} from '../utils';
+import { logouta, getTokena } from '../utils';
 import Style from './Login.module.css';
+import Axios from 'axios'
 class Adminhome extends React.Component  {
   constructor(props){
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
-  }
+    this.state = {
+      cId: '',
+      name: ''
+    };
+  };
 
+  componentDidMount() {
+    let config = {
+      headers: {
+        Authorization: 'bearer '+getTokena()
+      }
+    };
+    Axios.get('http://localhost:3001/dashboard',config)
+    .then((res) => {
+      this.setState({
+        cId: res.data.username,
+        name: res.data.name
+      });
+    });
+  };
 
     handleLogout(){
         logouta();
         this.props.history.push('/');
-    }
+    };
     render(){
  return (
   <div>
@@ -24,9 +43,8 @@ class Adminhome extends React.Component  {
   </div> 
   <div className={Style.dashboard}>
    <div className={Style.admindetails}>
-    <span> ID </span> 
-    <span>Adarsh S </span> 
-    <span>Position </span>
+    <span>{this.state.cId}</span> 
+    <span>{this.state.name}</span> 
    </div>
   <div className={Style.adminfunc}>
    <input type="text" placeholder="Search.."/>

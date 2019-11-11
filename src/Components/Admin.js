@@ -1,16 +1,38 @@
 import React from 'react';
-import { logina, logouts } from '../utils';
+import { logina, logouts, logouta } from '../utils';
 import Style from './Login.module.css';
+import Axios from 'axios'
 class Admin extends React.Component  {
     constructor(props){
       super(props);
-    this.handleLogin = this.handleLogin.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    }
-  
+      this.handleLogin = this.handleLogin.bind(this);
+      this.handleClick = this.handleClick.bind(this);
+      this.state = {
+        username: '',
+        password: ''
+      };
+    };
+
+    componentDidMount = () => {
+      logouta();
+      logouts();
+    };
+
+    handleChange = ({ target }) => {
+      this.setState({ [target.name]: target.value });
+    };
+
     handleLogin = () => {
-        logina(); logouts();
-       this.props.history.push('/Adminhome');
+      Axios.post('http://localhost:3001/users/login',{
+        username: this.state.username,
+        password: this.state.password
+      })
+      .then(res => {
+        if(res.data.success) {
+          logina(res.data.token);
+          this.props.history.push('/Adminhome');
+        }  
+      });
     }
 
     handleClick = () => {
@@ -30,8 +52,8 @@ render(){
       </div>
       <div className={Style.formadmin}>
       <span>Admin</span><br/><br/>
-      <input type="text" name="uname" placeholder="UserName" />
-      <input type="password" name="password" placeholder="Password" />
+      <input type="text" id="username" name="username" placeholder="UserName" value={this.state.username} onChange={this.handleChange} />
+      <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
       <button type="submit" className={Style.button4} onClick={this.handleLogin}>Login</button>
       </div>
       </div>

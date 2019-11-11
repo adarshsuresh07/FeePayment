@@ -1,15 +1,47 @@
 import React from 'react';
-import { logouts, isLogins } from '../utils';
+import { logouts, getTokens } from '../utils';
 import { Link } from 'react-router-dom';
 import Style from './Login.module.css';
+import Axios from 'axios';
 class Studenthome extends React.Component  {
   constructor(props){
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
     this.pay = this.pay.bind(this);
+    this.state = {
+      admno: '',
+      name: '',
+      sem: '',
+      dept: '',
+      schol: '',
+      deadline: '',
+      paid: 'No',
+      fine: 'No'
+    };
+  };
+  componentDidMount() { 
+    let config = {
+      headers: {
+        Authorization: 'bearer '+getTokens()
+      },
+    };
+    Axios.get('http://localhost:3001/dashboard',config)
+    .then((res) => {
+      console.log(res);
+      this.setState({
+        admno: res.data.admno,
+        name: res.data.name,
+        sem: res.data.sem,
+        dept: res.data.dept,
+        schol: res.data.schol,
+        deadline: res.data.deadline,
+        paid: res.data.paid,
+        fine: res.data.fine
+      });
+    });
   }
     handleLogout(){
-        logouts();
+      logouts();
       this.props.history.push('/');
     }
      pay(){
@@ -27,18 +59,18 @@ render(){
   </div>
   <div className={Style.dashboard}>
   <div className={Style.details}>
-    <span> 170668 </span> 
-    <span>Adarsh S </span> 
-    <span>S5 </span>
-    <span> Computer Science & Engineering</span>
+    <span id='admno'>{this.state.admno}</span> 
+    <span id='name'>{this.state.name}</span> 
+    <span id='sem'>{this.state.sem}</span>
+    <span id='dept'>{this.state.dept}</span>
    </div>
    <div className={Style.details}> 
-    <span>Scholarship Details: E-grantz</span>
-    <span>Fee Deadline: 29/08/2019</span>
-    <span>Paid : Yes</span>
+    <span id='schol'>Scholarship Details: {this.state.schol}</span>
+    <span id='deadline'>Fee Deadline: {this.state.deadline}</span>
+    <span id='paid'>Paid : {this.state.paid}</span>
     <div>
-    <span className={Style.finedetails} title="Base fine:Rs.10 It will be double after next two days and so on">?</span>
-    <span>Fine imposed: No</span>
+      <span className={Style.finedetails} title="Base fine:Rs.10 It will be double after next two days and so on">?</span>
+      <span id='fine'>Fine imposed: {this.state.fine}</span>
     </div>
     <button className={Style.button1} type="Submit" onClick={this.pay}> Pay </button>
   </div>

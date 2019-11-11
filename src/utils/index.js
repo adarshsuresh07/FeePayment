@@ -1,7 +1,7 @@
 const TOKEN_KEY = 'jwt';
 
-export const logins = () => {
-    localStorage.setItem(TOKEN_KEY, 'TestLogin');
+export const logins = (token) => {
+    localStorage.setItem(TOKEN_KEY, token);
 }
 
 export const logouts = () => {
@@ -15,10 +15,16 @@ export const isLogins = () => {
 
     return false;
 }
+
+export const getTokens = () => {
+  let token = localStorage.getItem(TOKEN_KEY);
+  return token;
+}
+
 const TOKEN_KEYA = 'jwt1';
 
-export const logina = () => {
-    localStorage.setItem(TOKEN_KEYA, 'TestLogin');
+export const logina = (token) => {
+    localStorage.setItem(TOKEN_KEYA, token);
 }
 
 export const logouta = () => {
@@ -31,4 +37,9 @@ export const isLogina = () => {
     }
 
     return false;
+}
+
+export const getTokena = () => {
+  let token = localStorage.getItem(TOKEN_KEYA);
+  return token;
 }
