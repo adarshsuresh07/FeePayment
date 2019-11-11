@@ -10,7 +10,7 @@ const PrivateRoute = ({component: Component, ...rest}) => {
         // Otherwise, redirect the user to /signin page
         <Route {...rest} render={props => (
             isLogina()?
-                <Adminhome/>
+                <Adminhome {...props}/>
             : <Redirect to="/" />
         )} />
     );
