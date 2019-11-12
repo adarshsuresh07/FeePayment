@@ -15,8 +15,8 @@ class Studenthome extends React.Component  {
       dept: '',
       schol: '',
       deadline: '',
-      paid: 'No',
-      fine: 'No'
+      paid: '',
+      fine: ''
     };
   };
   componentDidMount() { 
@@ -25,7 +25,7 @@ class Studenthome extends React.Component  {
         Authorization: 'bearer '+getTokens()
       },
     };
-    Axios.get('http://localhost:3001/dashboard',config)
+    Axios.get('http://localhost:3001/dashboard/student',config)
     .then((res) => {
       console.log(res);
       this.setState({
