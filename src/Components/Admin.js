@@ -41,7 +41,7 @@ class Admin extends React.Component  {
     }
 render(){
     return (
-      <div>
+      <div adminwrap>
       <div className={Style.topRight}>
       Are you a Student?   
       <button className={Style.button2} onClick={this.handleClick}>Login</button>
