@@ -42,7 +42,7 @@ class Student extends React.Component  {
   };
  render(){
     return (
-      <div>
+      <div studentwrap>
       <div className={Style.topRight}>
       Are you an Administrator?   
       <button className={Style.button2} onClick={this.handleClick}>Login</button>
