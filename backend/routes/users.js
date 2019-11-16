@@ -17,15 +17,17 @@ loginRouter.route('/login')
       res.statusCode = 401;
       res.json({success: false, status: 'Login Unsuccessful!', err: info});
     }
-    req.logIn(user, {session: false}, (err) => {
-      if (err) {
-        res.statusCode = 401;
-        res.json({success: false, status: 'Login Unsuccessful!', err: 'Could not log in user!'});          
-      }
-      var token = pass.getToken({_id: req.user.username});
-      res.statusCode = 200;
-      res.json({success: true, status: 'Login Successful!', token: token});
-    }); 
+    else {
+      req.logIn(user, {session: false}, (err) => {
+        if (err) {
+          res.statusCode = 401;
+          res.json({success: false, status: 'Login Unsuccessful!', err: 'Could not log in user!'});          
+        }
+        var token = pass.getToken({_id: req.user.username});
+        res.statusCode = 200;
+        res.json({success: true, status: 'Login Successful!', token: token});
+      });
+    }   
   }) (req, res, next);
 });
 

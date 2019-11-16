@@ -46,7 +46,6 @@ router.get('/student',cors.corsWithOptions, pass.verifyUser, function(req, res, 
 
 router.options('/admin', cors.corsWithOptions, (req,res) => {res.sendStatus(200); })
 router.get('/admin',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
-  console.log(req.user);
   const query = "SELECT username,name,role from users where username='"+req.user.username+"'";
   db.query(query, (err,result) => {
       res.statusCode = 200;
@@ -89,10 +88,8 @@ router.get('/confirmation',cors.corsWithOptions, pass.verifyUser, function(req, 
   const query = "SELECT s.admno,s.name,s.sem,s.dept,c.scholname,f.amount,f.deadline,DATE_FORMAT(f.deadline,'%d %M %Y') as dlday FROM students s,fees f,scholarships c WHERE s.sem=f.sem and s.scholId=c.scholId and s.admno="+req.user.username;
   db.query(query,function(err,result){
     let fine = 0;
-    console.log(result);
     let today = new Date();
     let dayslate = Math.floor((today.getTime() - result[0].deadline.getTime())/(1000*60*60*24));
-    console.log(dayslate);
     if(dayslate>0) {
       if(dayslate == 1)
         fine=10;
@@ -118,7 +115,6 @@ router.get('/confirmation',cors.corsWithOptions, pass.verifyUser, function(req, 
         'totalfee': totalFee
       }
     );
-    console.log(row);
     res.json(row);
   });
 });

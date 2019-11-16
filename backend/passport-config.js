@@ -10,11 +10,10 @@ exports.local = passport.use('local', new LocalStrategy({
   passwordField: 'password',
   passReqToCallback: true
 }, (req, username, password, done) => {
-  
   const query = 'SELECT * FROM users WHERE username=?';
   db.query(query,[username],(err,rows) => {
     if(err) return done({message: err});
-    if(!rows.length) {
+    if(!rows.length || req.body.role!=rows[0].role) {
       return done(null,false,
         {message: 'invalid Username or Password'});
     }
@@ -24,7 +23,6 @@ exports.local = passport.use('local', new LocalStrategy({
       return done(null,false,
         {message: 'invalid Username or Password'});
     }
-    console.log(rows);
     return done(null, rows[0]);
   });
 }));

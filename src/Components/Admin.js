@@ -25,7 +25,8 @@ class Admin extends React.Component  {
     handleLogin = () => {
       Axios.post('http://localhost:3001/users/login',{
         username: this.state.username,
-        password: this.state.password
+        password: this.state.password,
+        role: 'admin'
       })
       .then(res => {
         if(res.data.success) {

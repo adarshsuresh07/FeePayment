@@ -26,10 +26,10 @@ class Student extends React.Component  {
   handleLogin(){
     Axios.post('http://localhost:3001/users/login',{
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
+      role: 'student'
     })
     .then(res => {
-      console.log('blue');
       if(res.data.success) {
         logins(res.data.token);
         this.props.history.push('/Studenthome');
