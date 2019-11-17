@@ -61,6 +61,7 @@ render(){
   <div className={Style.details}>
     <span id='admno'>{this.state.admno}</span> 
     <span id='name'>{this.state.name}</span> 
+    <span id='pro'>{this.state.pro}</span>
     <span id='sem'>{this.state.sem}</span>
     <span id='dept'>{this.state.dept}</span>
    </div>

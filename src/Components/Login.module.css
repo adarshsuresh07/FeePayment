@@ -130,6 +130,7 @@ left:0;
   color: blue;
   background-color: white;
   margin-left: 10px;
+  display: inline-block;
 }
 .adminfunc select :hover{
   background-color: blue;

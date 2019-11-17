@@ -10,10 +10,9 @@ import StudentRoute from './Components/Studentroute.js';
 import AdminRoute from './Components/Adminroute.js';
 
 class App extends React.Component {
-
   render() {
     return (
-      <BrowserRouter>
+        <BrowserRouter>
         <Switch>
           <PublicRoute restricted={true} component={Student} path="/" exact />
           <PublicRoute restricted={true} component={Admin} path="/Admin" exact />
