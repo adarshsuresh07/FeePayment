@@ -1,0 +1,71 @@
+.dashboardimg{
+width:100vw;
+top:0;
+}
+.dashboardimg img{
+width:35vw;
+left:0;
+}
+.topRight{
+  float: right;
+  margin:20px 20px 0 0;
+}
+.button4 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: black; 
+  border: 2px solid blue;
+   margin-top: 20px;
+}
+
+.button4:hover {
+  background-color: blue;
+  color: white;
+}
+.dashboard{
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+}
+.admindetails{
+  background-color: blue;
+  color: white;
+  border: 2px solid blue;
+  padding: 10px;
+  position:fixed;
+  padding: 30px;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+.adminfunc{
+  margin-left: 150px;
+}
+.adminfunc input{
+  width: 200px;
+  height: 30px;
+  font-size: 16px;
+  margin: 10px;
+  outline: 0;
+  border-width: 0 0 2px;
+}
+.adminfunc input:focus {
+  border-color: blue;
+}
+.adminfunc select{
+  border: 2px solid blue;
+  color: blue;
+  background-color: white;
+  margin-left: 10px;
+  display: inline-block;
+}
+.adminfunc select :hover{
+  background-color: blue;
+  color: white;
+}
+.adminfunc img{
+  height:30px;
+  width:30px;
+  margin-left: 5px;
+  margin-right: 20px;
+}

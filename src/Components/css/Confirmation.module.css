@@ -1,0 +1,43 @@
+.confirm{
+ border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+  margin:7vw;
+  padding-top: 20px;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+.confirm span{
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+.finedetails{
+  color: red;
+  margin-right: 10px;
+}
+.button5 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: #00b300; 
+  border: 2px solid #00b300;
+   margin-top: 20px;
+}
+
+.button5:hover {
+  background-color: #00b300;
+  color: white;
+}
+.button6 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: #ff3300; 
+  border: 2px solid #ff3300;
+   margin-top: 20px;
+    margin-left: 20px;
+}
+
+.button6:hover {
+  background-color: #ff3300;
+  color: white;
+}
