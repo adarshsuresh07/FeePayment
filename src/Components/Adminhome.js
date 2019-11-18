@@ -20,7 +20,7 @@ class Adminhome extends React.Component  {
         Authorization: 'bearer '+getTokena()
       }
     };
-    Axios.get('http://localhost:3001/dashboard/admin',config)
+    Axios.get('http://localhost:3001/admin',config)
     .then((res) => {
       this.setState({
         cId: res.data.username,

@@ -6,6 +6,7 @@ var logger = require('morgan');
 var passport = require('passport');
 var cors = require('cors');
 var dashRouter = require('./routes/dash');
+var adminRouter = require('./routes/admin');
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -25,6 +26,7 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 
 app.use('/dashboard', dashRouter);
+app.use('/admin', adminRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
