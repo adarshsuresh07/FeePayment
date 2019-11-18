@@ -1,7 +1,7 @@
 import React from 'react';
 import { logouts, getTokens } from '../utils';
 import { Link } from 'react-router-dom';
-import Style from './Login.module.css';
+import Style from './css/Studenthome.module.css';
 import Axios from 'axios';
 class Studenthome extends React.Component  {
   constructor(props){

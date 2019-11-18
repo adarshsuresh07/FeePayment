@@ -1,0 +1,118 @@
+.topRight{
+  float: right;
+  margin:20px 20px 0 0;
+}
+.button2 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: black; 
+  border: 2px solid black;
+  margin-left: 2vw;
+}
+
+.button2:hover {
+  background-color: black;
+  color: white;
+}
+.login{
+  
+  display:inline-block;
+  margin-top:150px;
+}
+.imagecssstudent{
+  margin-left:50px;
+  margin-top: 5px;
+  margin-right: 50px;
+  display: inline-block;
+  position: absolute;
+}
+.imagecssstudent hr{
+border-top: 1px solid #184A45FF;
+}
+.formstudent
+{
+ display:block;
+ position: absolute;
+ /*  margin-top: 100px;*/
+ right:0;
+  margin-right: 70px;
+ width:300px;
+}
+.formstudent input{
+  width: 200px;
+  height: 30px;
+  font-size: 16px;
+  margin: 10px;
+  outline: 0;
+  border-width: 0 0 2px;
+}
+.formstudent input:focus {
+  border-color: #184A45FF;
+}
+.formstudent span{
+  color: #184A45FF;
+}
+.button3 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #184A45FF;
+  margin-top: 20px;
+}
+
+.button3:hover {
+  background-color: #184A45FF;
+  color: white;
+}
+@media only screen and (max-width:1038px)
+{
+
+  .studentwrap
+  {
+    
+    width:100%;
+
+  }
+  .imagecssstudent
+  {
+    top: 1vh;
+    left: 1vw;
+    right: 1vw;
+    width: 80vw;
+    align-content: center;
+  }  
+
+  .imagecssstudent img
+{
+ width: 80vw;
+}
+
+
+  .login
+  { 
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    margin-bottom: 100px; 
+  }
+  .formstudent
+  {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8vh;
+    margin-right:20vw;
+    width: 60vw;
+    align-content: center;
+  }
+  .topRight
+  {
+  position: fixed;
+  bottom: 10vh;
+  align-content: center;
+  /* margin-top: 90vh; */
+  margin-bottom: 5vh;
+  margin-left: 10px;
+  width: 90vw;
+  font-size: small;
+  }
+}

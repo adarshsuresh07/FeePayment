@@ -1,5 +1,5 @@
 import React from 'react';
-import Style from './Login.module.css';
+import Style from './css/Confirmation.module.css';
 import { isLogins, getTokens } from '../utils';
 import Axios from 'axios';
 

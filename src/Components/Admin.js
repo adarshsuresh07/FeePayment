@@ -1,6 +1,6 @@
 import React from 'react';
 import { logina, logouts, logouta } from '../utils';
-import Style from './Login.module.css';
+import Style from './css/Admin.module.css';
 import Axios from 'axios'
 class Admin extends React.Component  {
     constructor(props){

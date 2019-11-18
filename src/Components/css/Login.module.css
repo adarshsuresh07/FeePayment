@@ -1,0 +1,369 @@
+.imagecssadmin{
+  margin-left:50px;
+  margin-top: 5px;
+  display: inline-block;
+  position: absolute;
+}
+.imagecssstudent{
+  margin-left:50px;
+  margin-top: 5px;
+  margin-right: 50px;
+  display: inline-block;
+  position: absolute;
+}
+.imagecssadmin hr{
+border-top: 1px solid blue;
+}
+
+.imagecssstudent hr{
+border-top: 1px solid #184A45FF;
+}
+.formstudent, .formadmin
+{
+ display:block;
+ position: absolute;
+ /*  margin-top: 100px;*/
+ right:0;
+  margin-right: 70px;
+ width:300px;
+}
+.formstudent input, .formadmin input{
+  width: 200px;
+  height: 30px;
+  font-size: 16px;
+  margin: 10px;
+  outline: 0;
+  border-width: 0 0 2px;
+}
+.formadmin input:focus {
+  border-color: blue;
+}
+.formstudent input:focus {
+  border-color: #184A45FF;
+}
+.formadmin span{
+  color: blue;
+}
+.formstudent span{
+  color: #184A45FF;
+}
+
+.login{
+  
+  display:inline-block;
+  margin-top:150px;
+}
+.dashboard{
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+}
+.dashboardimg{
+width:100vw;
+top:0;
+}
+.dashboardimg img{
+width:35vw;
+left:0;
+
+}
+.details{
+  background-color: #184A45FF;
+  color: white;
+  border: 2px solid #184A45FF;
+  padding: 10px;
+  margin-left:100px;
+  padding: 30px;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+.details span{
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+.admindetails{
+  background-color: blue;
+  color: white;
+  border: 2px solid blue;
+  padding: 10px;
+  position:fixed;
+  padding: 30px;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+.confirm{
+ border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+  margin:7vw;
+  padding-top: 20px;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+.confirm span{
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+.finedetails{
+  color: red;
+  margin-right: 10px;
+}
+.adminfunc{
+  margin-left: 150px;
+}
+.adminfunc input{
+  width: 200px;
+  height: 30px;
+  font-size: 16px;
+  margin: 10px;
+  outline: 0;
+  border-width: 0 0 2px;
+}
+.adminfunc input:focus {
+  border-color: blue;
+}
+.adminfunc select{
+  border: 2px solid blue;
+  color: blue;
+  background-color: white;
+  margin-left: 10px;
+  display: inline-block;
+}
+.adminfunc select :hover{
+  background-color: blue;
+  color: white;
+}
+.adminfunc img{
+  height:30px;
+  width:30px;
+  margin-left: 5px;
+  margin-right: 20px;
+}
+.invalid{
+    color: red;
+     font-style: italic;
+     font-size: 12px;
+    }
+.flex-container > div {
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.flex-container {
+  display: flex;
+    justify-content:right;
+  align-items: right;
+}
+
+    .row{
+      width: 100%;
+    }
+
+
+.goodtogo{
+  text-align: center;
+  border: 2px;
+}
+
+.topRight{
+  float: right;
+  margin:20px 20px 0 0;
+}
+.button1 {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #184A45FF; 
+  color: white; 
+  border: 2px solid white;
+}
+
+.button1:hover {
+  background-color: white;
+  color: #184A45FF;
+}
+.button2 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: black; 
+  border: 2px solid black;
+  margin-left: 2vw;
+}
+
+.button2:hover {
+  background-color: black;
+  color: white;
+}
+.button3 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #184A45FF;
+  margin-top: 20px;
+}
+
+.button3:hover {
+  background-color: #184A45FF;
+  color: white;
+}
+.button4 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: black; 
+  border: 2px solid blue;
+   margin-top: 20px;
+}
+
+.button4:hover {
+  background-color: blue;
+  color: white;
+}
+.button5 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: #00b300; 
+  border: 2px solid #00b300;
+   margin-top: 20px;
+}
+
+.button5:hover {
+  background-color: #00b300;
+  color: white;
+}
+.button6 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: #ff3300; 
+  border: 2px solid #ff3300;
+   margin-top: 20px;
+    margin-left: 20px;
+}
+
+.button6:hover {
+  background-color: #ff3300;
+  color: white;
+}
+
+
+fieldset{
+ border: 2px solid;
+}
+
+   form{
+      text-align: center;
+   }
+
+a:hover{
+text-decoration: none;}
+a:visited{
+color: none;}
+
+th, td {
+  padding-left: 30px;
+  text-align: left;
+}
+
+span{ 
+  text-align: center;
+}
+.but{
+height:30px;
+width:80px;
+border: none;
+background-color: #010d0c;
+}
+
+@media only screen and (max-width:1038px)
+{
+
+  .studentwrap
+  {
+    
+    width:100%;
+
+  }
+  .imagecssstudent
+  {
+    top: 1vh;
+    left: 1vw;
+    right: 1vw;
+    width: 80vw;
+    align-content: center;
+  }  
+
+  .imagecssstudent img
+{
+ width: 80vw;
+}
+
+.adminwrap
+{
+
+  width:100%;
+
+}
+.imagecssadmin
+{
+  top: 1vh;
+  left: 1vw;
+  right: 1vw;
+  width: 80vw;
+  align-content: center;
+}  
+
+.imagecssadmin img
+{
+width: 80vw;
+}
+
+
+
+
+  .login
+  { 
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    margin-bottom: 100px;
+    
+  }
+
+
+  .formstudent
+  {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8vh;
+    margin-right:20vw;
+    width: 60vw;
+    align-content: center;
+  }
+  .formadmin
+  {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8vh;
+    margin-right:20vw;
+    width: 60vw;
+    align-content: center;
+  }
+  .topRight
+  {
+
+  position: fixed;
+  bottom: 10vh;
+  align-content: center;
+  /* margin-top: 90vh; */
+  margin-bottom: 5vh;
+  margin-left: 10px;
+  width: 90vw;
+  font-size: small;
+  }
+
+
+
+
+}

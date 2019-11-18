@@ -1,0 +1,60 @@
+.topRight{
+  float: right;
+  margin:20px 20px 0 0;
+}
+.dashboardimg{
+width:100vw;
+top:0;
+}
+.dashboardimg img{
+width:35vw;
+left:0;
+}
+.button3 {
+  padding: 12px 24px;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #184A45FF;
+  margin-top: 20px;
+}
+
+.button3:hover {
+  background-color: #184A45FF;
+  color: white;
+}
+.dashboard{
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+}
+.details{
+  background-color: #184A45FF;
+  color: white;
+  border: 2px solid #184A45FF;
+  padding: 10px;
+  margin-left:100px;
+  padding: 30px;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+.details span{
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+.finedetails{
+  color: red;
+  margin-right: 10px;
+}
+.button1 {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #184A45FF; 
+  color: white; 
+  border: 2px solid white;
+}
+
+.button1:hover {
+  background-color: white;
+  color: #184A45FF;
+}

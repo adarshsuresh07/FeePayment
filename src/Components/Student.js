@@ -1,5 +1,5 @@
 import React from 'react';
-import Style from './Login.module.css';
+import Style from './css/Student.module.css';
 import { logins, logouta, logouts } from '../utils';
 import Axios from 'axios';
 
