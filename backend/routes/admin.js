@@ -26,8 +26,9 @@ router.get('/',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
 router.options('/search', cors.corsWithOptions, (req,res) => {res.sendStatus(200); })
 router.get('/search',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
   let query = "SELECT s.admno,s.name,s.sem,s.dept,s.paidOrNot,c.scholname,f.deadline,DATE_FORMAT(f.deadline,'%d %M %Y') as dlday FROM students s,fees f,scholarships c WHERE s.sem=f.sem and s.scholId=c.scholId";
-  let keys = Object.keys(req.body);
-  let values = Object.values(req.body);
+  console.log(req.query);
+  let keys = Object.keys(req.query);
+  let values = Object.values(req.query);
   for(let i=0;i<keys.length;++i) {
     let table = 's';
     if(keys[i] == 'scholname') {
