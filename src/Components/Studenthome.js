@@ -1,6 +1,5 @@
 import React from 'react';
 import { logouts, getTokens } from '../utils';
-import { Link } from 'react-router-dom';
 import Style from './css/Studenthome.module.css';
 import Axios from 'axios';
 class Studenthome extends React.Component  {
@@ -25,7 +24,7 @@ class Studenthome extends React.Component  {
         Authorization: 'bearer '+getTokens()
       },
     };
-    Axios.get('http://localhost:3001/dashboard/student',config)
+    Axios.get('http://localhost:3001/dashboard/',config)
     .then((res) => {
       console.log(res);
       this.setState({
