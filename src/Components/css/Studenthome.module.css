@@ -58,3 +58,44 @@ left:0;
   background-color: white;
   color: #184A45FF;
 }
+
+
+@media only screen and (max-width:400px)
+{
+
+  .dashboard
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .details
+  {
+    margin: 30px;
+    padding: 10px;
+    width: 73vw;
+    margin-left: 10px;
+
+
+  }
+  .dashboardimg
+  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+
+  .topRight
+  {
+    margin: 1vw;
+    
+  }
+
+  
+  .dashboardimg img
+  {
+  width: 200px;
+  }
+}

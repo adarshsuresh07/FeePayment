@@ -49,13 +49,15 @@ class Studenthome extends React.Component  {
 render(){
  return (
   <div>
+    
   <div className={Style.dashboardimg}>
   <img src={require("./cet.png")}/>
   <div className={Style.topRight}>
   <button className={Style.button3} onClick={this.handleLogout}> Logout </button>
   </div>
-  <hr/>
+  
   </div>
+  <hr/>
   <div className={Style.dashboard}>
   <div className={Style.details}>
     <span id='admno'>{this.state.admno}</span> 

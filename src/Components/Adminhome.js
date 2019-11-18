@@ -79,7 +79,12 @@ class Adminhome extends React.Component  {
     <span>{this.state.name}</span> 
    </div>
   <div className={Style.adminfunc}>
+    <div search>
    <input type="text" placeholder="Search.."/>
+   <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+     </div>
    <span>Filters:</span>
     <select name="programme" value={this.state.programme} onChange={this.handleChange}>
     <option value="">Programme</option> <option value="UG">UG</option>
