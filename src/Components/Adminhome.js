@@ -53,7 +53,12 @@ class Adminhome extends React.Component  {
     <span>{this.state.name}</span> 
    </div>
   <div className={Style.adminfunc}>
+    <div search>
    <input type="text" placeholder="Search.."/>
+   <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+     </div>
    <span>Filters:</span>
     <select value={this.state.program} onChange={this.handleChange}>
     <option value="0">Program</option> <option value="1">UG</option>
@@ -98,7 +103,7 @@ class Adminhome extends React.Component  {
   <option value="-1">Scholarship</option>  <option value="0">None</option>
   <option value="2">E-Grantz</option> <option value="3">Merit</option>
   </select>   
-  <img src={require('./search.png')}/>
+  {/* <img src={require('./search.png')}/> */}
   </div> 
 </div>
 </div>
