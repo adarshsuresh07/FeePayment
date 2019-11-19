@@ -11,11 +11,12 @@ class Adminhome extends React.Component  {
     this.state = {
       cId: '',
       name: '',
+      admno: '',
       programme: '',
       sem: '',
       dept: '',
-      paidOrNot: '',
-      scholName: ''
+      paidornot: '',
+      scholname: ''
     };
   };
 
@@ -39,21 +40,22 @@ class Adminhome extends React.Component  {
         this.props.history.push('/');
     };
     handleChange({ target }) {
-      console.log(target.name,target.value);
       this.setState({ [target.name]: target.value });
     };
     submitSearch() {
       let data = {};
-      // if(this.state.programme !== "")
-        // data = {...data,...{programme: this.state.programme}};
+      if(this.state.admno !== "")
+      data = {...data,...{admno: this.state.admno}};
+      if(this.state.programme !== "")
+        data = {...data,...{programme: this.state.programme}};
       if(this.state.sem !== "")
         data = {...data,...{sem: this.state.sem}};
       if(this.state.dept !== "")
         data = {...data,...{dept: this.state.dept}};
-      if(this.state.paidOrNot !== "")
-        data = {...data,...{paidOrNot: this.state.paidOrNot}};
-      if(this.state.scholName !== "")
-        data = {...data,...{scholName: this.state.scholName}};
+      if(this.state.paidornot !== "")
+        data = {...data,...{paidornot: this.state.paidornot}};
+      if(this.state.scholname !== "")
+        data = {...data,...{scholname: this.state.scholname}};
       let config = {
         headers: {
           Authorization: 'bearer '+getTokena()
@@ -80,10 +82,7 @@ class Adminhome extends React.Component  {
    </div>
   <div className={Style.adminfunc}>
     <div search>
-   <input type="text" placeholder="Search.."/>
-   {/* <button type="submit" class="searchButton">
-        <i class="fa fa-search"></i>
-     </button> */}
+   <input name="admno" type="text" placeholder="Search.." value={this.state.admno} onChange={this.handleChange}/>
      
    <span>Filters:</span>
    

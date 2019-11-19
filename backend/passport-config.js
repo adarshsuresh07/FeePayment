@@ -17,7 +17,6 @@ exports.local = passport.use('local', new LocalStrategy({
       return done(null,false,
         {message: 'invalid Username or Password'});
     }
-
     let dbPassword = rows[0].password;
     if(dbPassword !== password) {
       return done(null,false,

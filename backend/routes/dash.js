@@ -17,7 +17,7 @@ const depts = {
 /* GET users listing. */
 router.options('/', cors.corsWithOptions, (req,res) => {res.sendStatus(200); })
 router.get('/',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
-  const query = "SELECT s.admno,s.name,s.sem,s.dept,s.paidOrNot,c.scholname,f.deadline,DATE_FORMAT(f.deadline,'%d %M %Y') as dlday FROM students s,fees f,scholarships c WHERE s.sem=f.sem and s.scholId=c.scholId and s.admno="+req.user.username;
+  const query = "SELECT s.admno,s.name,s.programme,s.sem,s.dept,s.paidornot,c.scholname,f.deadline,DATE_FORMAT(f.deadline,'%d %M %Y') as dlday FROM students s,fees f,scholarships c WHERE s.sem=f.sem and s.programme=f.programme and s.scholid=c.scholid and s.admno="+req.user.username;
   db.query(query,function(err,result){
     let fine = 'No';
     let paid = result[0].paidOrNot === 0?'No':'Yes';
@@ -32,6 +32,7 @@ router.get('/',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
       {
         'admno': result[0].admno,
         'name': result[0].name,
+        'prog': result[0].programme,
         'sem': result[0].sem,
         'schol': result[0].scholname,
         'deadline': result[0].dlday,
@@ -46,7 +47,7 @@ router.get('/',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
 
 router.options('/confirmation', cors.corsWithOptions, (req,res) => {res.sendStatus(200); })
 router.get('/confirmation',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
-  const query = "SELECT s.admno,s.name,s.sem,s.dept,c.scholname,f.amount,f.deadline,DATE_FORMAT(f.deadline,'%d %M %Y') as dlday FROM students s,fees f,scholarships c WHERE s.sem=f.sem and s.scholId=c.scholId and s.admno="+req.user.username;
+  const query = "SELECT s.admno,s.name,s.programme,s.sem,s.dept,c.scholname,f.amount,f.deadline,DATE_FORMAT(f.deadline,'%d %M %Y') as dlday FROM students s,fees f,scholarships c WHERE s.sem=f.sem and s.programme=f.programme and s.scholId=c.scholId and s.admno="+req.user.username;
   db.query(query,function(err,result){
     let fine = 0;
     let today = new Date();
@@ -66,6 +67,7 @@ router.get('/confirmation',cors.corsWithOptions, pass.verifyUser, function(req, 
       {
         'admno': result[0].admno,
         'name': result[0].name,
+        'prog': result[0].programme,
         'sem': result[0].sem,
         'scholname': result[0].scholname,
         'deadline': result[0].dlday,

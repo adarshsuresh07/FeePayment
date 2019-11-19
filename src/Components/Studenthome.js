@@ -10,6 +10,7 @@ class Studenthome extends React.Component  {
     this.state = {
       admno: '',
       name: '',
+      programme: '',
       sem: '',
       dept: '',
       schol: '',
@@ -30,6 +31,7 @@ class Studenthome extends React.Component  {
       this.setState({
         admno: res.data.admno,
         name: res.data.name,
+        programme: res.data.prog,
         sem: res.data.sem,
         dept: res.data.dept,
         schol: res.data.schol,
@@ -62,7 +64,7 @@ render(){
   <div className={Style.details}>
     <span id='admno'>{this.state.admno}</span> 
     <span id='name'>{this.state.name}</span> 
-    <span id='pro'>{this.state.pro}</span>
+    <span id='programme'>{this.state.programme}</span>
     <span id='sem'>{this.state.sem}</span>
     <span id='dept'>{this.state.dept}</span>
    </div>

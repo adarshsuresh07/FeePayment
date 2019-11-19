@@ -25,8 +25,7 @@ router.get('/',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
 
 router.options('/search', cors.corsWithOptions, (req,res) => {res.sendStatus(200); })
 router.get('/search',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
-  let query = "SELECT s.admno,s.name,s.sem,s.dept,s.paidOrNot,c.scholname,f.deadline,DATE_FORMAT(f.deadline,'%d %M %Y') as dlday FROM students s,fees f,scholarships c WHERE s.sem=f.sem and s.scholId=c.scholId";
-  console.log(req.query);
+  let query = "SELECT s.admno,s.name,s.programme,s.sem,s.dept,s.paidornot,c.scholname,f.deadline,DATE_FORMAT(f.deadline,'%d %M %Y') as dlday FROM students s,fees f,scholarships c WHERE s.sem=f.sem and s.programme=f.programme and s.scholid=c.scholid";
   let keys = Object.keys(req.query);
   let values = Object.values(req.query);
   for(let i=0;i<keys.length;++i) {
@@ -57,6 +56,7 @@ router.get('/search',cors.corsWithOptions, pass.verifyUser, function(req, res, n
         {
           'admno': row.admno,
           'name': row.name,
+          'prog': row.programme,
           'sem': row.sem,
           'schol': row.scholname,
           'deadline': row.dlday,
