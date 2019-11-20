@@ -134,7 +134,7 @@ class Adminhome extends React.Component  {
   <button className={Style.submit} type="submit" class="searchButton">
 
         <i class="fa fa-search"></i>
-        
+
      </button> 
      </span >
   </div> 
@@ -145,4 +145,5 @@ class Adminhome extends React.Component  {
   );
 }
 }
+
 export default Adminhome;
