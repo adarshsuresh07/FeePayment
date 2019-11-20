@@ -135,7 +135,6 @@ class Adminhome extends React.Component  {
         <i class="fa fa-search"></i>
      </button> 
      </span >
-  {/* <img src={require('./search.png')} onClick={this.submitSearch}/> */}
   </div> 
 </div>
 </div>
