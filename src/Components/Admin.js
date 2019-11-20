@@ -22,7 +22,8 @@ class Admin extends React.Component  {
       this.setState({ [target.name]: target.value });
     };
 
-    handleLogin = () => {
+    handleLogin = (e) => {
+      e.preventDefault();
       Axios.post('http://localhost:3001/users/login',{
         username: this.state.username,
         password: this.state.password,
