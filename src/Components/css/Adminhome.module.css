@@ -11,6 +11,7 @@ left:0;
   margin:20px 20px 0 0;
 }
 .button4 {
+  margin-left: 10px;
   padding: 12px 24px;
   background-color: white; 
   color: black; 
@@ -32,17 +33,19 @@ left:0;
   color: white;
   border: 2px solid blue;
   padding: 10px;
-  position:fixed;
+  /* position:fixed; */
   padding: 30px;
   display:flex;
   flex-direction: column;
   align-items: flex-start; 
+  /* position: absolute; */
+  margin-right: 20px;
 }
 .adminfunc{
   display:flex;
   flex-direction: row;
-  margin-left: 150px;
-  justify-items: center;
+  margin-left: 100px;
+  align-items: center;
 }
 .adminfunc input{
   width: 15vw;
@@ -54,6 +57,10 @@ left:0;
 }
 .adminfunc input:focus {
   border-color: blue;
+}
+.adminfunc span{
+  color: blue;
+  margin-right: 10px;
 }
 .adminfunc select{
   border: 2px solid blue;
@@ -84,4 +91,20 @@ left:0;
 .adminfunc select:hover{
   background: blue;
   color: white;
+}
+
+.student_table{
+  /* position: absolute; */
+  bottom: 0px;
+}
+
+.wrapper{
+  /* position: relative; */
+  display: felx;
+  flex-direction: column;
+  height:100vh;
+
+}
+.studenttable{
+  margin: 1vw;
 }

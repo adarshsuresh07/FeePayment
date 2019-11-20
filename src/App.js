@@ -8,7 +8,7 @@ import Confirm from './Components/Confirmation.js';
 import PublicRoute from './Components/Publicroute.js';
 import StudentRoute from './Components/Studentroute.js';
 import AdminRoute from './Components/Adminroute.js';
-
+import Reset from './Components/Reset.js';
 class App extends React.Component {
 
 
@@ -21,6 +21,8 @@ class App extends React.Component {
           <StudentRoute component={Studenthome} path="/Studenthome" exact />
           <AdminRoute component={Adminhome} path="/Adminhome" exact />
           <StudentRoute component={Confirm} path="/Confirmation" exact />
+          <StudentRoute component={Reset} path="/Reset" exact />
+          <AdminRoute component={Reset} path="/Reset" exact />
         </Switch>
       </BrowserRouter>
     );

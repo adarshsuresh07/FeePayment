@@ -1,0 +1,157 @@
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* background-image: url(Signup_bg.jpg); */
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.headerimg{
+  width:100vw;
+  top:0;
+  }
+  .headerimg img{
+  width:35vw;
+  height: auto;
+  left:0;
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    
+  }
+
+  .form-wrapper {
+  
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    box-shadow: 0px 10px 50px rgba(85, 85, 85, 0.479);
+    background: rgba(0, 0, 0, 0.397);
+  } 
+
+  h1 {
+    text-align: center;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    font-weight: lighter;
+  }
+
+  input {
+    padding: 10px 10px;
+    outline: none;
+    border: 1px solid #cfcfcf;
+    margin: 1px;
+    padding-left: 40px;
+    
+    
+  
+  }
+
+  input::placeholder {
+    font-size: 1.1em;
+    color: rgb(97, 96, 96); 
+  }
+  
+  input.error {
+    border: 1px solid red;
+  }
+
+  .errorMessage {
+    color: red;
+    font-size: 0.75em;
+    font-weight: bold;
+    display: relative;
+  }
+  
+  .oldpass,
+  .newpass,
+  .confirmpass{
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    position: relative;
+    width:100%;
+
+  }
+  .oldpass i,
+  .newpass i,
+  .confirmpass i{
+    position: absolute;
+      right: 0;
+      top: 4px;
+      padding: 9px 8px;
+
+  }
+
+  .reset {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+
+  .reset button {
+    background-color: #000000;
+    color: #fff;
+    border-radius: 4px;
+    border: 2px solid #000000;
+    width: 100%;
+    margin-top: 1em;
+    padding: 8px 0px;
+    font-size: 1em;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    margin-bottom: 0.25em;
+    transition: .5s;
+  }
+  .reset button:hover {
+    color: #000000;
+    background-color: #fff;
+    border: 2px solid #000000;
+    transition: .5s;
+    
+  }
+
+  @media only screen and (max-width:500px)
+  {
+  #wrapper
+  {
+  width:100%;
+  }
+  #wrapper h1
+  {
+  font-size:30px;
+  }
+  .form-wrapper
+  {
+    width:80vw;
+    margin: 10px 10px;
+  }
+  .headerimg 
+  {
+    margin-left:0;
+    top: 1vh;
+    left: 1vw;
+    right: 1vw;
+    width: 100%;
+    align-content: center;
+  }  
+
+  .headerimg img{
+    width:100vw;
+  }
+  }

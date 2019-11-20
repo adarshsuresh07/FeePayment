@@ -9,7 +9,8 @@ class Admin extends React.Component  {
       this.handleClick = this.handleClick.bind(this);
       this.state = {
         username: '',
-        password: ''
+        password: '', 
+        error:''
       };
     };
 
@@ -23,8 +24,16 @@ class Admin extends React.Component  {
     };
 
     handleLogin = (e) => {
-      e.preventDefault();
-      Axios.post('http://localhost:3001/users/login',{
+       e.preventDefault();
+      let error;
+      if(this.state.username=='' || this.state.password=='')
+      { 
+        error="Username or Password should not be empty"; 
+      }
+      else
+      {
+       error="Username or Password is incorrect";
+       Axios.post('http://localhost:3001/users/login',{
         username: this.state.username,
         password: this.state.password,
         role: 'admin'
@@ -33,14 +42,17 @@ class Admin extends React.Component  {
         if(res.data.success) {
           logina(res.data.token);
           this.props.history.push('/Adminhome');
-        }  
+        } 
       });
+    }
+      this.setState({ error: error }); 
     }
 
     handleClick = () => {
         this.props.history.push('/');
     }
 render(){
+  const {error} = this.state;
     return (
       <div adminwrap>
       <div className={Style.topRight}>
@@ -53,10 +65,10 @@ render(){
       <hr/>
       </div>
       <form className={Style.formadmin}>
-      <p>Admin</p><br/><br/>
-      <input type="text" id="username" name="username" placeholder="College ID" value={this.state.username} onChange={this.handleChange} required />
-      <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} required />
-      <button type="submit" className={Style.button4} onClick={this.handleLogin}>Login</button>
+      <div>{error==""? <p className={Style.normal}>Admin<i class="fa fa-circle-o"></i></p>: <p title={error} className={Style.error}>Admin<i class="fa fa-circle-o"></i></p>}</div>      
+      <input type="text" id="username" name="username" placeholder="College ID" value={this.state.username} onChange={this.handleChange} />
+      <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
+      <button type="submit" onClick={this.handleLogin}>Login</button>
       </form>
       </div>
       </div>

@@ -16,7 +16,13 @@ class Adminhome extends React.Component  {
       sem: '',
       dept: '',
       paidornot: '',
-      scholname: ''
+      scholname: '',
+      students: [
+            { id: 1, name: 'Wasif', age: 21, email: 'wasif@email.com' },
+            { id: 2, name: 'Ali', age: 19, email: 'ali@email.com' },
+            { id: 3, name: 'Saad', age: 16, email: 'saad@email.com' },
+            { id: 4, name: 'Asad', age: 25, email: 'asad@email.com' }
+         ]
     };
   };
 
@@ -34,6 +40,25 @@ class Adminhome extends React.Component  {
       });
     });
   };
+  renderTableHeader() {
+      let header = Object.keys(this.state.students[0])
+      return header.map((key, index) => {
+         return <th key={index}>{key.toUpperCase()}</th>
+      })
+   }
+   renderTableData() {
+      return this.state.students.map((student, index) => {
+         const { id, name, age, email } = student //destructuring
+         return (
+            <tr key={id}>
+               <td>{id}</td>
+               <td>{name}</td>
+               <td>{age}</td>
+               <td>{email}</td>
+            </tr>
+         )
+      })
+   }
 
     handleLogout(){
         logouta();
@@ -67,11 +92,12 @@ class Adminhome extends React.Component  {
     }
     render(){
  return (
-  <div>
+  <div className={Style.wrapper}>
   <div className={Style.dashboardimg}>
   <img src={require("./cet.png")}/>
   <div className={Style.topRight}>
   <button className={Style.button4} onClick={this.handleLogout}> Logout </button>
+  <button className={Style.button4} onClick={this.reset}> Reset Password </button>
   </div>
    <hr/>
   </div> 
@@ -81,7 +107,6 @@ class Adminhome extends React.Component  {
     <span>{this.state.name}</span> 
    </div>
   <div className={Style.adminfunc}>
-    <div search>
    <input name="admno" type="text" placeholder="Search.." value={this.state.admno} onChange={this.handleChange}/>
      
    <span>Filters:</span>
@@ -89,7 +114,7 @@ class Adminhome extends React.Component  {
     <select name="programme" value={this.state.programme} onChange={this.handleChange}>
     <option value="">Programme</option> <option value="UG">UG</option>
     <option value="PG">PG</option>
-   </select>
+    </select>
    
    { this.state.programme==="UG" ?
    <span>
@@ -132,12 +157,21 @@ class Adminhome extends React.Component  {
   </select>  
   <span>
   <button className={Style.submit} type="submit" class="searchButton">
+
         <i class="fa fa-search"></i>
+        
      </button> 
      </span >
-  {/* <img src={require('./search.png')} onClick={this.submitSearch}/> */}
   </div> 
 </div>
+<div className={Style.studenttable}>
+ <h1 id='title'>React Dynamic Table</h1>
+            <table id='students'>
+               <tbody>
+                  <tr>{this.renderTableHeader()}</tr>
+                  {this.renderTableData()}
+               </tbody>
+            </table>
 </div>
 </div>
 

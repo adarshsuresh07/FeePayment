@@ -6,6 +6,7 @@ class Studenthome extends React.Component  {
   constructor(props){
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
+    this.reset = this.reset.bind(this);
     this.pay = this.pay.bind(this);
     this.state = {
       admno: '',
@@ -48,6 +49,9 @@ class Studenthome extends React.Component  {
      pay(){
       this.props.history.push('/Confirmation');
     }
+    reset(){
+      this.props.history.push('/Reset');
+    }
 render(){
  return (
   <div>
@@ -56,8 +60,8 @@ render(){
   <img src={require("./cet.png")}/>
   <div className={Style.topRight}>
   <button className={Style.button3} onClick={this.handleLogout}> Logout </button>
+  <button className={Style.button3} onClick={this.reset}> Reset Password </button>
   </div>
-  
   </div>
   <hr/>
   <div className={Style.dashboard}>

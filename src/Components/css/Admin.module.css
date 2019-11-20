@@ -52,8 +52,19 @@ border-top: 1px solid blue;
 .formadmin input:focus {
   border-color: blue;
 }
-.formadmin p{
+.normal {
   color: blue;
+ margin:10px;
+}
+.normal i{
+ color:white;
+}
+.error {
+  margin: 10px;
+  color: red;
+}
+.error i{
+ margin-left: 10px;
 }
 .formadmin button {
   margin-left: 10px;
