@@ -132,7 +132,9 @@ class Adminhome extends React.Component  {
   </select>  
   <span>
   <button className={Style.submit} type="submit" class="searchButton">
+
         <i class="fa fa-search"></i>
+        
      </button> 
      </span >
   </div> 
