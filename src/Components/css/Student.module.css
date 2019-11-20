@@ -53,13 +53,23 @@ border-top: 1px solid #184A45FF;
 .formstudent input:focus {
   border-color: #184A45FF;
 }
-
-.formstudent p{
-  color: #184A45FF;
+.formstudent div{
+  display: flex;
+  flex-direction: row;
 }
-.formstudent span{
-  color:red;
-  font-size: 10px;
+ .normal {
+  color: #184A45FF;
+ margin:10px;
+}
+.normal i{
+ color:white;
+}
+.error {
+  margin: 10px;
+  color: red;
+}
+.error i{
+ margin-left: 10px;
 }
 .formstudent button {
   margin-left: 10px;
