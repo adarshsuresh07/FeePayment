@@ -72,7 +72,7 @@ render(){
     <span id='schol'>Scholarship Details: {this.state.schol}</span>
     <span id='deadline'>Fee Deadline: {this.state.deadline}</span>
     <span id='paid'>Paid : {this.state.paid}</span>
-    {this.state.paid == '' ?
+    {this.state.paid == 'No' ?
     <div>
       <span className={Style.finedetails} title="Base fine:Rs.10 It will be double after next two days and so on">?</span>
       <span id='fine'>Fine imposed: {this.state.fine}</span><br/>

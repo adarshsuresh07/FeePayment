@@ -28,7 +28,6 @@ router.get('/',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
     }
     let dept = depts[result[0].dept];
     res.statusCode = 200;
-    console.log(result);
     let row = Object.assign(
       {
         'admno': result[0].admno,
@@ -42,7 +41,6 @@ router.get('/',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
         'paid': paid
       }
     );
-    console.log(row);
     res.json(row);
   });
 });
