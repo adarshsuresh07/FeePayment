@@ -13,17 +13,19 @@ class Student extends React.Component  {
       password: ''
     };
   };
-
   componentDidMount = () => {
     logouta();
     logouts();
   };
 
   handleChange = ({ target }) => {
+   
     this.setState({ [target.name]: target.value });
   };
 
   handleLogin(){
+
+    
     Axios.post('http://localhost:3001/users/login',{
       username: this.state.username,
       password: this.state.password,
@@ -41,6 +43,7 @@ class Student extends React.Component  {
     this.props.history.push('/Admin');
   };
  render(){
+    
     return (
       <div studentwrap>
       <div className={Style.topRight}>
@@ -52,12 +55,12 @@ class Student extends React.Component  {
         <img src={require("./cet.png")}/>
         <hr/>
         </div>
-        <div className={Style.formstudent}>
-        <span>Student</span><br/><br/>
-        <input type="text" id="username" name="username" placeholder="UserName" value={this.state.username} onChange={this.handleChange} />
-        <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
-        <button type="submit" className={Style.button3} onClick={this.handleLogin}>Login</button>
-        </div>
+        <form className={Style.formstudent}>
+        <p>Student</p><br/><br/>
+        <input type="text" id="username" name="username" placeholder="Admission Number" className={Style.input1} value={this.state.username} onChange={this.handleChange} required />
+        <input type="password" id="password" name="password" placeholder="Password" className={Style.input1} value={this.state.password} onChange={this.handleChange} required/> 
+        <button type="submit" onClick={this.handleLogin}>Login</button>
+        </form>
         </div>
       </div>
     );

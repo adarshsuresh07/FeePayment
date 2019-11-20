@@ -31,7 +31,8 @@ border-top: 1px solid #184A45FF;
 }
 .formstudent
 {
- display:block;
+  display: flex;
+  flex-direction: column;
  position: absolute;
  /*  margin-top: 100px;*/
  right:0;
@@ -39,28 +40,38 @@ border-top: 1px solid #184A45FF;
  width:300px;
 }
 .formstudent input{
+ 
   width: 200px;
   height: 30px;
   font-size: 16px;
+  padding:2px 2px;
   margin: 10px;
   outline: 0;
   border-width: 0 0 2px;
+  border-color: white;
 }
 .formstudent input:focus {
   border-color: #184A45FF;
 }
-.formstudent span{
+
+.formstudent p{
   color: #184A45FF;
 }
-.button3 {
-  padding: 12px 24px;
+.formstudent span{
+  color:red;
+  font-size: 10px;
+}
+.formstudent button {
+  margin-left: 10px;
+  width:100px;
+  height:45px;
   background-color: white; 
   color: black; 
   border: 2px solid #184A45FF;
   margin-top: 20px;
 }
 
-.button3:hover {
+.formstudent button:hover {
   background-color: #184A45FF;
   color: white;
 }
@@ -110,7 +121,7 @@ border-top: 1px solid #184A45FF;
     width: 90vw;
     font-size: small;
   }
-  .button3 
+  .formstudent button 
   {
     height: 7vh;
     width: 47vw;
@@ -122,7 +133,7 @@ border-top: 1px solid #184A45FF;
     margin-left: 10px;
   }
 
-  .button3:hover 
+  .formstudent button:hover 
   {
     background-color: #184A45FF;
     color: white;

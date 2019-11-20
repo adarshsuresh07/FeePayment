@@ -51,12 +51,12 @@ render(){
       <img src={require("./cet.png")}/>
       <hr/>
       </div>
-      <div className={Style.formadmin}>
-      <span>Admin</span><br/><br/>
-      <input type="text" id="username" name="username" placeholder="UserName" value={this.state.username} onChange={this.handleChange} />
-      <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
+      <form className={Style.formadmin}>
+      <p>Admin</p><br/><br/>
+      <input type="text" id="username" name="username" placeholder="College ID" value={this.state.username} onChange={this.handleChange} required />
+      <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} required />
       <button type="submit" className={Style.button4} onClick={this.handleLogin}>Login</button>
-      </div>
+      </form>
       </div>
       </div>
 
