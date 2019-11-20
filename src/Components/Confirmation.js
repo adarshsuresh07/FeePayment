@@ -2,6 +2,7 @@ import React from 'react';
 import Style from './css/Confirmation.module.css';
 import { isLogins, getTokens } from '../utils';
 import Axios from 'axios';
+import Stripebtn from './Stripebtn';
 
 class Confirm extends React.Component {
   constructor(props){
@@ -59,7 +60,7 @@ class Confirm extends React.Component {
     </div>
     <span>Total Amount: Rs {this.state.totalFee}</span>
     <div>
-    <button className={Style.button5} type="Submit"> Confirm </button>
+    <Stripebtn amount={this.state.totalFee}/>
     <button className={Style.button6} type="Submit" onClick={this.cancel}> Cancel </button>
     </div>
 </div>
