@@ -2,6 +2,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const JwtStrategy = require('passport-jwt').Strategy;
 const passport = require('passport');
 const db = require('./mysql-config');
+const config = require('./config')
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const jwt = require('jsonwebtoken');
 
@@ -27,12 +28,12 @@ exports.local = passport.use('local', new LocalStrategy({
 }));
 
 exports.getToken = (user) => {
-  return jwt.sign(user, 'secretapparently', {expiresIn: 3600});
+  return jwt.sign(user, config.JWTSecret, {expiresIn: 3600});
 };
 
 var opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = 'secretapparently';
+opts.secretOrKey = config.JWTSecret;
 opts.passReqToCallback = true;
 
 exports.jwtPassport = passport.use(new JwtStrategy(opts, 
