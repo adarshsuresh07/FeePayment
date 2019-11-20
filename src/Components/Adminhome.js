@@ -72,6 +72,7 @@ class Adminhome extends React.Component  {
   <img src={require("./cet.png")}/>
   <div className={Style.topRight}>
   <button className={Style.button4} onClick={this.handleLogout}> Logout </button>
+  <button className={Style.button4} onClick={this.reset}> Reset Password </button>
   </div>
    <hr/>
   </div> 
