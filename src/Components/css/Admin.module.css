@@ -31,7 +31,8 @@ border-top: 1px solid blue;
 
 .formadmin
 {
- display:block;
+  display: flex;
+  flex-direction: column;
  position: absolute;
  /*  margin-top: 100px;*/
  right:0;
@@ -43,24 +44,28 @@ border-top: 1px solid blue;
   height: 30px;
   font-size: 16px;
   margin: 10px;
+  padding:2px 2px;
   outline: 0;
   border-width: 0 0 2px;
+  border-color: white;
 }
 .formadmin input:focus {
   border-color: blue;
 }
-.formadmin span{
+.formadmin p{
   color: blue;
 }
-.button4 {
-  padding: 12px 24px;
+.formadmin button {
+  margin-left: 10px;
+  width:100px;
+  height:45px;
   background-color: white; 
   color: black; 
   border: 2px solid blue;
    margin-top: 20px;
 }
 
-.button4:hover {
+.formadmin button:hover {
   background-color: blue;
   color: white;
 }
@@ -111,7 +116,7 @@ border-top: 1px solid blue;
     width: 90vw;
     font-size: small;
   }
-  .button4 
+  .formadmin button 
   {
     height: 7vh;
     width: 47vw;
@@ -122,7 +127,7 @@ border-top: 1px solid blue;
     margin-top: 20px;
     margin-left: 10px;
   }
-  .button4:hover 
+  .formadmin button:hover 
   {
     background-color: blue;
     color: white;
