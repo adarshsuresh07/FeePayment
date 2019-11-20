@@ -120,6 +120,7 @@ class Reset extends Component {
           <h1>Password Reset</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             <div className="oldpass">
+              
               <input
                 className={formErrors.oldpass.length > 0 ? "error" : "noerror"}
                 placeholder="Old Pasword"
@@ -133,6 +134,7 @@ class Reset extends Component {
               </button > */}
               {/* <i  
               className="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i> */}
+              
               {formErrors.oldpass.length > 0 && (
                 <div className="errorMessage">{formErrors.oldpass}</div>
               )}
@@ -163,7 +165,9 @@ class Reset extends Component {
               />
               {this.state.hidden3? <i class="fa fa-circle-o" onClick={this.toggleShow3}></i> : <i class="fa fa-dot-circle-o" onClick={this.toggleShow3}></i>}
               {/* <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span> */}
-              {/* <i className="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i> */}
+              {/* <div icon>
+              <i className="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i>
+              </div> */}
               {formErrors.confirmpass.length > 0 && (
                 <span className="errorMessage">{formErrors.confirmpass}</span>
               )}
