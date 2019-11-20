@@ -139,7 +139,7 @@ class Adminhome extends React.Component  {
   </div> 
 </div>
 <div className={Style.student_table}>
-aakhbkabub
+ Space for Table
 </div>
 </div>
 
