@@ -67,7 +67,7 @@ class Adminhome extends React.Component  {
     }
     render(){
  return (
-  <div>
+  <div className={Style.wrapper}>
   <div className={Style.dashboardimg}>
   <img src={require("./cet.png")}/>
   <div className={Style.topRight}>
@@ -81,7 +81,6 @@ class Adminhome extends React.Component  {
     <span>{this.state.name}</span> 
    </div>
   <div className={Style.adminfunc}>
-    <div search>
    <input name="admno" type="text" placeholder="Search.." value={this.state.admno} onChange={this.handleChange}/>
      
    <span>Filters:</span>
@@ -89,7 +88,7 @@ class Adminhome extends React.Component  {
     <select name="programme" value={this.state.programme} onChange={this.handleChange}>
     <option value="">Programme</option> <option value="UG">UG</option>
     <option value="PG">PG</option>
-   </select>
+    </select>
    
    { this.state.programme==="UG" ?
    <span>
@@ -134,16 +133,17 @@ class Adminhome extends React.Component  {
   <button className={Style.submit} type="submit" class="searchButton">
 
         <i class="fa fa-search"></i>
-
+        
      </button> 
      </span >
   </div> 
 </div>
+<div className={Style.student_table}>
+aakhbkabub
 </div>
 </div>
 
   );
 }
 }
-
 export default Adminhome;
