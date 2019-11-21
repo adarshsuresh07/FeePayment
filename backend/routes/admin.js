@@ -38,14 +38,14 @@ router.get('/search',cors.corsWithOptions, pass.verifyUser, function(req, res, n
   }
   db.query(query,function(err,result){
     if(err)
-      return res.json({error: true, msg: 'Something went wrong'});
+      return err;
     if(result.length == 0) {
       return res.json({error: true, msg: 'No students found'});
     }
     let rows = [];
     result.forEach((row) => {
       let fine = 'No';
-      let paid = row.paidOrNot === 0?'No':'Yes';
+      let paid = row.paidornot === 0?'No':'Yes';
       let today = new Date();
       let dayslate = Math.floor((today.getTime() - row.deadline.getTime())/(1000*60*60*24));
       if(row.paidOrNot && dayslate>0) {
@@ -64,7 +64,6 @@ router.get('/search',cors.corsWithOptions, pass.verifyUser, function(req, res, n
           'dept': dept, 
           'fine': fine, 
           'paid': paid,
-          'error': false
         }
       );
       rows.push(resRow);
@@ -94,19 +93,32 @@ router.post('/addStudents',cors.corsWithOptions, pass.verifyUser, function(req, 
   query+=')';
   db.query(query, async (err,result) => {
     if(err)
-      return res.json(err);
+      return err;
     else {
-      let hashedPassword = await bcrypt.hash(req.body.dob,10);
+      let date = req.body.dob;
+      let hashedPassword = await bcrypt.hash(date,10);
       let query2 = "INSERT into users VALUES(";
       query2+=("'"+req.body.admno+"','"+hashedPassword+"','"+req.body.name+"','student')");
       db.query(query2,(err,result) => {
         if(err)
-          return res.json(err);
+          return err;
         else
-          console.log('Successfully Inserted');
           res.json({success: true});
       });
     }    
   });
 });
+
+router.options('/addAdmin', cors.corsWithOptions, (req,res) => {res.sendStatus(200); })
+router.post('/addAdmin',cors.corsWithOptions, pass.verifyUser, async function(req, res, next) {
+  let hashedPassword = await bcrypt.hash(req.body.password,10);
+  let query = "INSERT INTO users VALUES('"+req.body.collegeid+"','"+hashedPassword+"','"+req.body.name+"','admin')";
+  db.query(query,(err,result) => {
+    if(err)
+      return res.json(err);
+    console.log('Successfully Inserted');
+    res.json({success: true});
+  });
+});  
+
 module.exports = router;

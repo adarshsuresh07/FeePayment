@@ -9,6 +9,7 @@ import PublicRoute from './Components/Publicroute.js';
 import StudentRoute from './Components/Studentroute.js';
 import AdminRoute from './Components/Adminroute.js';
 import Reset from './Components/Reset.js';
+import Newstudentreg from './Components/Newstudentreg';
 class App extends React.Component {
 
 
@@ -16,7 +17,7 @@ class App extends React.Component {
     return (
   <BrowserRouter>
         <Switch>
-          <PublicRoute restricted={true} component={Student} path="/" exact />
+          <PublicRoute restricted={true} component={Newstudentreg} path="/" exact />
           <PublicRoute restricted={true} component={Admin} path="/Admin" exact />
           <StudentRoute component={Studenthome} path="/Studenthome" exact />
           <AdminRoute component={Adminhome} path="/Adminhome" exact />
