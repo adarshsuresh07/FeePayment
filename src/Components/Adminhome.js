@@ -47,13 +47,18 @@ class Adminhome extends React.Component  {
    }
    renderTableData() {
       return this.state.students.map((student, index) => {
-         const { id, name, age, email } = student //destructuring
+         const { admno, name, prog, sem, schol, deadline, dept, fine, paid } = student //destructuring
          return (
-            <tr key={id}>
-               <td>{id}</td>
+            <tr key={admno}>
+               <td>{admno}</td>
                <td>{name}</td>
-               <td>{age}</td>
-               <td>{email}</td>
+               <td>{prog}</td>
+               <td>{sem}</td>
+               <td>{schol}</td>
+               <td>{deadline}</td>
+               <td>{dept}</td>
+               <td>{fine}</td>
+               <td>{paid}</td>               
             </tr>
          )
       })
@@ -87,7 +92,12 @@ class Adminhome extends React.Component  {
         params: data
       };
       Axios.get('http://localhost:3001/admin/search', config)
-      .then((res) => console.log(res));  
+      .then((res) => {
+         this.setState({
+           students: res.data,
+           isValid: 1
+         });
+      });     
     }
     render(){
  return (
@@ -163,6 +173,7 @@ class Adminhome extends React.Component  {
      </span >
   </div> 
 </div>
+{this.state.isValid?
 <div className={Style.studenttable}>
  <h1 id='title'>React Dynamic Table</h1>
             <table id='students'>
@@ -172,6 +183,7 @@ class Adminhome extends React.Component  {
                </tbody>
             </table>
 </div>
+:<span> search </span>}
 </div>
 
   );
