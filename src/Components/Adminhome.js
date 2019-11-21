@@ -156,7 +156,7 @@ class Adminhome extends React.Component  {
   <option value="E-Grantz">E-Grantz</option> <option value="Merit">Merit</option>
   </select>  
   <span>
-  <button className={Style.submit} type="submit" class="searchButton">
+  <button className={Style.submit} type="submit" class="searchButton" onClick={this.submitSearch}>
 
         <i class="fa fa-search"></i>
         
