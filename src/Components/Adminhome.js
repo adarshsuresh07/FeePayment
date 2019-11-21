@@ -1,6 +1,6 @@
 import React from 'react';
 import { logouta, getTokena } from '../utils';
-import Style from './css/Adminhome.module.css';
+import Style from './css/Adminhome.css';
 import Axios from 'axios'
 class Adminhome extends React.Component  {
   constructor(props){
@@ -101,22 +101,15 @@ class Adminhome extends React.Component  {
     }
     render(){
  return (
-  <div className={Style.wrapper}>
-  <div className={Style.dashboardimg}>
+  <div className="home">
+  <div className="header">
   <img src={require("./cet.png")}/>
-  <div className={Style.topRight}>
-  <button className={Style.button4} onClick={this.handleLogout}> Logout </button>
-  <button className={Style.button4} onClick={this.reset}> Reset Password </button>
-  </div>
-   <hr/>
-  </div> 
-  <div className={Style.dashboard}>
-   <div className={Style.admindetails}>
-    <span>{this.state.cId}</span> 
-    <span>{this.state.name}</span> 
-   </div>
-  <div className={Style.adminfunc}>
-   <input name="admno" type="text" placeholder="Search.." value={this.state.admno} onChange={this.handleChange}/>
+</div>
+
+<div className="row">
+  <div className="leftcolumn">
+    <div className="card">
+       <input name="admno" type="text" placeholder="Search.." value={this.state.admno} onChange={this.handleChange}/>
      
    <span>Filters:</span>
    
@@ -164,16 +157,12 @@ class Adminhome extends React.Component  {
   <option value="">Scholarship</option>  <option value="None">None</option>
   <option value="E-Grantz">E-Grantz</option> <option value="Merit">Merit</option>
   </select>  
-  <span>
   <button className={Style.submit} type="submit" class="searchButton" onClick={this.submitSearch}>
-
-        <i class="fa fa-search"></i>
-        
+        <i class="fa fa-search"></i>      
      </button> 
-     </span >
-  </div> 
-</div>
-{this.state.isValid?
+    </div>
+    <div className="cardtable">
+     {this.state.isValid?
 <div className={Style.studenttable}>
  <h1 id='title'>Student Details</h1>
             <table id='students'>
@@ -183,9 +172,22 @@ class Adminhome extends React.Component  {
                </tbody>
             </table>
 </div>
-:<span className={Style.image}> <img src={require("./search.png")}/>  </span>}
+:<span className={Style.image}> <img src={require("./search.png")}/> </span>}
+    </div>
+  </div>
+  <div className="rightcolumn">
+    <div className="card">
+      <h2> {this.state.cId}</h2>
+    <h2>{this.state.name} </h2>
+    </div>
+    <div className="card">
+      <button className="buttonadmin" onClick={this.handleLogout}> Logout </button><br/>
+      <button className="buttonadmin" onClick={this.reset}> Reset Password </button><br/>
+      <button className="buttonadmin" onClick={this.reset}> Add Student </button>
+    </div>
+  </div>
 </div>
-
+</div>
   );
 }
 }

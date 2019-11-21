@@ -1,0 +1,141 @@
+*{
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+.home {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+.cardtable{
+ background-color: white;
+padding: 20px;
+ margin-top: 20px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.card input{
+  width: 15vw;
+  height: 20px;
+  font-size: 16px;
+  margin: 10px;
+  outline: 0;
+  border-width: 0 0 2px;
+  padding:5px;
+}
+.card input:focus {
+  border-color: #f1f1f1;
+}
+.card select{
+  border: 2px solid #f1f1f1;
+  color: black;
+  background-color: white;
+  /* margin-left: 30px; */
+  margin-right: 7px;
+  height: 30px;
+  width:8vw;
+  display: inline-block;
+  transition: .5s;
+}
+.card span{
+  color:black;
+  margin-right: 5px;
+}
+.card h2{
+  color:black;
+}
+.card select:hover{
+  background: #f1f1f1;
+  color: black;
+}
+.buttonadmin {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f1f1f1;
+   margin-top: 20px;
+}
+
+.buttonadmin:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
