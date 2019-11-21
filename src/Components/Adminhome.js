@@ -18,11 +18,10 @@ class Adminhome extends React.Component  {
       paidornot: '',
       scholname: '',
       students: [
-            { id: 1, name: 'Wasif', age: 21, email: 'wasif@email.com' },
-            { id: 2, name: 'Ali', age: 19, email: 'ali@email.com' },
+            { id: 1, name: 'hello', age: 21, email: 'wasif@email.com' },
+            { id: 2, name: 'Adarsh', age: 19, email: 'ali@email.com' },
             { id: 3, name: 'Saad', age: 16, email: 'saad@email.com' },
-            { id: 4, name: 'Asad', age: 25, email: 'asad@email.com' }
-         ]
+                     ]
     };
   };
 
@@ -156,7 +155,7 @@ class Adminhome extends React.Component  {
   <option value="E-Grantz">E-Grantz</option> <option value="Merit">Merit</option>
   </select>  
   <span>
-  <button className={Style.submit} type="submit" class="searchButton">
+  <button className={Style.submit} type="submit" class="searchButton" onClick={this.submitSearch}>
 
         <i class="fa fa-search"></i>
         
