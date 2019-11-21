@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var bcrypt = require('bcrypt');
 var db = require('../mysql-config');
 var pass = require('../passport-config');
 const cors = require('./cors');
@@ -72,4 +73,40 @@ router.get('/search',cors.corsWithOptions, pass.verifyUser, function(req, res, n
   });
 });
 
+router.options('/addStudents', cors.corsWithOptions, (req,res) => {res.sendStatus(200); })
+router.post('/addStudents',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
+  let keys = Object.keys(req.body);
+  let values = Object.values(req.body);
+  let query = "INSERT INTO students(";
+  for(let i=0;i<keys.length;++i){
+    query+=keys[i];
+    if(i==keys.length-1)
+      continue;
+    query+=',';  
+  }
+  query+=") VALUES (";
+  for(let i=0;i<values.length;++i){
+    query+=("'"+values[i]+"'");
+    if(i==values.length-1)
+      continue;
+    query+=',';  
+  }
+  query+=')';
+  db.query(query, async (err,result) => {
+    if(err)
+      return res.json(err);
+    else {
+      let hashedPassword = await bcrypt.hash(req.body.dob,10);
+      let query2 = "INSERT into users VALUES(";
+      query2+=("'"+req.body.admno+"','"+hashedPassword+"','"+req.body.name+"','student')");
+      db.query(query2,(err,result) => {
+        if(err)
+          return res.json(err);
+        else
+          console.log('Successfully Inserted');
+          res.json({success: true});
+      });
+    }    
+  });
+});
 module.exports = router;
