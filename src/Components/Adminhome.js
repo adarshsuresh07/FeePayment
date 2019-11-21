@@ -126,7 +126,7 @@ class Adminhome extends React.Component  {
     </select>
    
    { this.state.programme==="UG" ?
-   <span>
+   <span className={Style.sem}>
     <select name="sem" onChange={this.handleChange}>
     <option value="">Sem</option>
     <option value="S1">S1</option> <option value="S2">S2</option> 
@@ -142,7 +142,7 @@ class Adminhome extends React.Component  {
     <option value="EE">Electrical</option> <option value="AR">Archie</option> 
      </select> </span>
      : this.state.programme==="PG" ?
-    <span>
+    <span className={Style.sem}>
     <select name="sem" onChange={this.handleChange}>
     <option value="">Sem</option>
     <option value="S1">S1</option> <option value="S2">S2</option> 
@@ -175,7 +175,7 @@ class Adminhome extends React.Component  {
 </div>
 {this.state.isValid?
 <div className={Style.studenttable}>
- <h1 id='title'>React Dynamic Table</h1>
+ <h1 id='title'>Student Details</h1>
             <table id='students'>
                <tbody>
                   <tr>{this.renderTableHeader()}</tr>
@@ -183,7 +183,7 @@ class Adminhome extends React.Component  {
                </tbody>
             </table>
 </div>
-:<span> search </span>}
+:<span className={Style.image}> <img src={require("./search.png")}/>  </span>}
 </div>
 
   );
