@@ -1,6 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy;
 const JwtStrategy = require('passport-jwt').Strategy;
 const passport = require('passport');
+const bcrypt = require('bcrypt');
 const db = require('./mysql-config');
 const config = require('./config')
 const ExtractJwt = require('passport-jwt').ExtractJwt;
@@ -12,18 +13,20 @@ exports.local = passport.use('local', new LocalStrategy({
   passReqToCallback: true
 }, (req, username, password, done) => {
   const query = 'SELECT * FROM users WHERE username=?';
-  db.query(query,[username],(err,rows) => {
+  db.query(query,[username], async (err,rows) => {
     if(err) return done({message: err});
     if(!rows.length || req.body.role!=rows[0].role) {
       return done(null,false,
-        {message: 'invalid Username or Password'});
+        {message: 'Invalid Username or Password'});
     }
     let dbPassword = rows[0].password;
-    if(dbPassword !== password) {
+    if(await bcrypt.compare(password,dbPassword)) {
+      return done(null, rows[0]);
+    }  
+    else {  
       return done(null,false,
-        {message: 'invalid Username or Password'});
+        {message: 'Invalid Username or Password'});
     }
-    return done(null, rows[0]);
   });
 }));
 
