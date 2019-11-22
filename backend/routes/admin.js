@@ -40,35 +40,38 @@ router.get('/search',cors.corsWithOptions, pass.verifyUser, function(req, res, n
     if(err)
       return err;
     if(result.length == 0) {
-      return res.json({error: true, msg: 'No students found'});
+      res.statusCode = 401;
+      res.json({error: true,msg: 'No students found'});
     }
-    let rows = [];
-    result.forEach((row) => {
-      let fine = 'No';
-      let paid = row.paidornot === 0?'No':'Yes';
-      let today = new Date();
-      let dayslate = Math.floor((today.getTime() - row.deadline.getTime())/(1000*60*60*24));
-      if(row.paidOrNot && dayslate>0) {
-        fine = 'Yes';
-      }
-      let dept = depts[row.dept];
-      res.statusCode = 200;
-      let resRow = Object.assign(
-        {
-          'admno': row.admno,
-          'name': row.name,
-          'prog': row.programme,
-          'sem': row.sem,
-          'schol': row.scholname,
-          'deadline': row.dlday,
-          'dept': dept, 
-          'fine': fine, 
-          'paid': paid,
+    else{
+      let rows = [];
+      result.forEach((row) => {
+        let fine = 'No';
+        let paid = row.paidornot === 0?'No':'Yes';
+        let today = new Date();
+        let dayslate = Math.floor((today.getTime() - row.deadline.getTime())/(1000*60*60*24));
+        if(row.paidOrNot && dayslate>0) {
+          fine = 'Yes';
         }
-      );
-      rows.push(resRow);
-    });
-    res.json(rows);
+        let dept = depts[row.dept];
+        res.statusCode = 200;
+        let resRow = Object.assign(
+          {
+            'admno': row.admno,
+            'name': row.name,
+            'prog': row.programme,
+            'sem': row.sem,
+            'schol': row.scholname,
+            'deadline': row.dlday,
+            'dept': dept, 
+            'fine': fine, 
+            'paid': paid,
+          }
+        );
+        rows.push(resRow);
+      });
+      res.json(rows);
+    }  
   });
 });
 
