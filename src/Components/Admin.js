@@ -54,24 +54,28 @@ class Admin extends React.Component  {
 render(){
   const {error} = this.state;
     return (
-      <div adminwrap>
-      <div className={Style.topRight}>
-      Are you a Student?   
-      <button className={Style.button2} onClick={this.handleClick}>Login</button>
+      <div className={Style.wrap}>
+  <div className={Style.row}>
+    <div className={Style.leftcolumn}>
+      <div className={Style.imagecss}>
+        <img src={require("./cet.png")}/>
       </div>
-      <div className={Style.login}>
-      <div className={Style.imagecssadmin}>
-      <img src={require("./cet.png")}/>
-      <hr/>
+    </div>
+    <div className={Style.rightcolumn}>
+      <div className={Style.formstudent}>
+      <div>
+      <button className={Style.inactive} onClick={this.handleClick}>Student</button>
+      <button className={Style.tabbutton}>Admin</button> 
+       </div>
+        <form > 
+         <input type="text" id="username" name="username" placeholder="CET ID Number" className={Style.input1} value={this.state.username} onChange={this.handleChange} required />
+         <input type="password" id="password" name="password" placeholder="Password" className={Style.input1} value={this.state.password} onChange={this.handleChange} required/> 
+         <button type="submit" className={Style.login} onClick={this.handleLogin}>Login</button>
+        </form>
       </div>
-      <form className={Style.formadmin}>
-      <div>{error==""? <p className={Style.normal}>Admin<i class="fa fa-circle-o"></i></p>: <p title={error} className={Style.error}>Admin<i class="fa fa-circle-o"></i></p>}</div>      
-      <input type="text" id="username" name="username" placeholder="College ID" value={this.state.username} onChange={this.handleChange} />
-      <input type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
-      <button type="submit" onClick={this.handleLogin}>Login</button>
-      </form>
-      </div>
-      </div>
+    </div>
+  </div>
+</div>
 
   );
 }

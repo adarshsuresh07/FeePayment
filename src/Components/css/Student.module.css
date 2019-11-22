@@ -1,49 +1,76 @@
-.topRight{
-  float: right;
-  margin:20px 20px 0 0;
-}
-.button2 {
-  padding: 12px 24px;
-  background-color: white; 
-  color: black; 
-  border: 2px solid black;
-  margin-left: 2vw;
-}
 
-.button2:hover {
-  background-color: black;
-  color: white;
+.wrap{
+  width:100%;
+  background-color: white;
+  position: fixed;
+}
+.row{
+  margin-top: 22vh;
+  width:100%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.leftcolumn {   
+  padding-left: 2vw;
+  float: left;
+  width: 50%;
+}
+.rightcolumn {
+  margin-right:2vw;
 }
 .login{
-  
-  display:inline-block;
-  margin-top:150px;
+  margin-left: 10px;
+  width:200px;
+  padding:5px;
+  margin-top: 20px;
+  background-color: #ccc;
+  border:1px solid #ccc;
 }
-.imagecssstudent{
-  margin-left:50px;
-  margin-top: 5px;
-  margin-right: 50px;
-  display: inline-block;
-  position: absolute;
+.login:hover{
+  background-color: white; 
 }
-.imagecssstudent hr{
-border-top: 1px solid #184A45FF;
+
+.imagecss{
+  border:15px solid #ccc;
 }
-.formstudent
-{
-  display: flex;
-  flex-direction: column;
- position: absolute;
- /*  margin-top: 100px;*/
- right:0;
-  margin-right: 70px;
- width:300px;
+
+.imagecss img{
+  width:40vw;
+  height:auto;
 }
+
+.tabbutton {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #ddd;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+.inactive{
+  background-color: white;
+  color:#ddd;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+form{
+  background-color: #ddd;
+  padding:30px;
+}
+
 .formstudent input{
- 
+  font-size: 13px;
   width: 200px;
   height: 30px;
-  font-size: 16px;
   padding:2px 2px;
   margin: 10px;
   outline: 0;
@@ -51,13 +78,13 @@ border-top: 1px solid #184A45FF;
   border-color: white;
 }
 .formstudent input:focus {
-  border-color: #184A45FF;
+  border-color: black;
 }
 .formstudent div{
   display: flex;
   flex-direction: row;
 }
- .normal {
+.normal {
   color: #184A45FF;
  margin:10px;
 }
@@ -71,81 +98,60 @@ border-top: 1px solid #184A45FF;
 .error i{
  margin-left: 10px;
 }
-.formstudent button {
-  margin-left: 10px;
-  width:100px;
-  height:45px;
-  background-color: white; 
-  color: black; 
-  border: 2px solid #184A45FF;
-  margin-top: 20px;
-}
 
-.formstudent button:hover {
-  background-color: #184A45FF;
-  color: white;
-}
 @media only screen and (max-width:1038px)
 {
-  .studentwrap
+  .wrap
   {   
     width:100%;
   }
-  .imagecssstudent
+  .imagecss
   {
-    margin-left:0;
-    top: 1vh;
-    left: 1vw;
-    right: 1vw;
-    width: 100%;
-    align-content: center;
+    top:0;
+    width:100%;
   }  
-  .imagecssstudent img
+  .imagecss img
   {
-    width: 80vw;
-  }
-  .login
-  { 
-    display: flex;
-    flex-direction: column;
-    width: 60vw;
-    margin-bottom: 100px; 
-  }
-  .formstudent
-  {
-    display: flex;
-    flex-direction: column;
-    margin-top: 8vh;
-    margin-right:20vw;
-    width: 60vw;
-    align-content: center;
-  }
-  .topRight
-  {
-    position: absolute;
-    bottom: 10vh;
-    align-content: center;
-    /* margin-top: 90vh; */
-    margin-bottom: 5vh;
-    margin-left: 10px;
     width: 90vw;
-    font-size: small;
   }
-  .formstudent button 
-  {
-    height: 7vh;
-    width: 47vw;
-    padding: 1vh;
-    background-color: white; 
-    color: black; 
-    border: 2px solid #184A45FF;
-    margin-top: 20px;
-    margin-left: 10px;
+  .row{
+   margin-top: 0;
+   display: flex;
+    flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
   }
+  .leftcolumn {   
+    padding:0px;
+  width: 100%;
+  }
+  .rightcolumn{
+    margin-left: 4vw;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
+.formstudent
+{
+  margin-top: 10vh;
+  display: flex;
+    margin-right: 4vw;
+  flex-direction: column;
+  right:5px;
+  background-color: white;
+  padding: 20px;
+  width:90vw;
+  border:15px solid #ccc;
+}
 
-  .formstudent button:hover 
-  {
-    background-color: #184A45FF;
-    color: white;
-  }
+.formstudent input{
+  font-size:2vh;
+  width: 40vw;
+}
+.login{
+margin-left: 10px;
+width:40vw;
+}
+
 }

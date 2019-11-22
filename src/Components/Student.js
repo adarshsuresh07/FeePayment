@@ -58,24 +58,28 @@ class Student extends React.Component  {
  render(){
   const {error} = this.state;
     return (
-      <div studentwrap>
-      <div className={Style.topRight}>
-      Are you an Administrator?   
-      <button className={Style.button2} onClick={this.handleClick}>Login</button>
-      </div>
-        <div className={Style.login}>
-        <div className={Style.imagecssstudent}>
+<div className={Style.wrap}>
+  <div className={Style.row}>
+    <div className={Style.leftcolumn}>
+      <div className={Style.imagecss}>
         <img src={require("./cet.png")}/>
-        <hr/>
-        </div>
-        <form className={Style.formstudent}>
-        <div>{error===""? <p className={Style.normal}>Student<i class="fa fa-circle-o"></i></p>: <p title={error} className={Style.error}>Student<i class="fa fa-circle-o"></i></p>}</div>  
-        <input type="text" id="username" name="username" placeholder="Admission Number" className={Style.input1} value={this.state.username} onChange={this.handleChange} required />
-        <input type="password" id="password" name="password" placeholder="Password" className={Style.input1} value={this.state.password} onChange={this.handleChange} required/> 
-        <button type="submit" onClick={this.handleLogin}>Login</button>
-        </form>
-        </div>
       </div>
+    </div>
+    <div className={Style.rightcolumn}>
+      <div className={Style.formstudent}>
+      <div>
+      <button className={Style.tabbutton}>Student</button>
+      <button className={Style.inactive} onClick={this.handleClick}>Admin</button> 
+       </div>
+        <form > 
+         <input type="text" id="username" name="username" placeholder="Admission Number" className={Style.input1} value={this.state.username} onChange={this.handleChange} required />
+         <input type="password" id="password" name="password" placeholder="Password" className={Style.input1} value={this.state.password} onChange={this.handleChange} required/> 
+         <button type="submit" className={Style.login} onClick={this.handleLogin}>Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
     );
 }}
 export default Student;
