@@ -17,13 +17,14 @@ class App extends React.Component {
     return (
   <BrowserRouter>
         <Switch>
-          <PublicRoute restricted={true} component={Newstudentreg} path="/" exact />
+          <PublicRoute restricted={true} component={Student} path="/" exact />
           <PublicRoute restricted={true} component={Admin} path="/Admin" exact />
           <StudentRoute component={Studenthome} path="/Studenthome" exact />
           <AdminRoute component={Adminhome} path="/Adminhome" exact />
           <StudentRoute component={Confirm} path="/Confirmation" exact />
           <StudentRoute component={Reset} path="/Reset" exact />
           <AdminRoute component={Reset} path="/Reset" exact />
+          <AdminRoute component={Newstudentreg} path="/Newstudentreg" exact />
         </Switch>
       </BrowserRouter>
     );

@@ -54,36 +54,44 @@ class Studenthome extends React.Component  {
     }
 render(){
  return (
-  <div>
-    
-  <div className={Style.dashboardimg}>
+<div className="home">
+ <div className="header">
   <img src={require("./cet.png")}/>
-  <div className={Style.topRight}>
-  <button className={Style.button3} onClick={this.handleLogout}> Logout </button>
-  <button className={Style.button3} onClick={this.reset}> Reset Password </button>
+ </div>
+ <div className="row">
+  <div className="leftcolumn">
+    <div className="card1">
+    <div className={Style.details}>
+      <p>Fee Details</p>
+      <span id='schol'>Scholarship Details: {this.state.schol}</span>
+      <span id='deadline'>Fee Deadline: {this.state.deadline}</span>
+      <span id='paid'>Paid : {this.state.paid}</span>
+      {this.state.paid == 'No' ?
+      <div>
+      <div className={Style.pay}>
+      <span title="Base fine:Rs.10 It will be double after next two days and so on" className={Style.fine}>?</span>
+      <span id='fine'>Fine imposed: {this.state.fine}</span></div>
+      <button className={Style.paybutton} type="Submit" onClick={this.pay}> Pay </button>
+      </div> : <span/>}
+      </div>
+    </div>
   </div>
+  <div className="rightcolumn">
+    <div className="card1"> 
+    <div className={Style.details}>
+      <p id='admno'>{this.state.admno}</p> 
+      <span id='name'>{this.state.name}</span> 
+      <span id='programme'>{this.state.programme}</span>
+      <span id='sem'>{this.state.sem}</span>
+      <span id='dept'>{this.state.dept}</span>
+      </div>
+    </div>
+    <div className="card1">
+     <button onClick={this.handleLogout}> Logout </button>
+     <button onClick={this.reset}> Reset Password </button>
+    </div>
   </div>
-  <hr/>
-  <div className={Style.dashboard}>
-  <div className={Style.details}>
-    <span id='admno'>{this.state.admno}</span> 
-    <span id='name'>{this.state.name}</span> 
-    <span id='programme'>{this.state.programme}</span>
-    <span id='sem'>{this.state.sem}</span>
-    <span id='dept'>{this.state.dept}</span>
-   </div>
-   <div className={Style.details}> 
-    <span id='schol'>Scholarship Details: {this.state.schol}</span>
-    <span id='deadline'>Fee Deadline: {this.state.deadline}</span>
-    <span id='paid'>Paid : {this.state.paid}</span>
-    {this.state.paid == 'No' ?
-    <div>
-      <span className={Style.finedetails} title="Base fine:Rs.10 It will be double after next two days and so on">?</span>
-      <span id='fine'>Fine imposed: {this.state.fine}</span><br/>
-      <button className={Style.button1} type="Submit" onClick={this.pay}> Pay </button>
-    </div> : <span/>}
-  </div>
-  </div>
+ </div>
 </div>
 
   );

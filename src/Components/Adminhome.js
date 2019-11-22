@@ -109,17 +109,14 @@ class Adminhome extends React.Component  {
 <div className="row">
   <div className="leftcolumn">
     <div className="card">
-       <input name="admno" type="text" placeholder="Search.." value={this.state.admno} onChange={this.handleChange}/>
-     
-   <span>Filters:</span>
-   
+    <input name="admno" type="text" placeholder="Search.." value={this.state.admno} onChange={this.handleChange}/>
+   <p>Filters:</p>
     <select name="programme" value={this.state.programme} onChange={this.handleChange}>
     <option value="">Programme</option> <option value="UG">UG</option>
     <option value="PG">PG</option>
     </select>
-   
    { this.state.programme==="UG" ?
-   <span className={Style.sem}>
+   <span className="sem">
     <select name="sem" onChange={this.handleChange}>
     <option value="">Sem</option>
     <option value="S1">S1</option> <option value="S2">S2</option> 
@@ -157,13 +154,13 @@ class Adminhome extends React.Component  {
   <option value="">Scholarship</option>  <option value="None">None</option>
   <option value="E-Grantz">E-Grantz</option> <option value="Merit">Merit</option>
   </select>  
-  <button className={Style.submit} type="submit" class="searchButton" onClick={this.submitSearch}>
+  <button type="submit" class="searchButton" onClick={this.submitSearch}>
         <i class="fa fa-search"></i>      
      </button> 
     </div>
     <div className="cardtable">
      {this.state.isValid?
-<div className={Style.studenttable}>
+<div>
  <h1 id='title'>Student Details</h1>
             <table id='students'>
                <tbody>
@@ -172,15 +169,15 @@ class Adminhome extends React.Component  {
                </tbody>
             </table>
 </div>
-:<span className={Style.image}> <img src={require("./search.png")}/> </span>}
+:<img src={require("./search.png")}/>}
     </div>
   </div>
   <div className="rightcolumn">
-    <div className="card">
-      <h2> {this.state.cId}</h2>
-    <h2>{this.state.name} </h2>
+    <div className="card1">
+      <p> {this.state.cId}</p>
+    <p>{this.state.name} </p>
     </div>
-    <div className="card">
+    <div className="card1">
       <button className="buttonadmin" onClick={this.handleLogout}> Logout </button><br/>
       <button className="buttonadmin" onClick={this.reset}> Reset Password </button><br/>
       <button className="buttonadmin" onClick={this.reset}> Add Student </button>

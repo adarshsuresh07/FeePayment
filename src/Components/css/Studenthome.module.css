@@ -1,114 +1,21 @@
-.topRight{
-  float: right;
-  margin:20px 20px 0 0;
-}
-.topRight button{
-  margin-left: 10px;
-}
-.dashboardimg{
-width:100vw;
-top:0;
-}
-.dashboardimg img{
-width:35vw;
-height: auto;
-left:0;
-}
-.button3 {
-  padding: 12px 24px;
-  background-color: white; 
-  color: black; 
-  border: 2px solid #184A45FF;
-  margin-top: 20px;
-}
-
-.button3:hover {
-  background-color: #184A45FF;
-  color: white;
-}
-.dashboard{
-  display: flex;
-  flex-direction: row;
-  padding: 30px;
-}
-.details{
-  background-color: #184A45FF;
-  color: white;
-  border: 2px solid #184A45FF;
-  padding: 10px;
-  margin-left:100px;
-  padding: 30px;
-  display:flex;
-  flex-direction: column;
-  align-items: flex-start; 
+.fine{
+  color:red;
 }
 .details span{
-  margin-top:20px;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  margin:10px;
 }
-.finedetails{
-  color: red;
-  margin-right: 10px;
+.details p{
+  font-size: 25px;
+  font-weight: bold;
 }
-.button1 {
-  margin-top: 20px;
-  padding: 12px 24px;
-  background-color: #184A45FF; 
-  color: white; 
-  border: 2px solid white;
+.pay{
+  display: flex;
+  flex-direction:row; 
 }
-
-.button1:hover {
-  background-color: white;
-  color: #184A45FF;
-}
-
-
-@media only screen and (max-width:400px)
-{
-
-  .dashboard
-  {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 14px;
-  }
-
-  .details
-  {
-    margin: 30px;
-    padding: 10px;
-    width: 73vw;
-    margin-left: 10px;
-
-
-  }
-  .dashboardimg
-  {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-  }
-  .dashboardimg img{
-   width:auto ;
-   height:auto ;
-   left:0;
-  }
-
-  .topRight
-  {
-    margin: 1vw;
-  }
-   
-   .button3{
-    padding: 6px 12px;
-    margin-left: auto;
-   }
-  
-  .dashboardimg img
-  {
-  width: 200px;
-  }
+.paybutton{
+  margin-left: 50px;
+  width:100px;
+  height: auto;
 }
