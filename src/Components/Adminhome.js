@@ -17,11 +17,7 @@ class Adminhome extends React.Component  {
       dept: '',
       paidornot: '',
       scholname: '',
-      students: [
-            { id: 1, name: 'hello', age: 21, email: 'wasif@email.com' },
-            { id: 2, name: 'Adarsh', age: 19, email: 'ali@email.com' },
-            { id: 3, name: 'Saad', age: 16, email: 'saad@email.com' },
-                     ]
+      students: []
     };
   };
 
@@ -93,11 +89,17 @@ class Adminhome extends React.Component  {
       };
       Axios.get('http://localhost:3001/admin/search', config)
       .then((res) => {
-         this.setState({
-           students: res.data,
-           isValid: 1
-         });
-      });     
+        this.setState({
+          students: res.data,
+          isValid: 1
+        });
+      })
+      .catch((err) => {
+        this.setState({
+          students: [],
+          isValid: 0
+        });
+      });  
     }
     render(){
  return (
