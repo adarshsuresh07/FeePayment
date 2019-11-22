@@ -27,6 +27,7 @@ class App extends React.Component {
           <AdminRoute component={Newstudentreg} path="/Newstudentreg" exact />
         </Switch>
       </BrowserRouter>
+      //hello
     );
   }
 }
