@@ -40,7 +40,7 @@ router.get('/search',cors.corsWithOptions, pass.verifyUser, function(req, res, n
     if(err)
       return err;
     if(result.length == 0) {
-      res.statusCode = 401;
+      res.statusCode = 404;
       res.json({error: true,msg: 'No students found'});
     }
     else{
