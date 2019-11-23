@@ -8,6 +8,7 @@ class Adminhome extends React.Component  {
     this.handleLogout = this.handleLogout.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.submitSearch = this.submitSearch.bind(this);
+    this.addStudent = this.addStudent.bind(this);
     this.state = {
       cId: '',
       name: '',
@@ -100,7 +101,11 @@ class Adminhome extends React.Component  {
           isValid: 0
         });
       });  
-    }
+    };
+
+    addStudent() {
+      this.props.history.push('/Newstudentreg');
+    };
     render(){
  return (
   <div className="home">
@@ -182,7 +187,7 @@ class Adminhome extends React.Component  {
     <div className="card1">
       <button className="buttonadmin" onClick={this.handleLogout}> Logout </button><br/>
       <button className="buttonadmin" onClick={this.reset}> Reset Password </button><br/>
-      <button className="buttonadmin" onClick={this.reset}> Add Student </button>
+      <button className="buttonadmin" onClick={this.addStudent}> Add Student </button>
     </div>
   </div>
 </div>

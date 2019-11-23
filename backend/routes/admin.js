@@ -36,7 +36,6 @@ router.get('/search',cors.corsWithOptions, pass.verifyUser, function(req, res, n
     }
     query+=(" and "+table+"."+keys[i]+"='"+values[i]+"'");
   }
-  console.log(query);
   db.query(query,function(err,result){
     if(err)
       return err;
@@ -45,7 +44,6 @@ router.get('/search',cors.corsWithOptions, pass.verifyUser, function(req, res, n
       res.json({error: true,msg: 'No students found'});
     }
     else{
-      console.log(result);
       let rows = [];
       result.forEach((row) => {
         let fine = 'No';
