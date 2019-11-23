@@ -148,11 +148,11 @@ class Adminhome extends React.Component  {
     <option value="MBA">MBA</option> 
      </select> </span>:<span/>
    }
-  <select name="paidOrNot" onChange={this.handleChange}>
+  <select name="paidornot" onChange={this.handleChange}>
   <option value="">Paid/Not</option> <option value="1">Paid</option>
   <option value="0">Not Paid</option>
   </select>
-   <select name="scholName" onChange={this.handleChange}>
+   <select name="scholname" onChange={this.handleChange}>
   <option value="">Scholarship</option>  <option value="None">None</option>
   <option value="E-Grantz">E-Grantz</option> <option value="Merit">Merit</option>
   </select>  
