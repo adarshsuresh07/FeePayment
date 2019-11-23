@@ -49,27 +49,28 @@ label {
   font-weight: lighter;
 }
 
-input {
+.form-wrapper input {
   padding: 10px 10px;
   /* border-radius: 5px; */
   outline: none;
   border: 1px solid #cfcfcf;
 }
 
-input::placeholder {
+.form-wrapper input::placeholder {
   font-size: 1.2em;
   font-weight: lighter;
   color: #999;
 }
 
-input.error {
+ .form-wrapper input.error {
   border: 1px solid red;
 }
 
 .errorMessage {
-  color: red;
-  font-size: 0.75em;
+  color: #e81123;
+  font-size: 0.7em;
   display: relative;
+  font-weight: 500;
 }
 
 
@@ -93,7 +94,10 @@ input.error {
 
 
 
-select {
+.program select,
+.department select,
+.sem select,
+.scholorship select {
   display: block;
   font-size: 16px;
   font-family: sans-serif;
@@ -118,10 +122,16 @@ select {
   background-position: right .7em top 50%, 0 0;
   background-size: .65em auto, 100%;
 }
-select::-ms-expand {
+.program select ::-ms-expand,
+.department select ::-ms-expand,
+.sem select ::-ms-expand,
+.scholorship select::-ms-expand {
   display: none;
 }
-select:hover {
+.program select:hover,
+.department select:hover,
+.sem select:hover,
+.scholorship select:hover {
   border-color: #888;
 }
 
