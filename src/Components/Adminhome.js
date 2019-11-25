@@ -110,18 +110,26 @@ class Adminhome extends React.Component {
     this.props.history.push('/Newstudentreg');
   };
 
-  submit = () => {
+  submit = ({target}) => {
     confirmAlert({
       title: 'Confirm to submit',
       message: 'Are you sure to do this.',
       buttons: [
         {
           label: 'Yes',
-          onClick: () => alert('Click Yes')
+          onClick: () => {
+            let config = {
+              headers: {
+                Authorization: 'bearer ' + getTokena()
+              }
+            };
+            Axios.post('http://localhost:3001/admin/markPaid', {admno: target.id}, config)
+            .then(res => {console.log('Success');this.submitSearch();})
+            .catch(err => console.log(err));
+          }
         },
         {
           label: 'No',
-          onClick: () => alert('Click No')
         }
       ]
     });
