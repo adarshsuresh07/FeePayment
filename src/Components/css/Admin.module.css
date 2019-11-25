@@ -1,157 +1,165 @@
+.wrap {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+}
 
-.wrap{
-  width:100%;
-  background-color: white;
-  position: fixed;
+.row {
+    margin-top: 22vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
-.row{
-  margin-top: 22vh;
-  width:100%;
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+
+.leftcolumn {
+    padding-left: 2vw;
+    float: left;
+    width: 50%;
 }
-.leftcolumn {   
-  padding-left: 2vw;
-  float: left;
-  width: 50%;
-}
+
 .rightcolumn {
-  margin-right:2vw;
-}
-.login{
-  margin-left: 10px;
-  width:200px;
-  padding:5px;
-  margin-top: 20px;
-  background-color: #ccc;
-  border:1px solid #ccc;
-}
-.login:hover{
-  background-color: white; 
+    margin-right: 2vw;
 }
 
-.imagecss{
-  border:15px solid #ccc;
+.login {
+    margin-left: 10px;
+    width: 200px;
+    padding: 5px;
+    margin-top: 20px;
+    background-color: #ccc;
+    border: 1px solid #ccc;
 }
 
-.imagecss img{
-  width:40vw;
-  height:auto;
+.login:hover {
+    background-color: white;
+}
+
+.imagecss {
+    border: 15px solid #ccc;
+}
+
+.imagecss img {
+    width: 40vw;
+    height: auto;
 }
 
 .tabbutton {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #ddd;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-}
-.inactive{
-  background-color: white;
-  color:#ddd;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-}
-form{
-  background-color: #ddd;
-  padding:30px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #ddd;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
 }
 
-.formstudent input{
-  font-size: 13px;
-  width: 200px;
-  height: 30px;
-  padding:2px 2px;
-  margin: 10px;
-  outline: 0;
-  border-width: 0 0 2px;
-  border-color: white;
+.inactive {
+    background-color: white;
+    color: #ddd;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
 }
+
+form {
+    background-color: #ddd;
+    padding: 30px;
+}
+
+.formstudent input {
+    font-size: 13px;
+    width: 200px;
+    height: 30px;
+    padding: 2px 2px;
+    margin: 10px;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: white;
+}
+
 .formstudent input:focus {
-  border-color: black;
-}
-.formstudent div{
-  display: flex;
-  flex-direction: row;
-}
-.normal {
-  color: #184A45FF;
- margin:10px;
-}
-.normal i{
- color:white;
-}
-.error {
-  margin: 10px;
-  color: red;
-}
-.error i{
- margin-left: 10px;
+    border-color: black;
 }
 
-@media only screen and (max-width:1038px)
-{
-  .wrap
-  {   
-    width:100%;
-  }
-  .imagecss
-  {
-    top:0;
-    width:100%;
-  }  
-  .imagecss img
-  {
-    width: 90vw;
-  }
-  .row{
-   margin-top: 0;
-   display: flex;
-    flex-direction: column;
-   justify-content: center;
-   align-items: flex-start;
-  }
-  .leftcolumn {   
-    padding:0px;
-  width: 100%;
-  }
-  .rightcolumn{
-    margin-left: 4vw;
-    width:100%;
+.formstudent div {
     display: flex;
-    justify-content: center;
-    align-items: center;
-  } 
-.formstudent
-{
-  margin-top: 10vh;
-  display: flex;
-    margin-right: 4vw;
-  flex-direction: column;
-  right:5px;
-  background-color: white;
-  padding: 20px;
-  width:90vw;
-  border:15px solid #ccc;
+    flex-direction: row;
 }
 
-.formstudent input{
-  font-size:2vh;
-  width: 40vw;
-}
-.login{
-margin-left: 10px;
-width:40vw;
+.normal {
+    color: #184A45FF;
+    margin: 10px;
 }
 
+.normal i {
+    color: white;
+}
+
+.error {
+    margin: 10px;
+    color: red;
+}
+
+.error i {
+    margin-left: 10px;
+}
+
+@media only screen and (max-width:1038px) {
+    .wrap {
+        width: 100%;
+    }
+    .imagecss {
+        top: 0;
+        width: 100%;
+    }
+    .imagecss img {
+        width: 90vw;
+    }
+    .row {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .leftcolumn {
+        padding: 0px;
+        width: 100%;
+    }
+    .rightcolumn {
+        margin-left: 4vw;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .formstudent {
+        margin-top: 10vh;
+        display: flex;
+        margin-right: 4vw;
+        flex-direction: column;
+        right: 5px;
+        background-color: white;
+        padding: 20px;
+        max-width: 400px;
+        width: 90vw;
+        border: 15px solid #ccc;
+    }
+    .formstudent input {
+        font-size: 2vh;
+        width: 40vw;
+        max-width: 200px;
+    }
+    .login {
+        margin-left: 10px;
+        width: 40vw;
+        max-width: 200px;
+    }
 }
