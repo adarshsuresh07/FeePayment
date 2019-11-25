@@ -1,13 +1,15 @@
 const express = require('express');
 const passport = require('passport');
+const bcrypt = require('bcrypt');
 const cors = require('./cors');
 var pass = require('../passport-config');
+var db = require('../mysql-config');
 
-const loginRouter = express.Router();
+const usersRouter = express.Router();
 
-loginRouter.options('*',cors.corsWithOptions, (req,res) => {res.sendStatus(200); })
+usersRouter.options('*',cors.corsWithOptions, (req,res) => {res.sendStatus(200); })
 
-loginRouter.route('/login')
+usersRouter.route('/login')
 .post(cors.corsWithOptions,(req,res,next) => {
   passport.authenticate('local',{session: false}, (err, user, info) => {
     if (err)
@@ -31,7 +33,30 @@ loginRouter.route('/login')
   }) (req, res, next);
 });
 
-loginRouter.get('/checkJWTToken', cors.corsWithOptions, (req,res) => {
+usersRouter.post('/resetPassword', pass.verifyUser, (req,res) => {
+  let query = "SELECT password FROM users WHERE username='"+req.user.username+"'";
+  db.query(query, async (err,result) => {
+    let dbPassword = result[0].password;
+    let curPassword = req.body.curPassword;
+    if(await bcrypt.compare(curPassword,dbPassword)) {
+      let hashedPassword = await bcrypt.hash(req.body.newPassword,10);
+      let query2 = "UPDATE users SET password='"+hashedPassword+"' WHERE username='"+req.user.username+"'";
+      db.query(query2,(err,result) => {
+        if(err)
+          return err;
+        else {
+          res.json({success: true});
+        }  
+      });
+    }
+    else {
+      res.statusCode = 422;      
+      res.json({error: 'Invalid Password'});
+    }
+  })
+});
+
+usersRouter.get('/checkJWTToken', cors.corsWithOptions, (req,res) => {
   passport.authenticate('jwt',{session: false},(err,user,info) => {
     if(err)
       return next(err);
@@ -46,4 +71,4 @@ loginRouter.get('/checkJWTToken', cors.corsWithOptions, (req,res) => {
   }) (req, res);
 })
 
-module.exports = loginRouter;
+module.exports = usersRouter;

@@ -99,7 +99,11 @@ router.post('/addStudents',cors.corsWithOptions, pass.verifyUser, function(req, 
       return err;
     else {
       let date = req.body.dob;
-      let hashedPassword = await bcrypt.hash(date,10);
+      let year = date.slice(0,4);
+      let month = date.slice(5,7);
+      let day = date.slice(8,10);
+      let ddmmyyyy = day+month+year;
+      let hashedPassword = await bcrypt.hash(ddmmyyyy,10);
       let query2 = "INSERT into users VALUES(";
       query2+=("'"+req.body.admno+"','"+hashedPassword+"','"+req.body.name+"','student')");
       db.query(query2,(err,result) => {

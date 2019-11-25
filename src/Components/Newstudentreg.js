@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-//import {Link } from "react-router-dom";
+import { getTokena } from '../utils'
 import "./css/Newstudentreg.css";
+import Axios from "axios";
 
 const fullNameRegx = RegExp("^[A-Za-z]");
 // const emailRegex = RegExp(
@@ -65,6 +66,22 @@ class Newstudentreg extends Component {
         Scholorship: ${this.state.scholorship}
 
       `);
+          let config = {
+            headers: {
+              Authorization: 'bearer '+getTokena()
+            }
+          };
+          Axios.post('http://localhost:3001/admin/addStudents',{
+            admno: this.state.admNum,
+            name: this.state.fullName,
+            dob: this.state.dob,
+            programme: this.state.program,
+            sem: this.state.sem,
+            dept: this.state.department,
+            scholid: this.state.scholorship
+          },config)
+          .then(res=>console.log('Successfully Added Student'))
+          .catch(err=>console.log(err));    
             //   Axios.post('http://localhost:3001/users/login',{
             //     username: this.state.username,
             //     password: this.state.password,
@@ -214,11 +231,14 @@ class Newstudentreg extends Component {
 
                                     >
                                         <option value="" hidden>Department</option>
-                                        <option value="A">a</option>
-                                        <option value="B">b</option>
-                                        <option value="C">c</option>
-                                        <option value="D">d</option>
-                                        <option value="E">e</option>
+                                        <option value="ME">ME</option>
+                                        <option value="EE">EE</option>
+                                        <option value="CS">CS</option>
+                                        <option value="EC">EC</option>
+                                        <option value="CE">CE</option>
+                                        <option value="AE">AE</option>
+                                        <option value="AR">AR</option>
+                                        <option value="IE">IE</option>
 
 
 
@@ -242,11 +262,14 @@ class Newstudentreg extends Component {
                                     >
 
                                         <option value="" hidden>Semester</option>
-                                        <option value="A">a</option>
-                                        <option value="B">b</option>
-                                        <option value="C">c</option>
-                                        <option value="D">d</option>
-                                        <option value="E">e</option>
+                                        <option value="S1">S1</option>
+                                        <option value="S2">S2</option>
+                                        <option value="S3">S3</option>
+                                        <option value="S4">S4</option>
+                                        <option value="S5">S5</option>
+                                        <option value="S6">S6</option>
+                                        <option value="S7">S7</option>
+                                        <option value="S8">S8</option>
                                         {/* <i className="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i> */}
                                         {formErrors.sem.length > 0 && (
                                             <span className="errorMessage">{formErrors.sem}</span>
@@ -330,11 +353,11 @@ class Newstudentreg extends Component {
 
                             >
                                 <option value="" hidden >Scholorship</option>
-                                <option value="s1">s1</option>
-                                <option value="s2">s2</option>
-                                <option value="s3">s3</option>
-                                <option value="s4">s4</option>
-                                <option value="s5">s5</option>
+                                <option value="0">NONE</option>
+                                <option value="1">E-Grantz</option>
+                                <option value="2">Merit</option>
+                                {/* <option value="s4">s4</option> */}
+                                {/* <option value="s5">s5</option> */}
 
 
 
@@ -350,7 +373,7 @@ class Newstudentreg extends Component {
 
 
                         <div className="register">
-                            <button type="submit">Register</button>
+                            <button type="submit" onClick={this.handleSubmit}>Register</button>
                         </div>
                         <div >
 

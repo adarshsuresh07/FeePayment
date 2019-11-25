@@ -41,7 +41,7 @@ opts.passReqToCallback = true;
 
 exports.jwtPassport = passport.use(new JwtStrategy(opts, 
   (req, jwt_payload, done) => {
-    db.query("SELECT * FROM users WHERE username = '"+jwt_payload._id+"'", (err, rows) => {
+    db.query("SELECT username FROM users WHERE username = '"+jwt_payload._id+"'", (err, rows) => {
       if(err)
          return done(err, false);
       else if(rows.length>0)  
