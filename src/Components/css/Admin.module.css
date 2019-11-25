@@ -58,25 +58,28 @@
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
+    padding: 14px 14px;
+    font-size: 15px;
+    text-align: center;
 }
 
 .inactive {
     background-color: white;
-    color: #ddd;
+    color: #ccc;
     float: left;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
+    padding: 14px 14px;
+    font-size: 15px;
+    text-align: center;
 }
 
 
 form {
     background-color: #ddd;
-    padding: 30px;
+    width:20vw;
+    
 }
 
 .formstudent input {
@@ -102,22 +105,11 @@ form {
     width:50%;
 }
 
-.normal {
-    color: #184A45FF;
-    margin: 10px;
-}
-
-.normal i {
-    color: white;
-}
-
 .error {
     margin: 10px;
     color: red;
-}
-
-.error i {
-    margin-left: 10px;
+    font-size: 10px;
+    background: #ddd;
 }
 
 @media only screen and (max-width:1038px) {
