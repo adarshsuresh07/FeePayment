@@ -28,11 +28,10 @@ class Admin extends React.Component  {
       let error;
       if(this.state.username=='' || this.state.password=='')
       { 
-        error="Username or Password should not be empty"; 
+        error="ID & Password should not be empty"; 
       }
       else
       {
-       error="Username or Password is incorrect";
        Axios.post('http://localhost:3001/users/login',{
         username: this.state.username,
         password: this.state.password,
@@ -41,8 +40,11 @@ class Admin extends React.Component  {
       .then(res => {
         if(res.data.success) {
           logina(res.data.token);
+          this.setState({ error: ''});
           this.props.history.push('/Adminhome');
         } 
+      }).catch(err => {
+        this.setState({ error: 'Invalid ID or Password', password: ''});
       });
     }
       this.setState({ error: error }); 
@@ -64,12 +66,11 @@ render(){
     <div className={Style.rightcolumn}>
       <div className={Style.formstudent}>
       <div>
-      <button className={Style.inactive} onClick={this.handleClick}>Student</button>
-      <button className={Style.tabbutton}>Admin</button> 
+      <div className={Style.inactive} onClick={this.handleClick}>Student</div>
+      <div className={Style.tabbutton}>Admin</div> 
        </div>
-       {this.state.error.length > 0 && (<span className="errorInvalid" > {this.state.error} </span>)}
-
         <form > 
+        {this.state.error.length > 0 && (<span className={Style.error} > {this.state.error} </span>)}
          <input type="text" id="username" name="username" placeholder="CET ID Number" className={Style.input1} value={this.state.username} onChange={this.handleChange} required />
          <input type="password" id="password" name="password" placeholder="Password" className={Style.input1} value={this.state.password} onChange={this.handleChange} required/> 
          <button type="submit" className={Style.login} onClick={this.handleLogin}>Login</button>
