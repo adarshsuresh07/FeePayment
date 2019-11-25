@@ -17,7 +17,11 @@
   text-align: center;
   background: white;
 }
-
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
@@ -71,6 +75,12 @@ padding: 20px;
 .sem{
   display: flex;
   flex-direction: row;
+}
+.sem select{
+  background: white;
+}
+.sem select:hover{
+  background: #ccc;
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
@@ -179,4 +189,10 @@ margin:7px;
 .card1 button:hover {
   background-color: #f1f1f1;
   color: black;
+}
+.pay{
+  background: #00b300;
+  padding:0;
+  width:2vw;
+  height:2vw;
 }

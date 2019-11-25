@@ -54,13 +54,13 @@ class Studenthome extends React.Component  {
     }
 render(){
  return (
-<div className="home">
- <div className="header">
+<div className={Style.home}>
+ <div className={Style.header}>
   <img src={require("./cet.png")}/>
  </div>
- <div className="row">
-  <div className="leftcolumn">
-    <div className="card1">
+ <div className={Style.row}>
+  <div className={Style.leftcolumn}>
+    <div className={Style.card1}>
     <div className={Style.details}>
       <p>Fee Details</p>
       <span id='schol'>Scholarship Details: {this.state.schol}</span>
@@ -76,8 +76,8 @@ render(){
       </div>
     </div>
   </div>
-  <div className="rightcolumn">
-    <div className="card1"> 
+  <div className={Style.rightcolumn}>
+    <div className={Style.card1}> 
     <div className={Style.details}>
       <p id='admno'>{this.state.admno}</p> 
       <span id='name'>{this.state.name}</span> 
@@ -86,7 +86,7 @@ render(){
       <span id='dept'>{this.state.dept}</span>
       </div>
     </div>
-    <div className="card1">
+    <div className={Style.card1}>
      <button onClick={this.handleLogout}> Logout </button>
      <button onClick={this.reset}> Reset Password </button>
     </div>
