@@ -45,6 +45,13 @@
     height: auto;
 }
 
+.error {
+    margin: 10px;
+    color: red;
+    font-size: 10px;
+    background: #ddd;
+}
+
 .tabbutton {
     overflow: hidden;
     border: 1px solid #ccc;
@@ -53,19 +60,21 @@
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
+    padding: 14px 14px;
+    font-size: 15px;
+    text-align: center;
 }
 
 .inactive {
     background-color: white;
-    color: #ddd;
+    color: #ccc;
     float: left;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
+    padding: 14px 14px;
+    font-size: 15px;
+    text-align: center;
 }
 
 form {
@@ -101,24 +110,6 @@ form {
 
 .tabbutton,.inactive{
     width:50%;
-}
-
-.normal {
-    color: #184A45FF;
-    margin: 10px;
-}
-
-.normal i {
-    color: white;
-}
-
-.error {
-    margin: 10px;
-    color: red;
-}
-
-.error i {
-    margin-left: 10px;
 }
 
 @media only screen and (max-width:1038px) {
