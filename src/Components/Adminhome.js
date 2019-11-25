@@ -2,6 +2,8 @@ import React from 'react';
 import { logouta, getTokena } from '../utils';
 import Style from './css/Adminhome.module.css';
 import Axios from 'axios'
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
 class Adminhome extends React.Component {
   constructor(props) {
     super(props);
@@ -54,7 +56,7 @@ class Adminhome extends React.Component {
           <td>{schol}</td>
           <td>{deadline}</td>
           <td>{dept}</td>
-          <td>{paid=="Yes"?<button id={admno} className={Style.pay}>Pay</button> :
+          <td>{paid=="No"?<button id={admno} className={Style.pay} onClick={this.submit} >Pay</button> :
           <button className={Style.pay} disabled>Pay</button>}</td>
           <td>{fine}</td>
         </tr>
@@ -107,6 +109,26 @@ class Adminhome extends React.Component {
   addStudent() {
     this.props.history.push('/Newstudentreg');
   };
+
+  submit = () => {
+    confirmAlert({
+      title: 'Confirm to submit',
+      message: 'Are you sure to do this.',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => alert('Click Yes')
+        },
+        {
+          label: 'No',
+          onClick: () => alert('Click No')
+        }
+      ]
+    });
+  };
+
+ 
+
   render() {
     return (
       <div className={Style.home}>

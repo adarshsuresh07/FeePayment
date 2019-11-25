@@ -132,8 +132,8 @@ class Reset extends Component {
     const { formErrors } = this.state;
 
     return (
-      <div className={"wrapper"} >
-        <div className="headerimg">
+      <div className={"wrappe"} >
+        <div className="headerim">
         <img src={require("./cet.png")}/>
         </div>
         <div className="form-wrapper">
