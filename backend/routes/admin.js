@@ -15,6 +15,15 @@ const depts = {
   'AR': 'Architecture'
 };
 
+function getISTDate() {
+  let dateUTC = new Date();
+  let dateUTC = dateUTC.getTime() 
+  let dateIST = new Date(dateUTC);
+  //date shifting for IST timezone (+5 hours and 30 minutes)
+  dateIST.setHours(dateIST.getHours() + 5); 
+  dateIST.setMinutes(dateIST.getMinutes() + 30);
+  return dateIST;
+}
 router.options('/', cors.corsWithOptions, (req,res) => {res.sendStatus(200); })
 router.get('/',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
   const query = "SELECT username,name,role from users where username='"+req.user.username+"'";
@@ -134,7 +143,7 @@ router.post('/addAdmin',cors.corsWithOptions, pass.verifyUser, async function(re
 
 router.options('/markPaid', cors.corsWithOptions, (req,res) => {res.sendStatus(200);})
 router.post('/markPaid', cors.corsWithOptions, pass.verifyUser, (req,res,next) => {
-  let date = new Date();
+  let date = getISTDate();
   date = date.toISOString().slice(0, 19).replace('T', ' ');
   let query = "UPDATE students SET paidornot=1, dateofpayment='"+date+"' WHERE admno='"+req.body.admno+"'";
   db.query(query,(err,result) => {
