@@ -36,7 +36,7 @@ class Newstudentreg extends Component {
             department: null,
             sem: null,
             scholorship: null,
-
+            
             formErrors: {
                 admNum: "",
                 fullName: "",
@@ -281,7 +281,10 @@ class Newstudentreg extends Component {
                             </div>
 
 
-                        ) : (
+                        ) : null}
+
+                        {this.state.program == "PG" ?
+                        (
                                 <div className="depsem">
                                     <div className="department">
                                         {/* <label htmlFor="userName">User Name</label> */}
@@ -296,11 +299,11 @@ class Newstudentreg extends Component {
 
                                         >
                                             <option value="" hidden>Department</option>
-                                            <option value="F">f</option>
-                                            <option value="G">g</option>
-                                            <option value="H">h</option>
-                                            <option value="I">i</option>
-                                            <option value="J">j</option>
+                                            <option value="ME">f</option>
+                                            <option value="EE">g</option>
+                                            <option value="CS">h</option>
+                                            <option value="EC">i</option>
+                                            <option value="CE">j</option>
 
 
 
@@ -323,11 +326,10 @@ class Newstudentreg extends Component {
                                         >
 
                                             <option value="" hidden>Semester</option>
-                                            <option value="F">f</option>
-                                            <option value="G">g</option>
-                                            <option value="H">h</option>
-                                            <option value="I">i</option>
-                                            <option value="J">j</option>
+                                            <option value="S1">S1</option>
+                                            <option value="S2">S2</option>
+                                            <option value="S3">S3</option>
+                                            <option value="S4">S4</option>
                                             {/* <i className="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i> */}
                                             {formErrors.sem.length > 0 && (
                                                 <span className="errorMessage">{formErrors.sem}</span>
@@ -339,7 +341,7 @@ class Newstudentreg extends Component {
                                 </div>
 
 
-                            )}
+                            ) : null }
                         <div className="scholorship">
                             {/* <label htmlFor="userName">User Name</label> */}
                             <select
