@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getTokena } from '../utils'
 import "./css/Newstudentreg.css";
+import { confirmAlert } from 'react-confirm-alert';
 import Axios from "axios";
 
 const fullNameRegx = RegExp("^[A-Za-z]");
@@ -80,19 +81,20 @@ class Newstudentreg extends Component {
             dept: this.state.department,
             scholid: this.state.scholorship
           },config)
-          .then(res=>console.log('Successfully Added Student'))
+          .then(res=>{
+            confirmAlert({
+              title: 'Successfully Added Student',
+              buttons: [
+                {
+                  label: 'Continue',
+                  onClick: () => {
+                    this.props.history.push('/Adminhome');
+                  }
+                }
+              ]
+            });
+          })
           .catch(err=>console.log(err));    
-            //   Axios.post('http://localhost:3001/users/login',{
-            //     username: this.state.username,
-            //     password: this.state.password,
-            //     role: 'admin'
-            //   })
-            //   .then(res => {
-            //     if(res.data.success) {
-            //     logina(res.data.token);
-            //       this.props.history.push('/Adminhome');
-            //     } 
-            //   });
         } else {
             console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
         }

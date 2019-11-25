@@ -1,6 +1,7 @@
 import React,{ Component} from 'react';
 import { isLogins, isLogina, getTokena, getTokens } from '../utils';
 import  './css/Reset.css';
+import { confirmAlert } from 'react-confirm-alert';
 import Axios from 'axios'
 
 
@@ -91,7 +92,19 @@ class Reset extends Component {
        curPassword: this.state.oldpass,
        newPassword: this.state.newpass
      }, config)
-     .then(res => console.log('Password Reset Successfully'))
+     .then(res => {
+        confirmAlert({
+          title: 'Password Reset Successfully',
+          buttons: [
+            {
+              label: 'Continue',
+              onClick: () => {
+                this.props.history.push('/');
+              }
+            }
+          ]
+        });
+      })
      .catch(err => console.log('Invalid Password'));
       
   }
