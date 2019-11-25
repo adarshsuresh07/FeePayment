@@ -1,5 +1,5 @@
 import React from 'react';
-import { logouts, getTokens } from '../utils';
+import { logouts, getTokens, paidcheck } from '../utils';
 import Style from './css/Studenthome.module.css';
 import Axios from 'axios';
 class Studenthome extends React.Component  {
@@ -39,6 +39,7 @@ class Studenthome extends React.Component  {
         paid: res.data.paid,
         fine: res.data.fine
       });
+       this.state.paid=='Yes'? paidcheck(true):paidcheck(false);
     });
   }
     handleLogout(){
