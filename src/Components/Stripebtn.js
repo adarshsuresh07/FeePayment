@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import Style from './css/Confirmation.module.css';
+import { getTokens } from '../utils';
 import StripeCheckout from "react-stripe-checkout";
 import Axios from "axios";
 
@@ -11,8 +12,12 @@ const Stripebtn = (props) => {
       amount: props.amount,
       token: token
   };
-
-  Axios.post("http://localhost:3001/payment", body)
+  let config = {
+    headers: {
+      Authorization: 'bearer '+getTokens()
+    },
+  };
+  Axios.post("http://localhost:3001/payment", body, config)
   .then(response => {
     console.log(response);
     alert("Payment Success");
