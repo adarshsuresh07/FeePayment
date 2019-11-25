@@ -1,5 +1,5 @@
 import React,{ Component} from 'react';
-import { isLogins, isLogina } from '../utils';
+import { isLogins, isLogina, getTokena, getTokens } from '../utils';
 import  './css/Reset.css';
 import Axios from 'axios'
 
@@ -72,7 +72,27 @@ class Reset extends Component {
     
       Confirm Password: ${this.state.confirmpass}
     `);
-     Axios.post('http://localhost:3001/users/resetPassword',)
+     let config;
+     if(isLogina()) {
+      config = {
+        headers: {
+          Authorization: 'bearer '+getTokena()
+        },
+      };
+     }
+     else if(isLogins()) {
+      config = {
+        headers: {
+          Authorization: 'bearer '+getTokens()
+        },
+      };
+     }
+     Axios.post('http://localhost:3001/users/resetPassword', {
+       curPassword: this.state.oldpass,
+       newPassword: this.state.newpass
+     }, config)
+     .then(res => console.log('Password Reset Successfully'))
+     .catch(err => console.log('Invalid Password'));
       
   }
   else {
@@ -173,7 +193,7 @@ class Reset extends Component {
               )}
             </div>
             <div className="reset">
-              <button type="submit">Reset</button> 
+              <button type="submit" onClick={this.handleSubmit}>Reset</button> 
             </div>
           </form>
         </div>

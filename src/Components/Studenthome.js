@@ -28,7 +28,6 @@ class Studenthome extends React.Component  {
     };
     Axios.get('http://localhost:3001/dashboard/',config)
     .then((res) => {
-      console.log(res);
       this.setState({
         admno: res.data.admno,
         name: res.data.name,
