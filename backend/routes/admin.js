@@ -64,8 +64,8 @@ router.get('/search',cors.corsWithOptions, pass.verifyUser, function(req, res, n
             'schol': row.scholname,
             'deadline': row.dlday,
             'dept': dept, 
-            'fine': fine, 
             'paid': paid,
+            'fine': fine, 
           }
         );
         rows.push(resRow);

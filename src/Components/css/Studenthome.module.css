@@ -1,21 +1,136 @@
-.fine{
-  color:red;
+* {
+  box-sizing: border-box;
 }
-.details span{
+
+/* Add a gray background color with some padding */
+.home {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+  box-sizing: border-box;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.card1 {
+  display:flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+   margin-top: 20px;
+}
+.fine {
+  color: red;
+}
+
+.details span {
   display: flex;
   flex-direction: column;
-  margin:10px;
+  margin: 10px;
 }
-.details p{
+
+.details p {
   font-size: 25px;
   font-weight: bold;
 }
-.pay{
+
+.pay {
   display: flex;
-  flex-direction:row; 
+  flex-direction: row;
 }
-.paybutton{
+
+.paybutton {
   margin-left: 50px;
-  width:100px;
+  width: 100px;
   height: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+  .header {
+    padding: 0vw;
+    padding-top: 2vh;
+    padding-bottom:2vh;
+    background: white;
+  }
+  .header img{
+ width:70%;
+ min-width: 200px;
+ height:auto;
+}
+ 
+.card1 p{
+  font-size: 16px;
+}
+.card1 button{
+  width:200px;
+}
+}
+
+.card1 input{
+  padding:5px;
+  width: 15vw;
+  height: 20px;
+  font-size: 16px;
+  margin: 15px;
+  outline: 0;
+  border-width: 0 0 2px;
+}
+.card1 input:focus {
+  border-color: #f1f1f1;
+}
+.card1 select{
+  border: 2px solid #f1f1f1;
+  color: black;
+  background-color: white;
+  /* margin-left: 30px; */
+  margin: 7px;
+  height: 30px;
+  width:8vw;
+  display: inline-block;
+  transition: .5s;
+}
+.card1 span{
+  color:black;
+  margin-right: 5px;
+}
+.card1 h2{
+  color:black;
+}
+.card1 button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f1f1f1;
+   margin-top: 20px;
+}
+
+.card1 button:hover {
+  background-color: #f1f1f1;
+  color: black;
 }
