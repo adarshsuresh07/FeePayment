@@ -28,7 +28,7 @@ class Admin extends React.Component  {
       let error;
       if(this.state.username=='' || this.state.password=='')
       { 
-        error="ID & Password should not be empty"; 
+        this.setState({ error: 'ID & Password should not be empty' });
       }
       else
       {
@@ -47,7 +47,6 @@ class Admin extends React.Component  {
         this.setState({ error: 'Invalid ID or Password', password: ''});
       });
     }
-      this.setState({ error: error }); 
     }
 
     handleClick = () => {
