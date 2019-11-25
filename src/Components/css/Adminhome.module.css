@@ -63,7 +63,7 @@ padding: 20px;
  overflow:auto;
  }
 .cardtable img{
-  opacity:30%;
+  opacity: 30%;
 }
 
 /* Clear floats after the columns */
