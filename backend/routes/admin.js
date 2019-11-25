@@ -121,11 +121,33 @@ router.post('/addAdmin',cors.corsWithOptions, pass.verifyUser, async function(re
   let hashedPassword = await bcrypt.hash(req.body.password,10);
   let query = "INSERT INTO users VALUES('"+req.body.collegeid+"','"+hashedPassword+"','"+req.body.name+"','admin')";
   db.query(query,(err,result) => {
-    if(err)
+    if(err){
+      res.statusCode = 500;
       return res.json(err);
-    console.log('Successfully Inserted');
-    res.json({success: true});
+    }  
+    else {
+      console.log('Successfully Inserted');
+      res.json({success: true});
+    }  
   });
 });  
+
+router.options('/markPaid', cors.corsWithOptions, (req,res) => {res.sendStatus(200);})
+router.post('/markPaid', cors.corsWithOptions, pass.verifyUser, (req,res,next) => {
+  let date = new Date();
+  date = date.toISOString().slice(0, 19).replace('T', ' ');
+  let query = "UPDATE students SET paidornot=1, dateofpayment='"+date+"' WHERE admno='"+req.body.admno+"'";
+  db.query(query,(err,result) => {
+    if(err) {
+      res.statusCode = 500;
+      console.log(err);
+      return res.json(err);
+    }  
+    else{
+      console.log('Updated');
+      res.json({success: true});
+    }  
+  });
+});
 
 module.exports = router;
