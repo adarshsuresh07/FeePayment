@@ -37,7 +37,7 @@
 }
 
 .imagecss {
-    border: 15px solid #ddd;
+    border: 15px solid #ccc;
 }
 
 .imagecss img {
@@ -88,9 +88,19 @@ form {
     border-color: black;
 }
 
+.errorInvalid{
+    color: red ;
+    margin: auto;
+    margin-bottom: 6px;
+}
+
 .formstudent div {
     display: flex;
     flex-direction: row;
+}
+
+.tabbutton,.inactive{
+    width:50%;
 }
 
 .normal {

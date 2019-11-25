@@ -63,6 +63,7 @@ render(){
               <button className={Style.tabbutton}>Student</button>
               <button className={Style.inactive} onClick={this.handleClick}>Admin</button>
             </div>
+            {this.state.error.length > 0 && (<span className="errorInvalid" > {this.state.error} </span>)}
             <form >
               <input type="text" id="username" name="username" placeholder="Admission Number" className={Style.input1} value={this.state.username} onChange={this.handleChange} required />
               <input type="password" id="password" name="password" placeholder="Password" className={Style.input1} value={this.state.password} onChange={this.handleChange} required />
