@@ -136,7 +136,7 @@ class Reset extends Component {
         <div className="headerim">
         <img src={require("./cet.png")}/>
         </div>
-        <div className="form-wrapper">
+        <div className="form-wrappe">
           <h1>Password Reset</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             <div className="oldpass">
