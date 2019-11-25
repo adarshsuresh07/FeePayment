@@ -8,7 +8,7 @@ const Stripebtn = (props) => {
    
   const onToken = token => {
     const body = {
-      amount: 999,
+      amount: props.amount,
       token: token
   };
 
