@@ -1,14 +1,21 @@
 .confirm{
- border: 1px solid;
+  width:100%;
+  font-family: Arial;
+  background:#ccc;
+  height:100vh;
+  position: fixed;
+}
+
+.box{
   padding: 10px;
-  box-shadow: 5px 10px #888888;
   margin:7vw;
+  background: white;
   padding-top: 20px;
   display:flex;
   flex-direction: column;
   align-items: flex-start; 
 }
-.confirm span{
+.box span{
   margin-top:20px;
   margin-bottom: 20px;
 }

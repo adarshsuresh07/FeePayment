@@ -3,7 +3,6 @@ import Style from './css/Confirmation.module.css';
 import { isLogins, getTokens } from '../utils';
 import Axios from 'axios';
 import Stripebtn from './Stripebtn';
-
 class Confirm extends React.Component {
   constructor(props){
     super(props);
@@ -49,6 +48,7 @@ class Confirm extends React.Component {
     render(){
  return (
   <div className={Style.confirm}>
+  <div className={Style.box}>
     <h3> {this.state.admno} {this.state.name} {this.state.sem} {this.state.dept}</h3>
     <span>Scholarship Details: {this.state.scholname}</span>
     <span>Fee Deadline: {this.state.deadline}</span>
@@ -63,6 +63,7 @@ class Confirm extends React.Component {
     <Stripebtn amount={this.state.totalFee}/>
     <button className={Style.button6} type="Submit" onClick={this.cancel}> Cancel </button>
     </div>
+</div>
 </div>
 
   );}
