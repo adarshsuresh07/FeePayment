@@ -35,6 +35,11 @@
 .login:hover {
     background-color: white;
 }
+.errorInvalid{
+    color: red ;
+    margin: auto;
+    margin-bottom: 6px;
+}
 
 .imagecss {
     border: 15px solid #ccc;
@@ -68,6 +73,7 @@
     font-size: 17px;
 }
 
+
 form {
     background-color: #ddd;
     padding: 30px;
@@ -91,6 +97,9 @@ form {
 .formstudent div {
     display: flex;
     flex-direction: row;
+}
+.tabbutton,.inactive{
+    width:50%;
 }
 
 .normal {
