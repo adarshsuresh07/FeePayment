@@ -1,14 +1,14 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { isLogins } from '../utils'
+import { isLogins, ispaid } from '../utils'
 
-const PrivateRoute = ({component: Component, ...rest}) => {
+const ConfirmationRoute = ({component: Component, ...rest}) => {
     return (
 
         // Show the component only when the user is logged in
         // Otherwise, redirect the user to /signin page
         <Route {...rest} render={props => (
-            isLogins()?
+            (isLogins() && !ispaid())?
                 <Component {...props} />
             : <Redirect to="/" />
         )} />
@@ -16,4 +16,4 @@ const PrivateRoute = ({component: Component, ...rest}) => {
 };
 
 
-export default PrivateRoute;
+export default ConfirmationRoute;
