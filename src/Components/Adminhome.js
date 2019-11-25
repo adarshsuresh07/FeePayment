@@ -11,6 +11,7 @@ class Adminhome extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.submitSearch = this.submitSearch.bind(this);
     this.addStudent = this.addStudent.bind(this);
+    this.reset = this.reset.bind(this);
     this.state = {
       cId: '',
       name: '',
@@ -110,7 +111,7 @@ class Adminhome extends React.Component {
     this.props.history.push('/Newstudentreg');
   };
 
-  submit = ({target}) => {
+  submit({target}) {
     confirmAlert({
       title: 'Confirm to submit',
       message: 'Are you sure to do this.',
@@ -134,6 +135,10 @@ class Adminhome extends React.Component {
       ]
     });
   };
+
+  reset() {
+    this.props.history.push('/Reset');    
+  }
 
  
 
