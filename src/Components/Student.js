@@ -25,6 +25,7 @@ class Student extends React.Component {
 
   handleLogin(e) {
     e.preventDefault();
+    let error;
     if (this.state.username == '' || this.state.password == '') {
       this.setState({ error: 'ID & Password should not be empty' });
     }
