@@ -56,7 +56,7 @@ class Adminhome extends React.Component {
           <td>{schol}</td>
           <td>{deadline}</td>
           <td>{dept}</td>
-          <td>{paid=="Yes"?<button id={admno} className={Style.pay} onClick={this.submit} >Pay</button> :
+          <td>{paid=="No"?<button id={admno} className={Style.pay} onClick={this.submit} >Pay</button> :
           <button className={Style.pay} disabled>Pay</button>}</td>
           <td>{fine}</td>
         </tr>
