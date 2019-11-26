@@ -48,7 +48,7 @@ router.get('/', cors.corsWithOptions, pass.verifyUser, function (req, res, next)
 //get confimation page details
 router.options('/confirmation', cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
 router.get('/confirmation', cors.corsWithOptions, pass.verifyUser, function (req, res, next) {
-  const query = "SELECT s.admno,s.name,s.programme,s.sem,s.dept,c.scholname,f.amount,f.deadline,DATE_FORMAT(f.deadline,'%d %M %Y') as dlday FROM students s,fees f,scholarships c WHERE s.sem=f.sem and s.programme=f.programme and s.scholId=c.scholId and s.admno=" + req.user.username;
+  const query = "SELECT s.admno,s.name,s.programme,s.sem,s.dept,c.scholname,f.amount,f.deadline,DATE_FORMAT(f.deadline,'%d %M %Y') as dlday,c.concession FROM students s,fees f,scholarships c WHERE s.sem=f.sem and s.programme=f.programme and s.scholId=c.scholId and s.admno=" + req.user.username;
   db.query(query, function (err, result) {
     let fine = 0;
     let today = new Date();
@@ -62,8 +62,9 @@ router.get('/confirmation', cors.corsWithOptions, pass.verifyUser, function (req
       }
     }
     let dept = depts[result[0].dept];
+    let concession = result[0].concession;
     res.statusCode = 200;
-    let totalFee = result[0].amount + fine;
+    let totalFee = result[0].amount + fine - concession;
     let row = Object.assign(
       {
         'admno': result[0].admno,
@@ -76,6 +77,7 @@ router.get('/confirmation', cors.corsWithOptions, pass.verifyUser, function (req
         'dayslate': dayslate,
         'fee': result[0].amount,
         'fine': fine,
+        'concession' : concession,
         'totalfee': totalFee
       }
     );

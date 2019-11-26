@@ -16,6 +16,7 @@ class Confirm extends React.Component {
       deadline: '',
       fine: '',
       fee: '',
+      concession: '',
       totalFee: '',
       dayslate: ''
     };
@@ -37,6 +38,7 @@ class Confirm extends React.Component {
           deadline: res.data.deadline,
           fee: res.data.fee,
           fine: res.data.fine,
+          concession: res.data.concession,
           totalFee: res.data.totalfee
         });
       });
@@ -52,6 +54,7 @@ class Confirm extends React.Component {
           <span>Scholarship Details: {this.state.scholname}</span>
           <span>Fee Deadline: {this.state.deadline}</span>
           <span>Fee: Rs {this.state.fee}</span><br />
+          <span>Fee Concession: Rs {this.state.concession}</span><br />
           <div>
             <br />
             <span>Fine: Rs {this.state.fine}</span>
