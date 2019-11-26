@@ -60,9 +60,10 @@ class Confirm extends React.Component {
     </div>
     <span>Total Amount: Rs {this.state.totalFee}</span>
     <div>
-    <Stripebtn amount={this.state.totalFee}/>
+    <Stripebtn amount={this.state.totalFee} {...this.props}/>
     <button className={Style.button6} type="Submit" onClick={this.cancel}> Cancel </button>
     </div>
+
 </div>
 </div>
 
