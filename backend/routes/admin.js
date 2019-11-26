@@ -136,7 +136,7 @@ router.post('/addStudents', cors.corsWithOptions, pass.verifyUser, function (req
 
 //add new admin
 router.options('/addAdmin', cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
-router.post('/addAdmin', cors.corsWithOptions, pass.verifyUser, async function (req, res, next) {
+router.post('/addAdmin', cors.corsWithOptions, async function (req, res, next) {
   let hashedPassword = await bcrypt.hash(req.body.password, 10);
   let query = "INSERT INTO users VALUES('" + req.body.collegeid + "','" + hashedPassword + "','" + req.body.name + "','admin')";
   db.query(query, (err, result) => {
@@ -173,22 +173,20 @@ router.post('/markPaid', cors.corsWithOptions, pass.verifyUser, (req, res, next)
 //studentpassword reset
 router.options('/resetStudentPassword', cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
 router.post('/resetStudentPassword', cors.corsWithOptions, pass.verifyUser, (req, res, next) => {
-  let query = "SELECT dob from students where admno='"+req.body.admno+"'";
-  db.query(query,(err,result) => {
+  let query = "SELECT DATE_FORMAT(dob,'%d%m%Y') as date from students where admno='"+req.body.admno+"'";
+  db.query(query, async (err,result) => {
     if(err){
-      res.status(500).send(err);
+      res.statusCode = 500;
+      return res.json(err);      
     }
     else {
-      let date = result[0].dob;
-      let year = date.slice(0, 4);
-      let month = date.slice(5, 7);
-      let day = date.slice(8, 10);
-      let ddmmyyyy = day + month + year;
-      let hashedPassword = await bcrypt.hash(ddmmyyyy, 10);
-      let query2 = "UPDATE users set password='"+hashedPassword+"'";
+      let hashedPassword = await bcrypt.hash(result[0].date, 10);
+      let query2 = "UPDATE users set password='"+hashedPassword+"' WHERE username='"+req.body.admno+"'";
       db.query(query2, (err, result) => {
-        if (err)
-          return err;
+        if (err) {
+          res.statusCode = 500;
+          return res.json(err);
+        }
         else
           res.json({ success: true });
       });

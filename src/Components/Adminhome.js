@@ -11,6 +11,7 @@ class Adminhome extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.submitSearch = this.submitSearch.bind(this);
     this.addStudent = this.addStudent.bind(this);
+    this.submit = this.submit.bind(this);
     this.reset = this.reset.bind(this);
     this.resetstudent = this.resetstudent.bind(this);
     this.state = {
@@ -61,7 +62,7 @@ class Adminhome extends React.Component {
           <td>{paid === "No" ? <button id={admno} className={Style.pay} onClick={this.submit} >Pay</button> :
             <button className={Style.pay} disabled>Pay</button>}</td>
           <td>{fine}</td>
-          <td><button id={admno} className={Style.reset} onClick={this.resetstudent} >Reset</button></td>
+          <td><button id={admno} className={Style.reset} onClick={this.resetstudent}>Reset</button></td>
         </tr>
       )
     })
@@ -112,7 +113,7 @@ class Adminhome extends React.Component {
   addStudent() {
     this.props.history.push('/Newstudentreg');
   };
-<<<<<<< HEAD
+
   resetstudent({target}) {
     confirmAlert({
       title: 'Confirm to submit',
@@ -126,9 +127,9 @@ class Adminhome extends React.Component {
                 Authorization: 'bearer ' + getTokena()
               }
             };
-            Axios.post('http://localhost:3001/admin/markPaid', {admno: target.id}, config)
+            Axios.post('http://localhost:3001/admin/resetStudentPassword', {admno: target.id}, config)
             .then(res => {console.log('Success');this.submitSearch();})
-            .catch(err => console.log(err));
+            .catch(err => console.log('RED'));
           }
         },
         {
@@ -138,10 +139,6 @@ class Adminhome extends React.Component {
     });
   };
   submit({target}) {
-=======
-
-  submit({ target }) {
->>>>>>> d5caa1905370b9ede225251b0bc2f82ef6d7efe4
     confirmAlert({
       title: 'Confirm to submit',
       message: 'Are you sure to do this.',
