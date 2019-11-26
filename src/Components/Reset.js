@@ -1,6 +1,6 @@
-import React,{ Component} from 'react';
+import React, { Component } from 'react';
 import { isLogins, isLogina, getTokena, getTokens } from '../utils';
-import  './css/Reset.css';
+import './css/Reset.css';
 import { confirmAlert } from 'react-confirm-alert';
 import Axios from 'axios'
 
@@ -33,8 +33,8 @@ class Reset extends Component {
       confirmpass: null,
       hidden1: true,
       hidden2: true,
-      hidden3: true,  
-      
+      hidden3: true,
+
 
       formErrors: {
         oldpass: "",
@@ -43,7 +43,7 @@ class Reset extends Component {
       }
     };
 
-    this.handleSubmit =this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.toggleShow1 = this.toggleShow1.bind(this);
     // this.handlePasswordChange2 = this.handlePas  swordChange2.bind(this);
@@ -64,7 +64,7 @@ class Reset extends Component {
   handleSubmit = e => {
     e.preventDefault();
     if (formValid(this.state)) {
-      
+
       console.log(`
       --SUBMITTING--
       
@@ -73,61 +73,61 @@ class Reset extends Component {
     
       Confirm Password: ${this.state.confirmpass}
     `);
-     let config;
-     if(isLogina()) {
-      config = {
-        headers: {
-          Authorization: 'bearer '+getTokena()
-        },
-      };
-     }
-     else if(isLogins()) {
-      config = {
-        headers: {
-          Authorization: 'bearer '+getTokens()
-        },
-      };
-     }
-     Axios.post('http://localhost:3001/users/resetPassword', {
-       curPassword: this.state.oldpass,
-       newPassword: this.state.newpass
-     }, config)
-     .then(res => {
-        confirmAlert({
-          title: 'Password Reset Successfully',
-          buttons: [
-            {
-              label: 'Continue',
-              onClick: () => {
-                this.props.history.push('/');
+      let config;
+      if (isLogina()) {
+        config = {
+          headers: {
+            Authorization: 'bearer ' + getTokena()
+          },
+        };
+      }
+      else if (isLogins()) {
+        config = {
+          headers: {
+            Authorization: 'bearer ' + getTokens()
+          },
+        };
+      }
+      Axios.post('http://localhost:3001/users/resetPassword', {
+        curPassword: this.state.oldpass,
+        newPassword: this.state.newpass
+      }, config)
+        .then(res => {
+          confirmAlert({
+            title: 'Password Reset Successfully',
+            buttons: [
+              {
+                label: 'Continue',
+                onClick: () => {
+                  this.props.history.push('/');
+                }
               }
-            }
-          ]
-        });
-      })
-     .catch(err => console.log('Invalid Password'));
-      
-  }
-  else {
-    console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
-  }
-    
+            ]
+          });
+        })
+        .catch(err => console.log('Invalid Password'));
+
+    }
+    else {
+      console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+    }
+
   };
 
   handleChange = e => {
     e.preventDefault();
     const { name, value } = e.target;
     let formErrors = { ...this.state.formErrors };
-    var passval =this.state.newpass;
+    var passval = this.state.newpass;
     switch (name) {
-     
+
       // case "oldpass":
       //   formErrors.oldpass =
       //   passRegex.test(value) ? "" : "Minimum 5 characaters and maximum 20 required";
       //   break;
       case "newpass":
-        formErrors.newpass = passRegex.test(value) && value.length > 7  && value.length < 16 ? ""
-          : "Password should be contain one capital later, one small later, one symbol,one digit and length is at least 8 and at most 15" ;
+        formErrors.newpass = passRegex.test(value) && value.length > 7 && value.length < 16 ? ""
+          : "Password should be contain one capital later, one small later, one symbol,one digit and length is at least 8 and at most 15";
         break;
       case "confirmpass":
         formErrors.confirmpass =
@@ -147,27 +147,27 @@ class Reset extends Component {
     return (
       <div className={"wrappe"} >
         <div className="headerim">
-        <img src={require("./cet.png")} alt="College of Engineering Trivandrum"/>
+          <img src={require("./cet.png")} alt="College of Engineering Trivandrum" />
         </div>
         <div className="form-wrappe">
           <h1>Password Reset</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             <div className="oldpass">
-              
+
               <input
                 className={formErrors.oldpass.length > 0 ? "error" : "noerror"}
                 placeholder="Old Pasword"
-                type={this.state.hidden1 ? "password" : "text"}                name="oldpass"
+                type={this.state.hidden1 ? "password" : "text"} name="oldpass"
                 noValidate
                 onChange={this.handleChange}
               />
-              {this.state.hidden1? <i class="fa fa-circle-o" onClick={this.toggleShow1}></i> : <i class="fa fa-dot-circle-o" onClick={this.toggleShow1}></i>}
+              {this.state.hidden1 ? <i class="fa fa-circle-o" onClick={this.toggleShow1}></i> : <i class="fa fa-dot-circle-o" onClick={this.toggleShow1}></i>}
               {/* <button classname="eye" onclick={this.showhide} ref="eye">
               <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
               </button > */}
               {/* <i  
               className="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i> */}
-              
+
               {formErrors.oldpass.length > 0 && (
                 <div className="errorMessage">{formErrors.oldpass}</div>
               )}
@@ -176,11 +176,11 @@ class Reset extends Component {
               <input
                 className={formErrors.newpass.length > 0 ? "error" : null}
                 placeholder="New password"
-                type={this.state.hidden2 ? "password" : "text"}                name="newpass"
+                type={this.state.hidden2 ? "password" : "text"} name="newpass"
                 noValidate
                 onChange={this.handleChange}
               />
-              {this.state.hidden2? <i class="fa fa-circle-o" onClick={this.toggleShow2}></i> : <i class="fa fa-dot-circle-o" onClick={this.toggleShow2}></i>}
+              {this.state.hidden2 ? <i class="fa fa-circle-o" onClick={this.toggleShow2}></i> : <i class="fa fa-dot-circle-o" onClick={this.toggleShow2}></i>}
               {/* <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span> */}
 
               {/* <i className="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i> */}
@@ -192,11 +192,11 @@ class Reset extends Component {
               <input
                 className={formErrors.confirmpass.length > 0 ? "error" : null}
                 placeholder="Confirm Password"
-                type={this.state.hidden3 ? "password" : "text"}                name="confirmpass"
+                type={this.state.hidden3 ? "password" : "text"} name="confirmpass"
                 noValidate
                 onChange={this.handleChange}
               />
-              {this.state.hidden3? <i class="fa fa-circle-o" onClick={this.toggleShow3}></i> : <i class="fa fa-dot-circle-o" onClick={this.toggleShow3}></i>}
+              {this.state.hidden3 ? <i class="fa fa-circle-o" onClick={this.toggleShow3}></i> : <i class="fa fa-dot-circle-o" onClick={this.toggleShow3}></i>}
               {/* <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span> */}
               {/* <div icon>
               <i className="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i>
@@ -206,7 +206,7 @@ class Reset extends Component {
               )}
             </div>
             <div className="reset">
-              <button type="submit" onClick={this.handleSubmit}>Reset</button> 
+              <button type="submit" onClick={this.handleSubmit}>Reset</button>
             </div>
           </form>
         </div>
