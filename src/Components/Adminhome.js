@@ -12,6 +12,7 @@ class Adminhome extends React.Component {
     this.submitSearch = this.submitSearch.bind(this);
     this.addStudent = this.addStudent.bind(this);
     this.reset = this.reset.bind(this);
+    this.resetstudent = this.resetstudent.bind(this);
     this.state = {
       cId: '',
       name: '',
@@ -60,6 +61,7 @@ class Adminhome extends React.Component {
           <td>{paid==="No"?<button id={admno} className={Style.pay} onClick={this.submit} >Pay</button> :
           <button className={Style.pay} disabled>Pay</button>}</td>
           <td>{fine}</td>
+          <td><button id={admno} className={Style.reset} onClick={this.resetstudent} >Reset</button></td>
         </tr>
       )
     })
@@ -110,7 +112,30 @@ class Adminhome extends React.Component {
   addStudent() {
     this.props.history.push('/Newstudentreg');
   };
-
+  resetstudent({target}) {
+    confirmAlert({
+      title: 'Confirm to submit',
+      message: 'Are you sure to do this.',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => {
+            let config = {
+              headers: {
+                Authorization: 'bearer ' + getTokena()
+              }
+            };
+            Axios.post('http://localhost:3001/admin/markPaid', {admno: target.id}, config)
+            .then(res => {console.log('Success');this.submitSearch();})
+            .catch(err => console.log(err));
+          }
+        },
+        {
+          label: 'No',
+        }
+      ]
+    });
+  };
   submit({target}) {
     confirmAlert({
       title: 'Confirm to submit',

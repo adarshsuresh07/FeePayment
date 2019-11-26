@@ -217,3 +217,15 @@
     background-color: #cccccc;
     color: #666666;
   }
+  .reset {
+    border: 1px solid black;
+    background-color:red;
+    color: #ffffff;
+    font-size:1.3vw;
+    padding: 0.5vw 1vw;
+  }
+  .reset:hover {
+    border: 1px solid black;
+    background-color: #c40814;
+    color: #ffffff;
+  }
