@@ -17,7 +17,7 @@ class App extends React.Component {
 
   render() {
     return (
-  <BrowserRouter>
+      <BrowserRouter>
         <Switch>
           <PublicRoute restricted={true} component={Student} path="/" exact />
           <PublicRoute restricted={true} component={Admin} path="/Admin" exact />

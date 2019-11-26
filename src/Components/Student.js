@@ -36,43 +36,44 @@ class Student extends React.Component {
       })
         .then(res => {
           logins(res.data.token);
-          this.setState({ error: ''});
+          this.setState({ error: '' });
           this.props.history.push('/Studenthome');
         })
         .catch(err => {
-          this.setState({ error: 'Invalid ID or Password', password: ''});
+          this.setState({ error: 'Invalid ID or Password', password: '' });
         });
     }
   };
 
-  handleClick(){
+  handleClick() {
     this.props.history.push('/Admin');
   };
-render(){
-  return (
-    <div className={Style.wrap}>
-      <div className={Style.row}>
-        <div className={Style.leftcolumn}>
-          <div className={Style.imagecss}>
-            <img src={require("./cet.png")} alt="College of Engineering Trivandrum" />
-          </div>
-        </div>
-        <div className={Style.rightcolumn}>
-          <div className={Style.formstudent}>
-            <div>
-              <div className={Style.tabbutton}>Student</div>
-              <div className={Style.inactive} onClick={this.handleClick}>Admin</div>
+  render() {
+    return (
+      <div className={Style.wrap}>
+        <div className={Style.row}>
+          <div className={Style.leftcolumn}>
+            <div className={Style.imagecss}>
+              <img src={require("./cet.png")} alt="College of Engineering Trivandrum" />
             </div>
-            <form >
-            {this.state.error.length > 0 && (<span className={Style.error} > {this.state.error} </span>)}
-              <input type="text" id="username" name="username" placeholder="Admission Number" className={Style.input1} value={this.state.username} onChange={this.handleChange} required />
-              <input type="password" id="password" name="password" placeholder="Password" className={Style.input1} value={this.state.password} onChange={this.handleChange} required />
-              <button type="submit" className={Style.login} onClick={this.handleLogin}>Login</button>
-            </form>
+          </div>
+          <div className={Style.rightcolumn}>
+            <div className={Style.formstudent}>
+              <div>
+                <div className={Style.tabbutton}>Student</div>
+                <div className={Style.inactive} onClick={this.handleClick}>Admin</div>
+              </div>
+              <form >
+                {this.state.error.length > 0 && (<span className={Style.error} > {this.state.error} </span>)}
+                <input type="text" id="username" name="username" placeholder="Admission Number" className={Style.input1} value={this.state.username} onChange={this.handleChange} required />
+                <input type="password" id="password" name="password" placeholder="Password" className={Style.input1} value={this.state.password} onChange={this.handleChange} required />
+                <button type="submit" className={Style.login} onClick={this.handleLogin}>Login</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-}}
+    );
+  }
+}
 export default Student;
