@@ -1,5 +1,5 @@
 import React from 'react';
-import { logouts, getTokens, paidcheck } from '../utils';
+import { logouts, getTokens, notpaid , paid} from '../utils';
 import Style from './css/Studenthome.module.css';
 import Axios from 'axios';
 class Studenthome extends React.Component  {
@@ -39,7 +39,7 @@ class Studenthome extends React.Component  {
         paid: res.data.paid,
         fine: res.data.fine
       });
-       this.state.paid=='Yes'? paidcheck(true):paidcheck(false);
+       this.state.paid==='Yes'? paid():notpaid("Notpaid");
     });
   }
     handleLogout(){
@@ -56,7 +56,7 @@ render(){
  return (
 <div className={Style.home}>
  <div className={Style.header}>
-  <img src={require("./cet.png")}/>
+  <img src={require("./cet.png")} alt="College of Engineering Trivandrum"/>
  </div>
  <div className={Style.row}>
   <div className={Style.leftcolumn}>
@@ -66,7 +66,7 @@ render(){
       <span id='schol'>Scholarship Details: {this.state.schol}</span>
       <span id='deadline'>Fee Deadline: {this.state.deadline}</span>
       <span id='paid'>Paid : {this.state.paid}</span>
-      {this.state.paid == 'No' ?
+      {this.state.paid === 'No' ?
       <div>
       <div className={Style.pay}>
       <span title="Base fine:Rs.10 It will be double after next two days and so on" className={Style.fine}>?</span>

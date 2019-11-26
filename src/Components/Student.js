@@ -1,6 +1,6 @@
 import React from 'react';
 import Style from './css/Student.module.css';
-import { logins, logouta, logouts, isLogins } from '../utils';
+import { logins, logouta, logouts } from '../utils';
 import Axios from 'axios';
 
 class Student extends React.Component {
@@ -25,8 +25,7 @@ class Student extends React.Component {
 
   handleLogin(e) {
     e.preventDefault();
-    let error;
-    if (this.state.username == '' || this.state.password == '') {
+    if (this.state.username === '' || this.state.password === '') {
       this.setState({ error: 'ID & Password should not be empty' });
     }
     else {
@@ -50,13 +49,12 @@ class Student extends React.Component {
     this.props.history.push('/Admin');
   };
 render(){
-  const { error } = this.state;
   return (
     <div className={Style.wrap}>
       <div className={Style.row}>
         <div className={Style.leftcolumn}>
           <div className={Style.imagecss}>
-            <img src={require("./cet.png")} />
+            <img src={require("./cet.png")} alt="College of Engineering Trivandrum" />
           </div>
         </div>
         <div className={Style.rightcolumn}>

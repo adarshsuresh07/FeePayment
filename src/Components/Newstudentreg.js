@@ -108,29 +108,29 @@ class Newstudentreg extends Component {
         switch (name) {
             case "admNum":
                 formErrors.admNum =
-                    (admNumRegx.test(value) && value.length ==6) ? "" : "Please enter a valid Admission number";
+                    (admNumRegx.test(value) && value.length === 6) ? "" : "Please enter a valid Admission number";
                 break;
             case "fullName":
                 formErrors.fullName = ( fullNameRegx.test(value)  && value.length < 31 && value.length > 4) ? "" : "Maximum 30 alphabets an minimum 5 alphabets";
                 break;
             case "dob":
-                formErrors.dob = value.length == 0 ? "Date of birth required" : "";
+                formErrors.dob = value.length === 0 ? "Date of birth required" : "";
                 break;
             case "program":
                 formErrors.program =
-                    value.length == 0 ? "Error" : "";
+                    value.length === 0 ? "Error" : "";
                 break;
             case "department":
                 formErrors.department =
-                    value.length == 0 ? "Error" : "";
+                    value.length === 0 ? "Error" : "";
                 break;
             case "sem":
                 formErrors.sem =
-                    value.length == 0 ? "Error" : "";
+                    value.length === 0 ? "Error" : "";
                 break;
             case "scholorship":
                 formErrors.scholorship =
-                    value.length == 0 ? "Error" : "";
+                    value.length === 0 ? "Error" : "";
                 break;
 
             default:
@@ -218,7 +218,7 @@ class Newstudentreg extends Component {
                                 <span className="errorMessage">{formErrors.program}</span>
                             )}
                         </div>
-                        {this.state.program == "UG" ? (
+                        {this.state.program === "UG" ? (
                             <div className="depsem">
                                 <div className="department">
                                     {/* <label htmlFor="userName">User Name</label> */}
@@ -285,7 +285,7 @@ class Newstudentreg extends Component {
 
                         ) : null}
 
-                        {this.state.program == "PG" ?
+                        {this.state.program === "PG" ?
                         (
                                 <div className="depsem">
                                     <div className="department">

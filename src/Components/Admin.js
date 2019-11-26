@@ -25,8 +25,7 @@ class Admin extends React.Component  {
 
     handleLogin = (e) => {
        e.preventDefault();
-      let error;
-      if(this.state.username=='' || this.state.password=='')
+      if(this.state.username==='' || this.state.password==='')
       { 
         this.setState({ error: 'ID & Password should not be empty' });
       }
@@ -53,13 +52,12 @@ class Admin extends React.Component  {
         this.props.history.push('/');
     }
 render(){
-  const {error} = this.state;
     return (
       <div className={Style.wrap}>
   <div className={Style.row}>
     <div className={Style.leftcolumn}>
       <div className={Style.imagecss}>
-        <img src={require("./cet.png")}/>
+        <img src={require("./cet.png")} alt="College of Engineering Trivandrum"/>
       </div>
     </div>
     <div className={Style.rightcolumn}>
