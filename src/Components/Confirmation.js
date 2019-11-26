@@ -1,12 +1,12 @@
 import React from 'react';
 import Style from './css/Confirmation.module.css';
-import { isLogins, getTokens } from '../utils';
+import { getTokens } from '../utils';
 import Axios from 'axios';
 import Stripebtn from './Stripebtn';
 class Confirm extends React.Component {
   constructor(props){
     super(props);
-    this.cancel = this.cancel.bind(this);
+    this.Cancel = this.Cancel.bind(this);
     this.state = {
       admno: '',
       name: '',
@@ -41,9 +41,8 @@ class Confirm extends React.Component {
       });
     });
   }
-      cancel(){
-      isLogins()?  
-      this.props.history.push('/Studenthome'): this.props.history.push('/');
+      Cancel(){
+        this.props.mutateState(false);
     }
     render(){
  return (
@@ -61,7 +60,7 @@ class Confirm extends React.Component {
     <span>Total Amount: Rs {this.state.totalFee}</span>
     <div>
     <Stripebtn amount={this.state.totalFee} {...this.props}/>
-    <button className={Style.button6} type="Submit" onClick={this.cancel}> Cancel </button>
+    <button className={Style.button6} type="Submit" onClick={this.Cancel}> Cancel </button>
     </div>
 
 </div>
