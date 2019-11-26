@@ -23,7 +23,7 @@ class App extends React.Component {
           <PublicRoute restricted={true} component={Admin} path="/Admin" exact />
           <StudentRoute component={Studenthome} path="/Studenthome" exact />
           <AdminRoute component={Adminhome} path="/Adminhome" exact />
-          <ConfirmationRoute component={Confirm} path="/Confirmation" exact />
+          <StudentRoute component={Confirm} path="/Confirmation" exact />
           <ResetRoute component={Reset} path="/Reset" exact />
           <AdminRoute component={Newstudentreg} path="/Newstudentreg" exact />
         </Switch>
