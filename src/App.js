@@ -12,6 +12,7 @@ import StudentRoute from './Components/Studentroute.js';
 import AdminRoute from './Components/Adminroute.js';
 import Reset from './Components/Reset.js';
 import Newstudentreg from './Components/Newstudentreg';
+import Errorpage from './Components/Errorpage.js'
 class App extends React.Component {
 
 
@@ -26,6 +27,7 @@ class App extends React.Component {
           <StudentRoute component={Confirm} path="/Confirmation" exact />
           <ResetRoute component={Reset} path="/Reset" exact />
           <AdminRoute component={Newstudentreg} path="/Newstudentreg" exact />
+          <PublicRoute restricted={false} component={Errorpage} path="/error" exact />
         </Switch>
       </BrowserRouter>
     );
