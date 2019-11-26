@@ -3,7 +3,7 @@ import { logouta, getTokena } from '../utils';
 import Style from './css/Adminhome.module.css';
 import Axios from 'axios'
 import { confirmAlert } from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css'; 
+import 'react-confirm-alert/src/react-confirm-alert.css';
 class Adminhome extends React.Component {
   constructor(props) {
     super(props);
@@ -57,8 +57,8 @@ class Adminhome extends React.Component {
           <td>{schol}</td>
           <td>{deadline}</td>
           <td>{dept}</td>
-          <td>{paid==="No"?<button id={admno} className={Style.pay} onClick={this.submit} >Pay</button> :
-          <button className={Style.pay} disabled>Pay</button>}</td>
+          <td>{paid === "No" ? <button id={admno} className={Style.pay} onClick={this.submit} >Pay</button> :
+            <button className={Style.pay} disabled>Pay</button>}</td>
           <td>{fine}</td>
         </tr>
       )
@@ -111,7 +111,7 @@ class Adminhome extends React.Component {
     this.props.history.push('/Newstudentreg');
   };
 
-  submit({target}) {
+  submit({ target }) {
     confirmAlert({
       title: 'Confirm to submit',
       message: 'Are you sure to do this.',
@@ -124,9 +124,9 @@ class Adminhome extends React.Component {
                 Authorization: 'bearer ' + getTokena()
               }
             };
-            Axios.post('http://localhost:3001/admin/markPaid', {admno: target.id}, config)
-            .then(res => {console.log('Success');this.submitSearch();})
-            .catch(err => console.log(err));
+            Axios.post('http://localhost:3001/admin/markPaid', { admno: target.id }, config)
+              .then(res => { console.log('Success'); this.submitSearch(); })
+              .catch(err => console.log(err));
           }
         },
         {
@@ -137,10 +137,10 @@ class Adminhome extends React.Component {
   };
 
   reset() {
-    this.props.history.push('/Reset');    
+    this.props.history.push('/Reset');
   }
 
- 
+
 
   render() {
     return (
@@ -212,7 +212,7 @@ class Adminhome extends React.Component {
                     </tbody>
                   </table>
                 </div>
-                : <img src={require("./search.png")} alt="Search for Results"/>}
+                : <img src={require("./search.png")} alt="Search for Results" />}
             </div>
           </div>
           <div className={Style.rightcolumn}>
