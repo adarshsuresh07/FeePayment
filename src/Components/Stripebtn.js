@@ -1,6 +1,7 @@
 import React from "react";
 import Style from './css/Confirmation.module.css';
 import { getTokens, paid } from '../utils';
+import { confirmAlert } from 'react-confirm-alert';
 import StripeCheckout from "react-stripe-checkout";
 import Axios from "axios";
 
@@ -19,13 +20,20 @@ const Stripebtn = (props) => {
   };
   Axios.post("http://localhost:3001/payment", body, config)
   .then(response => {
-    console.log(response);
-    alert("Payment Success");
-    paid();
+    confirmAlert({
+      title: 'Payment Successfull',
+      buttons: [
+        {
+          label: 'Continue',
+          onClick: () => {
+            props.history.push('/');
+          }
+        }
+      ]
+    });
   })
   .catch(error => {
-    console.log("Payment Error: ", error);
-    alert("Payment Error");
+    props.history.push('/Errorpage');
   });
   };
 
