@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { isLogina } from '../utils'
-import Adminhome from './Adminhome.js'
 
 const PrivateRoute = ({component: Component, ...rest}) => {
     return (

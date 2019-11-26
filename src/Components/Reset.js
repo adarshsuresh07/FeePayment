@@ -147,7 +147,7 @@ class Reset extends Component {
     return (
       <div className={"wrappe"} >
         <div className="headerim">
-        <img src={require("./cet.png")}/>
+        <img src={require("./cet.png")} alt="College of Engineering Trivandrum"/>
         </div>
         <div className="form-wrappe">
           <h1>Password Reset</h1>

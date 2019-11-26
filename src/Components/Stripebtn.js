@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Style from './css/Confirmation.module.css';
 import { getTokens, paidcheck } from '../utils';
 import StripeCheckout from "react-stripe-checkout";
