@@ -35,7 +35,7 @@ router.get('/',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
 
 router.options('/search', cors.corsWithOptions, (req,res) => {res.sendStatus(200); })
 router.get('/search',cors.corsWithOptions, pass.verifyUser, function(req, res, next) {
-  let query = "SELECT s.admno,s.name,s.programme,s.sem,s.dept,s.paidornot,c.scholname,f.deadline,DATE_FORMAT(f.deadline,'%d %M %Y') as dlday FROM students s,fees f,scholarships c WHERE s.sem=f.sem and s.programme=f.programme and s.scholid=c.scholid";
+  let query = "SELECT s.admno,s.name,s.programme,s.sem,s.dept,s.paidornot,c.scholname,f.deadline,DATE_FORMAT(f.deadline,'%d %M %Y') as dlday, dateofpayment FROM students s,fees f,scholarships c WHERE s.sem=f.sem and s.programme=f.programme and s.scholid=c.scholid";
   let keys = Object.keys(req.query);
   let values = Object.values(req.query);
   for(let i=0;i<keys.length;++i) {
@@ -58,8 +58,12 @@ router.get('/search',cors.corsWithOptions, pass.verifyUser, function(req, res, n
         let fine = 'No';
         let paid = row.paidornot === 0?'No':'Yes';
         let today = new Date();
-        let dayslate = Math.floor((today.getTime() - row.deadline.getTime())/(1000*60*60*24));
-        if(row.paidOrNot && dayslate>0) {
+        let dayslate;
+        if(!row.paidornot)
+          dayslate = Math.floor((today.getTime() - row.deadline.getTime())/(1000*60*60*24));
+        else 
+          dayslate = Math.floor((row.dateofpayment.getTime() - row.deadline.getTime())/(1000*60*60*24));
+        if(dayslate>0) {
           fine = 'Yes';
         }
         let dept = depts[row.dept];
