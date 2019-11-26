@@ -2,28 +2,38 @@ const TOKEN_KEY = 'jwt';
 export const logins = (token) => {
     localStorage.setItem(TOKEN_KEY, token);
 }
-export const paidcheck = (k) => {
-    localStorage.setItem('paid', k);
-}
+
 export const logouts = () => {
     localStorage.removeItem(TOKEN_KEY);
 }
-export const ispaid = () => {
-    return localStorage.getItem('paid');
-}
-
 export const isLogins = () => {
     if (localStorage.getItem(TOKEN_KEY)) {
         return true;
     }
-
     return false;
 }
-
 export const getTokens = () => {
-  let token = localStorage.getItem(TOKEN_KEY);
-  return token;
+    let token = localStorage.getItem(TOKEN_KEY);
+    return token;
+  }
+
+
+export const notpaid = (token) => {
+    localStorage.setItem('paid', token);
 }
+export const ispaid = () => {
+    if (localStorage.getItem('paid')) {
+        return true;
+    }
+    return false;
+}
+export const paid = () => {
+    localStorage.removeItem('paid');
+}
+
+
+
+
 
 const TOKEN_KEYA = 'jwt1';
 

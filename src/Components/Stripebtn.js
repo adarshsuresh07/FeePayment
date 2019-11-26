@@ -1,6 +1,6 @@
 import React from "react";
 import Style from './css/Confirmation.module.css';
-import { getTokens, paidcheck } from '../utils';
+import { getTokens, paid } from '../utils';
 import StripeCheckout from "react-stripe-checkout";
 import Axios from "axios";
 
@@ -21,7 +21,7 @@ const Stripebtn = (props) => {
   .then(response => {
     console.log(response);
     alert("Payment Success");
-    paidcheck(true);
+    paid();
   })
   .catch(error => {
     console.log("Payment Error: ", error);
