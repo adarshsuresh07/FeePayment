@@ -1,6 +1,6 @@
 import React from "react";
 import Style from './css/Confirmation.module.css';
-import { getTokens, paid } from '../utils';
+import { getTokens } from '../utils';
 import { confirmAlert } from 'react-confirm-alert';
 import StripeCheckout from "react-stripe-checkout";
 import Axios from "axios";

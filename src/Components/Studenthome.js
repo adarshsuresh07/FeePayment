@@ -1,11 +1,13 @@
 import React from 'react';
 import { logouts, getTokens, notpaid , paid} from '../utils';
 import Style from './css/Studenthome.module.css';
+import Confirm from './Confirmation'
 import Axios from 'axios';
 class Studenthome extends React.Component  {
   constructor(props){
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
+    this.cancel=this.cancel.bind(this);
     this.reset = this.reset.bind(this);
     this.pay = this.pay.bind(this);
     this.state = {
@@ -17,7 +19,8 @@ class Studenthome extends React.Component  {
       schol: '',
       deadline: '',
       paid: '',
-      fine: ''
+      fine: '',
+      toggle: false
     };
   };
   componentDidMount() { 
@@ -39,7 +42,6 @@ class Studenthome extends React.Component  {
         paid: res.data.paid,
         fine: res.data.fine
       });
-       this.state.paid==='Yes'? paid():notpaid("Notpaid");
     });
   }
     handleLogout(){
@@ -47,13 +49,18 @@ class Studenthome extends React.Component  {
       this.props.history.push('/');
     }
      pay(){
-      this.props.history.push('/Confirmation');
+      // this.props.history.push('/Confirmation');
+      this.setState({toggle: true});
     }
+    cancel(value){
+      this.setState({toggle : false});
+  }
     reset(){
       this.props.history.push('/Reset');
     }
 render(){
  return (
+   this.state.toggle? <Confirm {...this.props} mutateState={this.cancel}/>:
 <div className={Style.home}>
  <div className={Style.header}>
   <img src={require("./cet.png")} alt="College of Engineering Trivandrum"/>

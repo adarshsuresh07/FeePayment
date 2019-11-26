@@ -17,24 +17,6 @@ export const getTokens = () => {
     return token;
   }
 
-
-export const notpaid = (token) => {
-    localStorage.setItem('paid', token);
-}
-export const ispaid = () => {
-    if (localStorage.getItem('paid')) {
-        return true;
-    }
-    return false;
-}
-export const paid = () => {
-    localStorage.removeItem('paid');
-}
-
-
-
-
-
 const TOKEN_KEYA = 'jwt1';
 
 export const logina = (token) => {
