@@ -10,7 +10,7 @@ const Stripebtn = (props) => {
 
   const onToken = token => {
     const body = {
-      amount: props.amount,
+      amount: props.amount*100,
       token: token
     };
     let config = {

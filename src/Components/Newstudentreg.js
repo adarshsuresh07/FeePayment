@@ -356,7 +356,7 @@ class Newstudentreg extends Component {
 
 
               >
-                <option value="" hidden >Scholorship</option>
+                <option value="" hidden >Scholarship</option>
                 <option value="0">NONE</option>
                 <option value="1">E-Grantz</option>
                 <option value="2">Merit</option>
