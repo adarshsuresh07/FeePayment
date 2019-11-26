@@ -82,6 +82,7 @@ router.get('/search', cors.corsWithOptions, pass.verifyUser, function (req, res,
             'dept': dept,
             'paid': paid,
             'fine': fine,
+            'reset': 0
           }
         );
         rows.push(resRow);
