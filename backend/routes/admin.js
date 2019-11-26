@@ -17,7 +17,7 @@ const depts = {
 
 function getISTDate() {
   let dateUTC = new Date();
-  let dateUTC = dateUTC.getTime() 
+  dateUTC = dateUTC.getTime() 
   let dateIST = new Date(dateUTC);
   //date shifting for IST timezone (+5 hours and 30 minutes)
   dateIST.setHours(dateIST.getHours() + 5); 

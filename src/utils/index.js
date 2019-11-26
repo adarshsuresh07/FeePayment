@@ -2,8 +2,8 @@ const TOKEN_KEY = 'jwt';
 export const logins = (token) => {
     localStorage.setItem(TOKEN_KEY, token);
 }
-export const paidcheck = (boolean) => {
-    localStorage.setItem('paid', boolean);
+export const paidcheck = (k) => {
+    localStorage.setItem('paid', k);
 }
 export const logouts = () => {
     localStorage.removeItem(TOKEN_KEY);

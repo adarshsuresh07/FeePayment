@@ -57,7 +57,7 @@ class Adminhome extends React.Component {
           <td>{schol}</td>
           <td>{deadline}</td>
           <td>{dept}</td>
-          <td>{paid=="No"?<button id={admno} className={Style.pay} onClick={this.submit} >Pay</button> :
+          <td>{paid==="No"?<button id={admno} className={Style.pay} onClick={this.submit} >Pay</button> :
           <button className={Style.pay} disabled>Pay</button>}</td>
           <td>{fine}</td>
         </tr>
@@ -146,7 +146,7 @@ class Adminhome extends React.Component {
     return (
       <div className={Style.home}>
         <div className={Style.header}>
-          <img src={require("./cet.png")} />
+          <img src={require("./cet.png")} alt="College of Engineering Trivandrum" />
         </div>
 
         <div className={Style.row}>
@@ -212,7 +212,7 @@ class Adminhome extends React.Component {
                     </tbody>
                   </table>
                 </div>
-                : <img src={require("./search.png")} />}
+                : <img src={require("./search.png")} alt="Search for Results"/>}
             </div>
           </div>
           <div className={Style.rightcolumn}>
