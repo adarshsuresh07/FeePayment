@@ -33,7 +33,7 @@ const Stripebtn = (props) => {
     });
   })
   .catch(error => {
-    props.history.push('/Errorpage');
+    props.history.push('/error');
   });
   };
 
