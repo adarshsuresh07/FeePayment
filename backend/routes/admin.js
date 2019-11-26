@@ -170,4 +170,29 @@ router.post('/markPaid', cors.corsWithOptions, pass.verifyUser, (req, res, next)
   });
 });
 
+//studentpassword reset
+router.options('/resetStudentPassword', cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
+router.post('/resetStudentPassword', cors.corsWithOptions, pass.verifyUser, (req, res, next) => {
+  let query = "SELECT dob from students where admno='"+req.body.admno+"'";
+  db.query(query,(err,result) => {
+    if(err){
+      res.status(500).send(err);
+    }
+    else {
+      let date = result[0].dob;
+      let year = date.slice(0, 4);
+      let month = date.slice(5, 7);
+      let day = date.slice(8, 10);
+      let ddmmyyyy = day + month + year;
+      let hashedPassword = await bcrypt.hash(ddmmyyyy, 10);
+      let query2 = "UPDATE users set password='"+hashedPassword+"'";
+      db.query(query2, (err, result) => {
+        if (err)
+          return err;
+        else
+          res.json({ success: true });
+      });
+    }
+  })
+});
 module.exports = router;
