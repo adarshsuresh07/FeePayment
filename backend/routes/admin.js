@@ -19,7 +19,6 @@ function getISTDate() {
   let dateUTC = new Date();
   dateUTC = dateUTC.getTime() 
   let dateIST = new Date(dateUTC);
-  //date shifting for IST timezone (+5 hours and 30 minutes)
   dateIST.setHours(dateIST.getHours() + 5); 
   dateIST.setMinutes(dateIST.getMinutes() + 30);
   return dateIST;
