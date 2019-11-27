@@ -8,7 +8,7 @@ import Axios from 'axios'
 
 
 
-var passRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+var passRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})");
 
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
