@@ -1,5 +1,5 @@
 import React from 'react';
-import { logouts, getTokens, notpaid, paid } from '../utils';
+import { logouts, getTokens } from '../utils';
 import Style from './css/Studenthome.module.css';
 import Confirm from './Confirmation'
 import Axios from 'axios';
