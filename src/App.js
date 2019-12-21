@@ -4,7 +4,6 @@ import Student from './Components/Student.js'
 import Admin from './Components/Admin.js'
 import Studenthome from './Components/Studenthome.js';
 import Adminhome from './Components/Adminhome.js';
-import Confirm from './Components/Confirmation.js';
 import PublicRoute from './Components/Publicroute.js';
 import ResetRoute from './Components/ResetRoute.js';
 import StudentRoute from './Components/Studentroute.js';
