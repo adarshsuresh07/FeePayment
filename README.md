@@ -14,6 +14,7 @@ The current fee payment system in our college involves skipping class and standi
 ## Behind the Idea
 This was our Application Development Lab project assigned by our Associate Professor Vipin Vasu. This was our first product based project and we learned different frameworks to implement the system. 
 ![ER Diagram for CETPay](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/er.jpg)
+<img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/er.jpg" width="50%"/>
 ## Stacks Used
 
 The whole application is build on the following : 
