@@ -1,4 +1,5 @@
 
+
 # CETPay
 
 The current fee payment system in our college involves skipping class and standing in long queues. This process is tiresome as well as time consuming. Our project tries to make life easier for students in paying their fees by providing an Online Platform to do so.Here we present the various functionalities of our Online Fee Payment System CETPay
@@ -13,7 +14,7 @@ The current fee payment system in our college involves skipping class and standi
 
 ## Behind the Idea
 This was our Application Development Lab project assigned by our Associate Professor Vipin Vasu. This was our first product based project and we learned different frameworks to implement the system. 
-![ER Diagram for CETPay](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/er.jpg)
+- ER Dialgram
 <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/er.jpg" width="50%"/>
 ## Stacks Used
 
@@ -47,23 +48,30 @@ There are two types of Logins :
 ## Features Implemented
 
  - [x] Student authentication
- ![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/loginstudent.jpg | width=500)
+ <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/loginstudent.jpg" width="80%"/>
+ 
  - [x] Student Dashboard
- ![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/studentdash.png)
+  <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/studentdash.png" width="80%"/>
+  
  - [x] Initiating Payment
- ![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/confirmation.png)
- ![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/pay.png)
+  <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/confirmation.png" width="80%"/>
+  
+  <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/pay.png" width="80%"/>
+  
  - [x] Payment Details
 	 - The major reason we have used Stripe for the project is that it provides a test mode.
 	- On Successful Payment, the payment receipt is sent to the email provided by the student at the time of
 payment.
-![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/receipt.png)
+ <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/receipt.png" width="80%"/>
+
  - [x] Reset Password
-![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/resetpass.png)
+  <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/resetpass.png" width="80%"/>
+
  - [x] Admin authentication
-![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/loginadmin.png)
+ <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/loginadmin.png" width="80%"/>
+ 
  - [x] Admin Dashboard
-![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/admindash.png)
+ <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/admindash.png" width="80%"/>
  - [x]  Filters:
 	 - Search by Name  
 	 - Based on UG/ PG
@@ -72,11 +80,13 @@ payment.
 	 - Based on Paid/ Not paid
 	 - Based on Scholarship
 	 
-![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/searchsem.png)
+ <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/searchsem.png" width="80%"/>
+ 
  - [x] New Student Registration
-![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/register.png)
+ <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/register.png" width="80%"/>
+ 
  - [x] Online Payment Log
-![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/log.png)
+ <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/log.png" width="80%"/>
 
 ## Contributors
 
