@@ -48,20 +48,21 @@ There are two types of Logins :
  - [x] Student authentication
  ![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/loginstudent.jpg)
  - [x] Student Dashboard
- ![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/studentdash.png)
+ ![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/studentdash.png)
  - [x] Initiating Payment
- ![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/confirmation.png)![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/pay.png)
+ ![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/confirmation.png)
+ ![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/pay.png)
  - [x] Payment Details
 	 - The major reason we have used Stripe for the project is that it provides a test mode.
 	- On Successful Payment, the payment receipt is sent to the email provided by the student at the time of
 payment.
-![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/receipt.png)
+![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/receipt.png)
  - [x] Reset Password
-![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/resetpass.png)
+![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/resetpass.png)
  - [x] Admin authentication
-![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/loginadmin.png)
+![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/loginadmin.png)
  - [x] Admin Dashboard
-![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/admindash.png)
+![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/admindash.png)
  - [x]  Filters:
 	 - Search by Name  
 	 - Based on UG/ PG
@@ -69,12 +70,12 @@ payment.
 	 - Based on Department
 	 - Based on Paid/ Not paid
 	 - Based on Scholarship
-	
-![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/searchsem.png)
+	 
+![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/searchsem.png)
  - [x] New Student Registration
-![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/register.png)
+![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/register.png)
  - [x] Online Payment Log
-![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/log.png)
+![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/log.png)
 
 ## Contributors
 
