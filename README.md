@@ -1,68 +1,108 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# CETPay
 
-In the project directory, you can run:
+The current fee payment system in our college involves skipping class and standing in long queues. This process is tiresome as well as time consuming. Our project tries to make life easier for students in paying their fees by providing an Online Platform to do so.Here we present the various functionalities of our Online Fee Payment System CETPay
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ - [Behind the Idea](https://github.com/adarshsuresh07/Notified#behind-the-idea)
+ - [Stacks Used](https://github.com/adarshsuresh07/Notified#stacks-used)
+ - [Basic concept](https://github.com/adarshsuresh07/Notified#basic-concept)
+ - [Features Implemented](https://github.com/adarshsuresh07/Notified#features-implemented)
+ - [Contributors](https://github.com/adarshsuresh07/Notified#contributors)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Behind the Idea
+This was our Application Development Lab project assigned by our Associate Professor Vipin Vasu. This was our first product based project and we learned different frameworks to implement the system. 
+![ER Diagram for CETPay](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/er.jpg)
+## Stacks Used
 
-### `npm test`
+The whole application is build on the following : 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ - `Reactjs`  front-end
+ - `MySQL` database
+ - `Nodejs - Express` back-end
+ - `Stripe` payment medium
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Basic concept
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Lets now familiarize CETPay a bit more clearly. 
+There are two types of Logins :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ - ***Student*** : aka our main user, for whom the product will be more useful. They can 
+	 - login 
+	 - reset their password
+	 - pay their fee
+	 - get the receipt
+ - ***Admin*** :  is also a user who can 
+	 - login
+	 - will have an admin dashboard
+	 - see the students and their status
+	 - filter them out 
+	 - can pay student's fee offline
+	 - can reset student's and their own password
+	 - Add student
 
-### `npm run eject`
+## Features Implemented
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ - [x] Student authentication
+ ![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/loginstudent.jpg)
+ - [x] Student Dashboard
+ ![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/studentdash.png)
+ - [x] Initiating Payment
+ ![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/confirmation.png)![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/pay.png)
+ - [x] Payment Details
+	 - The major reason we have used Stripe for the project is that it provides a test mode.
+	- On Successful Payment, the payment receipt is sent to the email provided by the student at the time of
+payment.
+![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/receipt.png)
+ - [x] Reset Password
+![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/resetpass.png)
+ - [x] Admin authentication
+![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/loginadmin.png)
+ - [x] Admin Dashboard
+![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/admindash.png)
+ - [x]  Filters:
+	 - Search by Name  
+	 - Based on UG/ PG
+	 - Based on Semester
+	 - Based on Department
+	 - Based on Paid/ Not paid
+	 - Based on Scholarship
+	
+![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/searchsem.png)
+ - [x] New Student Registration
+![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/register.png)
+ - [x] Online Payment Log
+![](https://github.com/adarshsuresh07/FeePayment/tree/master/Screenshots/log.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributors
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[1]: https://github.com/adarshsuresh07
+[2]: https://adarshsuresh07.github.io/Portfolio/
+[3]: https://github.com/adarsh-av13
+[4]: http://adarshvijay.me/portfolio
+[5]: https://github.com/ajayduth
+[6]: https://github.com/afnanmedappil
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+ `Adarsh S `  [![github](https://img.icons8.com/material-sharp/24/000000/github.png)][1]      [![portfolio](https://img.icons8.com/material-sharp/24/000000/domain.png)][2]
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`Adarsh Vijay` [![github](https://img.icons8.com/material-sharp/24/000000/github.png)][3]    [![portfolio](https://img.icons8.com/material-sharp/24/000000/domain.png)][4]
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+`Ajay Duth` [![github](https://img.icons8.com/material-sharp/24/000000/github.png)][5]  
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+`Afnan Medappil` [![github](https://img.icons8.com/material-sharp/24/000000/github.png)][6]  
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Note to readers..
+This was out first project in our frameworks. The code may not be neat but our hard work is real. Thanks for visiting this repository.
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+<img src="https://img.icons8.com/bubbles/50/000000/filled-like.png"/>
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
