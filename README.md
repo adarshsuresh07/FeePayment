@@ -6,11 +6,11 @@ The current fee payment system in our college involves skipping class and standi
 
 ## Table of Contents
 
- - [Behind the Idea](https://github.com/adarshsuresh07/Notified#behind-the-idea)
- - [Stacks Used](https://github.com/adarshsuresh07/Notified#stacks-used)
- - [Basic concept](https://github.com/adarshsuresh07/Notified#basic-concept)
- - [Features Implemented](https://github.com/adarshsuresh07/Notified#features-implemented)
- - [Contributors](https://github.com/adarshsuresh07/Notified#contributors)
+ - [Behind the Idea](https://github.com/adarshsuresh07/FeePayment#behind-the-idea)
+ - [Stacks Used](https://github.com/adarshsuresh07/FeePayment#stacks-used)
+ - [Basic concept](https://github.com/adarshsuresh07/FeePayment#basic-concept)
+ - [Features Implemented](https://github.com/adarshsuresh07/FeePayment#features-implemented)
+ - [Contributors](https://github.com/adarshsuresh07/FeePayment#contributors)
 
 ## Behind the Idea
 This was our Application Development Lab project assigned by our Associate Professor Vipin Vasu. This was our first product based project and we learned different frameworks to implement the system. 
