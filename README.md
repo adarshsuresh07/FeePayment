@@ -16,6 +16,7 @@ The current fee payment system in our college involves skipping class and standi
 This was our Application Development Lab project assigned by our Associate Professor Vipin Vasu. This was our first product based project and we learned different frameworks to implement the system. 
 - ER Dialgram
 <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/er.jpg" width="50%"/>
+
 ## Stacks Used
 
 The whole application is build on the following : 
@@ -68,10 +69,11 @@ payment.
   <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/resetpass.png" width="80%"/>
 
  - [x] Admin authentication
- <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/loginadmin.png" width="80%"/>
+ <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/loginadmin.jpg" width="80%"/>
  
  - [x] Admin Dashboard
  <img src="https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/admindash.png" width="80%"/>
+ 
  - [x]  Filters:
 	 - Search by Name  
 	 - Based on UG/ PG
