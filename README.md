@@ -46,7 +46,7 @@ There are two types of Logins :
 ## Features Implemented
 
  - [x] Student authentication
- ![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/loginstudent.jpg)
+ ![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/loginstudent.jpg | width=500)
  - [x] Student Dashboard
  ![](https://github.com/adarshsuresh07/FeePayment/blob/master/Screenshots/studentdash.png)
  - [x] Initiating Payment
