@@ -115,7 +115,7 @@ payment.
 
 
 ## Note to readers..
-This was out first project in our frameworks. The code may not be neat but our hard work is real. Thanks for visiting this repository.
+This was our first project in our frameworks. The code may not be neat but our hard work is real. Thanks for visiting this repository.
 
 
 <img src="https://img.icons8.com/bubbles/50/000000/filled-like.png"/>
